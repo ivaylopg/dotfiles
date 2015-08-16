@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"antigen",
+				"antigen-bundle"
+			],
+			[
 				"padd",
 				"padding-bottom"
 			]
@@ -12,10 +16,29 @@
 	"buffers":
 	[
 		{
-			"file": ".osx",
+			"file": ".aliases",
 			"settings":
 			{
-				"buffer_size": 48455,
+				"buffer_size": 2144,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".zshrc",
+			"settings":
+			{
+				"buffer_size": 891,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "# Create a new directory and enter it\nfunction md() {\n	mkdir -p \"$@\" && cd \"$@\"\n}\n\n\n# find shorthand\nfunction f() {\n    find . -name \"$1\" 2>&1 | grep -v 'Permission denied'\n}\n\n\n\n\n# cd into whatever is the forefront Finder window.\ncdf() {  # short for cdfinder\n  cd \"`osascript -e 'tell app \"Finder\" to POSIX path of (insertion location as alias)'`\"\n}\n\n\n# Start an HTTP server from a directory, optionally specifying the port\nfunction server() {\n	local port=\"${1:-8000}\"\n	open \"http://localhost:${port}/\"\n	# Set the default Content-Type to `text/plain` instead of `application/octet-stream`\n	# And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)\n	python -c $'import SimpleHTTPServer;\\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\\nmap[\"\"] = \"text/plain\";\\nfor key, value in map.items():\\n\\tmap[key] = value + \";charset=UTF-8\";\\nSimpleHTTPServer.test();' \"$port\"\n}\n\n\n# Copy w/ progress\ncp_p () {\n  rsync -WavP --human-readable --progress $1 $2\n}\n\n\n\n# get gzipped size\nfunction gz() {\n	echo \"orig size    (bytes): \"\n	cat \"$1\" | wc -c\n	echo \"gzipped size (bytes): \"\n	gzip -c \"$1\" | wc -c\n}\n\n# whois a domain or a URL\nfunction whois() {\n	local domain=$(echo \"$1\" | awk -F/ '{print $3}') # get domain from URL\n	if [ -z $domain ] ; then\n		domain=$1\n	fi\n	echo \"Getting whois record for: $domain …\"\n\n	# avoid recursion\n					# this is the best whois server\n													# strip extra fluff\n	/usr/bin/whois -h whois.internic.net $domain | sed '/NOTICE:/q'\n}\n\n\n\n# Extract archives - use: extract <file>\n# Based on http://dotfiles.org/~pseup/.bashrc\nfunction extract() {\n	if [ -f \"$1\" ] ; then\n		local filename=$(basename \"$1\")\n		local foldername=\"${filename%%.*}\"\n		local fullpath=`perl -e 'use Cwd \"abs_path\";print abs_path(shift)' \"$1\"`\n		local didfolderexist=false\n		if [ -d \"$foldername\" ]; then\n			didfolderexist=true\n			read -p \"$foldername already exists, do you want to overwrite it? (y/n) \" -n 1\n			echo\n			if [[ $REPLY =~ ^[Nn]$ ]]; then\n				return\n			fi\n		fi\n		mkdir -p \"$foldername\" && cd \"$foldername\"\n		case $1 in\n			*.tar.bz2) tar xjf \"$fullpath\" ;;\n			*.tar.gz) tar xzf \"$fullpath\" ;;\n			*.tar.xz) tar Jxvf \"$fullpath\" ;;\n			*.tar.Z) tar xzf \"$fullpath\" ;;\n			*.tar) tar xf \"$fullpath\" ;;\n			*.taz) tar xzf \"$fullpath\" ;;\n			*.tb2) tar xjf \"$fullpath\" ;;\n			*.tbz) tar xjf \"$fullpath\" ;;\n			*.tbz2) tar xjf \"$fullpath\" ;;\n			*.tgz) tar xzf \"$fullpath\" ;;\n			*.txz) tar Jxvf \"$fullpath\" ;;\n			*.zip) unzip \"$fullpath\" ;;\n			*) echo \"'$1' cannot be extracted via extract()\" && cd .. && ! $didfolderexist && rm -r \"$foldername\" ;;\n		esac\n	else\n		echo \"'$1' is not a valid file\"\n	fi\n}\n\n# who is using the laptop's iSight camera?\ncamerausedby() {\n    echo \"Checking to see who is using the iSight camera… 📷\"\n    usedby=$(lsof | grep -w \"AppleCamera\\|USBVDC\\|iSight\" | awk '{printf $2\"\\n\"}' | xargs ps)\n    echo -e \"Recent camera uses:\\n$usedby\"\n}\n\n\n# animated gifs from any video\n# from alex sexton   gist.github.com/SlexAxton/4989674\ngifify() {\n  if [[ -n \"$1\" ]]; then\n    if [[ $2 == '--good' ]]; then\n      ffmpeg -i $1 -r 10 -vcodec png out-static-%05d.png\n      time convert -verbose +dither -layers Optimize -resize 900x900\\> out-static*.png  GIF:- | gifsicle --colors 128 --delay=5 --loop --optimize=3 --multifile - > $1.gif\n      rm out-static*.png\n    else\n      ffmpeg -i $1 -s 600x400 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > $1.gif\n    fi\n  else\n    echo \"proper usage: gifify <input_movie.mov>. You DO need to include extension.\"\n  fi\n}\n\n# turn that video into webm.\n# brew reinstall ffmpeg --with-libvpx\nwebmify(){\n	ffmpeg -i $1 -vcodec libvpx -acodec libvorbis -isync -copyts -aq 80 -threads 3 -qmax 30 -y $2 $1.webm\n}\n\n\n# visual studio code. a la `subl`\n#code () {\n#    if [[ $# = 0 ]]\n#    then\n#        open -a \"Visual Studio Code\"\n#    else\n#        [[ $1 = /* ]] && F=\"$1\" || F=\"$PWD/${1#./}\"\n#        open -a \"Visual Studio Code\" --args \"$F\"\n#    fi\n#}\n\n# `shellswitch bash`\n# `shellswitch zsh`\nshellswitch () {\n	chsh -s $(brew --prefix)/bin/$1\n}\n",
+			"file": ".functions",
+			"file_size": 4078,
+			"file_write_time": 130841816190000000,
+			"settings":
+			{
+				"buffer_size": 4071,
 				"line_ending": "Unix"
 			}
 		}
@@ -69,10 +92,26 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/ivaylopg/Documents/99_Misc/Dotfiles"
 	],
 	"file_history":
 	[
+		"/Users/ivaylopg/Documents/99_Misc/Dotfiles/.exports",
+		"/Users/ivaylopg/Documents/99_Misc/Dotfiles/zshConfig/git.zsh",
+		"/Users/ivaylopg/Documents/99_Misc/Dotfiles/zshConfig/README.md",
+		"/Users/ivaylopg/Documents/99_Misc/Dotfiles/.zshrc",
+		"/Users/ivaylopg/Documents/99_Misc/Dotfiles/.gitconfig",
+		"/Users/ivaylopg/.Trash/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/git.zsh",
+		"/Users/ivaylopg/Documents/99_Misc/Dotfiles/themes/ivaylopg.zsh-theme",
+		"/Users/ivaylopg/Documents/99_Misc/Dotfiles/.bash_profile",
+		"/Users/ivaylopg/Documents/99_Misc/Dotfiles/.aliases",
+		"/Users/ivaylopg/Documents/99_Misc/Dotfiles/tempBackups/.zshrc",
+		"/Users/ivaylopg/Documents/99_Misc/Dotfiles/.osx",
+		"/Users/ivaylopg/Documents/99_Misc/Dotfiles/.bash_prompt",
+		"/Users/ivaylopg/Documents/99_Misc/Dotfiles/.functions",
+		"/Users/ivaylopg/Documents/99_Misc/Dotfiles/tempBackups/.gitconfig",
+		"/Users/ivaylopg/Documents/99_Misc/Dotfiles/.gitignore",
+		"/Users/ivaylopg/Documents/99_Misc/Dotfiles/.inputrc",
+		"/Users/ivaylopg/Documents/99_Misc/Dotfiles/.gitmodules",
 		"/Users/ivaylopg/Documents/99_Misc/Dotfiles/symlink-setup.sh",
 		"/Users/ivaylopg/Documents/99_Misc/ivaylopg.zsh_theme",
 		"/Users/ivaylopg/Documents/01_Websites/ivaylogetov.com/gulpfile.js",
@@ -88,13 +127,15 @@
 	],
 	"find":
 	{
-		"height": 24.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"/Users/ivaylopg/Documents/99_Misc/Dotfiles/zshConfig",
+			"/Users/ivaylopg/Documents/99_Misc/Dotfiles"
 		]
 	},
 	"find_state":
@@ -102,6 +143,28 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"aFh",
+			"ls",
+			"$1",
+			"gs=",
+			"gs",
+			"git_compare_version",
+			"git_prompt_info",
+			"status",
+			"statud",
+			"git",
+			"dircolors",
+			"md",
+			"set_promp",
+			"mkdir",
+			"md",
+			"ack",
+			"ackrc",
+			"shopt",
+			"shop",
+			"tpu",
+			"auto-ls",
+			"itunes",
 			"file_ty"
 		],
 		"highlight": true,
@@ -125,11 +188,42 @@
 			[
 				{
 					"buffer": 0,
-					"file": ".osx",
+					"file": ".aliases",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2144,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1405,
+								1392
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 489.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": ".zshrc",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 48455,
+						"buffer_size": 891,
 						"regions":
 						{
 						},
@@ -151,7 +245,38 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": ".functions",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4071,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								176,
+								176
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 174.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -163,7 +288,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 32.0
 	},
 	"layout":
 	{
@@ -200,7 +325,7 @@
 	"project": "dotfiles.sublime-project",
 	"replace":
 	{
-		"height": 44.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
