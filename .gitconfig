@@ -23,6 +23,8 @@
 	s = status
 	cma = commit -a -m
 	cm = commit -m
+	difflast = diff HEAD^..HEAD
+    cpbranch = "!f() { git archive $1 | tar -xC $2; }; f"
 	p = push
 	pl = pull
 	df = diff --color --color-words --abbrev
