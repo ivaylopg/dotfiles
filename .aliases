@@ -19,7 +19,7 @@ else # OS X `ls`
 fi
 
 # ls options: F = put `/` after folders, h = byte unit suffixes, color! (even with piping to awk)
-alias ls='CLICOLOR_FORCE=1 gls -aFh ${colorflag} --group-directories-first'
+alias ls='CLICOLOR_FORCE=1 ls -aFh ${colorflag}'
 
 # List ALL files (colorized() in long format, show permissions in octal
 alias la="ls -l | awk '
@@ -49,6 +49,7 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 
 # programs
 alias st='open -a "Sublime Text"'
+alias mou='open -a "Mou"'
 
 # Shortcuts
 alias g="git"
