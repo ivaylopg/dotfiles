@@ -6,8 +6,6 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~"
 
-
-
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 alias rm="rm -i"  # safety first
