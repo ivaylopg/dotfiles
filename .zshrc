@@ -1,15 +1,21 @@
 ZSHA_BASE=$HOME/.zsh-antigen
 source $ZSHA_BASE/antigen/antigen.zsh
+#source $ZSHA_BASE/themes/git.zsh
+#source $ZSHA_BASE/themes/theme-and-appearance.zsh
 
-antigen-use oh-my-zsh
+#antigen-use oh-my-zsh
 
 #if [ "$OSTYPE"="darwin11.0" ]; then
 #  antigen-bundle osx
 #fi
 
-antigen-bundle extract
+#antigen-bundle extract
+antigen-bundle https://github.com/ivaylopg/dotfiles.git zshConfig/git.zsh
+antigen-bundle https://github.com/ivaylopg/dotfiles.git zshConfig/theme-and-appearance.zsh
 
-antigen-theme https://gist.github.com/ivaylopg/f8d38f22a2164c08dead.git ivaylopg
+#antigen-theme https://gist.github.com/ivaylopg/f8d38f22a2164c08dead.git ivaylopg
+
+antigen-theme ivaylopg/dotfiles zshThemes/ivaylopg
 
 antigen-apply
 
