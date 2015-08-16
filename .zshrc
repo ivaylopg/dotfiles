@@ -8,11 +8,11 @@ source $ZSHA_BASE/antigen/antigen.zsh
 #zshConfig/theme-and-appearance.zsh
 
 
-antigen-bundle ivaylopg/dotfiles zshConfig/
+antigen-bundle ivaylopg/dotfiles zshConfig/all/
 
-#if [ "$OSTYPE"="darwin11.0" ]; then
-#  antigen-bundle osx
-#fi
+if [ "$OSTYPE"="darwin11.0" ]; then
+  antigen-bundle ivaylopg/dotfiles zshConfig/osx/
+fi
 
 #antigen-theme https://gist.github.com/ivaylopg/f8d38f22a2164c08dead.git ivaylopg
 antigen-theme ivaylopg/dotfiles zshThemes/ivaylopg
