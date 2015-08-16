@@ -1,78 +1,19 @@
-# uncomment to profile prompt startup with zprof
-# zmodload zsh/zprof
+ZSHA_BASE=$HOME/.zsh-antigen
+source $ZSHA_BASE/antigen/antigen.zsh
 
-# history
-SAVEHIST=100000
+antigen-use oh-my-zsh
 
-# vim bindings
-bindkey -v
+#if [ "$OSTYPE"="darwin11.0" ]; then
+#  antigen-bundle osx
+#fi
 
+antigen-bundle extract
 
-fpath=( "$HOME/.zfunctions" $fpath )
+antigen-theme https://gist.github.com/ivaylopg/f8d38f22a2164c08dead.git ivaylopg
 
+antigen-apply
 
-# antigen time!
-source ~/code/antigen/antigen.zsh
-
-
-######################################################################
-### install some antigen bundles
-
-local b="antigen-bundle"
-
-
-# Don't load the oh-my-zsh's library. Takes too long. No need.
-	# antigen use oh-my-zsh
-
-# Guess what to install when running an unknown command.
-$b command-not-found
-
-# Helper for extracting different types of archives.
-$b extract
-
-# atom editor
-$b atom
-
-# homebrew  - autocomplete on `brew install`
-$b brew
-$b brew-cask
-
-# Tracks your most used directories, based on 'frecency'.
-$b robbyrussell/oh-my-zsh plugins/z
-
-# suggestion as you type
-$b tarruda/zsh-autosuggestions
-
-# nicoulaj's moar completion files for zsh
-# $b zsh-users/zsh-completions src
-
-# Syntax highlighting on the readline
-$b zsh-users/zsh-syntax-highlighting
-
-# colors for all files!
-$b trapd00r/zsh-syntax-highlighting-filetypes
-
-# dont set a theme, because pure does it all
-$b mafredri/zsh-async
-$b sindresorhus/pure
-
-# history search
-$b zsh-users/zsh-history-substring-search
-
-# Tell antigen that you're done.
-antigen apply
-
-###
-#################################################################################################
-
-
-
-# bind UP and DOWN arrow keys for history search
-zmodload zsh/terminfo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
-
-export PURE_GIT_UNTRACKED_DIRTY=0
+##########
 
 # Automatically list directory contents on `cd`.
 auto-ls () {
@@ -82,20 +23,53 @@ auto-ls () {
 }
 chpwd_functions=( auto-ls $chpwd_functions )
 
-# history mgmt
-# http://www.refining-linux.org/archives/49/ZSH-Gem-15-Shared-history/
-setopt inc_append_history
-setopt share_history
-
-
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
+##########
+# aliases
 
-# uncomment to finish profiling
-# zprof
+#make ls more useful
+alias ls='ls -GFh'
 
+alias ..="cd .."
+alias cd..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~"
 
+# Git (See .gitconfig for more)
+alias g='git'
+alias gs='git status'
+alias gp='git push'
 
-# Load default dotfiles
-source ~/.bash_profile
+# programs
+alias st='open -a "Sublime Text"'
 
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
+
+#shortcuts
+alias nn='nano'
+alias v='vim'
+
+# File size
+alias fs="stat -f \"%z bytes\""
+
+# ROT13-encode text. Works for decoding, too! ;)
+alias rot13='tr a-zA-Z n-za-mN-ZA-M'
+
+# Empty the Trash on all mounted volumes and the main HDD
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
+
+# Hide/show all desktop icons (useful when presenting)
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# Stuff I never really use but cannot delete either because of http://xkcd.com/530/
+alias stfu="osascript -e 'set volume output muted true'"
+alias pumpitup="osascript -e 'set volume 10'"
