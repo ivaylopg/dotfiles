@@ -1,8 +1,30 @@
+[user]
+	name = Ivaylo Getov
+	email = ivaylo.getov@gmail.com
+
+[core]
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+	quotepath = false
+
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+
+# push easily. http://stackoverflow.com/a/23918418/89484
+[push]
+	# default = current
+	default = matching
+
 [alias]
-	c = commit -am
-	up = pull
-	p = push
+	undo = reset HEAD~1
+	last = log -1 HEAD
 	s = status -s
+	cma = commit -a -m
+	cm = commit -m
+	p = push
+	pl = pull
 	df = diff --color --color-words --abbrev
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	co = checkout
@@ -22,14 +44,8 @@
 		fi \
 	}; f"
 
-
-
 [color]
 	ui = always
-
-[core]
-	excludesfile = ~/.gitignore
-	attributesfile = ~/.gitattributes
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -64,17 +80,15 @@
 # Any GitHub repo with my username should be checked out r/w by default
 # http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
 
-[url "git@github.com:paulirish/"]
-  insteadOf = "git://github.com/paulirish/"
+[url "git@github.com:ivaylopg/"]
+  insteadOf = "git://github.com/ivaylopg/"
+
+[url "git@github.com:luxloop/"]
+  insteadOf = "git://github.com/luxloop/"
+
 [help]
 	autocorrect = 1
 
-# push easily. http://stackoverflow.com/a/23918418/89484
-[push]
-	default = current
-
-
-
-[include]
-  # For username / github token / etc
-  path = ~/.gitconfig.local
+# For username / github token / etc
+#[include]
+  #path = ~/.gitconfig.local

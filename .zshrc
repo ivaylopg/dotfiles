@@ -40,8 +40,9 @@ alias ~="cd ~"
 
 # Git (See .gitconfig for more)
 alias g='git'
-alias gs='git status'
+alias gs='git status -s'
 alias gp='git push'
+alias gpl='git pull'
 
 # programs
 alias st='open -a "Sublime Text"'
