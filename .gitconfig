@@ -20,7 +20,7 @@
 [alias]
 	undo = reset HEAD~1
 	last = log -1 HEAD
-	s = status -s
+	s = status
 	cma = commit -a -m
 	cm = commit -m
 	p = push
