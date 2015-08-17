@@ -31,6 +31,13 @@ cp_p () {
   rsync -WavP --human-readable --progress $1 $2
 }
 
+# ROT13-encode text. Works for decoding, too!
+# Numbers are encoded through ROT5
+# I use this encoding to hide contact info from screen readers in webpages:
+# https://gist.github.com/sammy0025/6672775
+function rot13(){
+	echo $1 | tr a-zA-Z0-9 n-za-mN-ZA-M5-90-4;
+}
 
 
 # get gzipped size
