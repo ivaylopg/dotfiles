@@ -1,5 +1,5 @@
 ZSHA_BASE=$HOME/.zsh-antigen
-ADOTDIR=$ZSHA_BASE/
+ADOTDIR=$ZSHA_BASE
 source $ZSHA_BASE/antigen/antigen.zsh
 
 #antigen-use oh-my-zsh
