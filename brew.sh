@@ -3,12 +3,8 @@
 # Based on the thoughtbot laptop script:
 # https://github.com/thoughtbot/laptop/blob/master/mac
 
-
-
 fancy_echo() {
   local fmt="$1"; shift
-
-  # shellcheck disable=SC2059
   printf "\n$fmt\n" "$@"
 }
 
@@ -69,13 +65,16 @@ append_to_path() {
   fi
 }
 
+trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
+set -e
+
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew ..."
+
     mkdir $HOME/.homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
-
     export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
-
     append_to_path 'export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH' 1
+    
 else
   fancy_echo "Homebrew already installed. Skipping ..."
 fi
@@ -83,15 +82,11 @@ fi
 fancy_echo "Updating Homebrew formulas ..."
 brew update
 
-# brew_install_or_upgrade 'zsh'
-# brew_install_or_upgrade 'git'
-# brew_install_or_upgrade 'node'
+#brew_install_or_upgrade 'zsh'
+#fancy_echo "Remember to change your default shell..."
 
-# brew_install_or_upgrade 'rbenv'
-# brew_install_or_upgrade 'ruby-build'
+#brew_install_or_upgrade 'git'
+#brew_install_or_upgrade 'node'
 
-# # shellcheck disable=SC2016
-# append_to_zshrc 'eval "$(rbenv init - --no-rehash zsh)"' 1
-
-# brew_install_or_upgrade 'openssl'
-# brew unlink openssl && brew link openssl --force
+#brew_install_or_upgrade 'openssl'
+#brew unlink openssl && brew link openssl --force
