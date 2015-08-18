@@ -63,6 +63,7 @@ alias mou='open -a "Mou"'
 alias g="git"
 alias v="vim"
 alias c="clear"
+alias nn="nano"
 
 # File size
 alias fs="stat -f \"%z bytes\""
