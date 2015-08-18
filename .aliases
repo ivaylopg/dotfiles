@@ -44,8 +44,26 @@ alias lsd="ls -l | grep '^d' | awk '
 }'"
 
 # Git (See .gitconfig for more)
-alias g='git'
-alias gs='git status'
+#alias g='git'
+#alias gs='git status'
+
+# No arguments: `git status`
+# With arguments: acts like `git`
+# from: https://github.com/thoughtbot/dotfiles/blob/master/zsh/functions/g
+g() {
+  if [[ $# > 0 ]]; then
+    git $@
+  else
+    git status
+  fi
+}
+
+# Complete g like git
+if [[ -n "$ZSH_VERSION" ]]; then
+    compdef g=git
+fi;
+
+alias ga="git add"
 alias gp='git push'
 
 # IP addresses
@@ -60,7 +78,6 @@ alias st='open -a "Sublime Text"'
 alias mou='open -a "Mou"'
 
 # Shortcuts
-alias g="git"
 alias v="vim"
 alias c="clear"
 alias nn="nano"
