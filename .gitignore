@@ -1,11 +1,35 @@
 # Folder view configuration files
 .DS_Store
 Desktop.ini
+.AppleDouble
+.LSOverride
 
 # Thumbnail cache files
 ._*
 Thumbs.db
 
-# Files that might appear on external disks
+# Files that might appear on external disks or in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
 .Spotlight-V100
+.TemporaryItems
 .Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+.apdisk
+
+# Sublime Text global ignores
+# cache files for sublime text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# workspace files are user-specific
+*.sublime-workspace
+
+# sftp configuration file
+sftp-config.json
