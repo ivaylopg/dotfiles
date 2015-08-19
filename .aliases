@@ -76,8 +76,18 @@ alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 
 # programs
-alias st='open -a "Sublime Text"'
+#alias st='open -a "Sublime Text"'
 alias mou='open -a "Mou"'
+
+# No arguments: open sublime text project in current directory, if it exists
+# With arguments: open arguments in sublime text
+st() {
+  if [[ $# > 0 ]]; then
+    open -a "Sublime Text" $@
+  else
+    open -a "Sublime Text" *.sublime-project
+  fi
+}
 
 # Shortcuts
 alias v="vim"
