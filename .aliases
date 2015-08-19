@@ -45,7 +45,6 @@ alias lsd="ls -l | grep '^d' | awk '
 
 # Git (See .gitconfig for more)
 #alias g='git'
-#alias gs='git status'
 
 # No arguments: `git status`
 # With arguments: acts like `git`
@@ -63,6 +62,7 @@ if [[ -n "$ZSH_VERSION" ]]; then
     compdef g=git
 fi;
 
+alias gs='git status'
 alias ga="git add"
 alias gp='git push'
 alias gpl="git pull"
