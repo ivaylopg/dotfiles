@@ -8,6 +8,11 @@ fancy_echo() {
   printf "\n$fmt\n" "$@"
 }
 
+add_instructions() {
+  touch $HOME/Desktop/manualSetupInstructions.txt
+  echo $1 >> $HOME/Desktop/manualSetupInstructions.txt
+}
+
 # case "$SHELL" in
 #   */zsh) : ;;
 #   *)
@@ -20,13 +25,13 @@ brew_install_or_upgrade() {
   if brew_is_installed "$1"; then
     if brew_is_upgradable "$1"; then
       fancy_echo "Upgrading %s ..." "$1"
-      brew upgrade "$@"
+      brew upgrade $@
     else
       fancy_echo "Already using the latest version of %s. Skipping ..." "$1"
     fi
   else
     fancy_echo "Installing %s ..." "$1"
-    brew install "$@"
+    brew install $@
   fi
 }
 
@@ -42,12 +47,30 @@ brew_is_upgradable() {
   ! brew outdated --quiet "$name" >/dev/null
 }
 
+cask_install() {
+  if cask_is_installed "$1"; then
+    fancy_echo "Cask %s is already installed. Skipping ..." "$1"
+  else
+    fancy_echo "Installing Cask: %s ..." "$1"
+    brew cask install $@
+  fi
+}
+
+cask_is_installed() {
+  local name="$(cask_expand_alias "$1")"
+  brew cask list -1 | grep -Fqx "$name"
+}
+
 brew_tap() {
   brew tap "$1" 2> /dev/null
 }
 
 brew_expand_alias() {
   brew info "$1" 2>/dev/null | head -1 | awk '{gsub(/:/, ""); print $1}'
+}
+
+cask_expand_alias() {
+  brew cask info "$1" 2>/dev/null | head -1 | awk '{gsub(/:/, ""); print $1}'
 }
 
 append_to_path() {
@@ -84,9 +107,39 @@ brew update
 
 #brew_install_or_upgrade 'zsh'
 #fancy_echo "Remember to change your default shell..."
+#add_instructions "Add to your /etc/shells - $HOME/.homebrew/bin/zsh"
 
-#brew_install_or_upgrade 'git'
-#brew_install_or_upgrade 'node'
+brew_install_or_upgrade git
+brew_install_or_upgrade node
+brew_install_or_upgrade grc
 
-#brew_install_or_upgrade 'openssl'
-#brew unlink openssl && brew link openssl --force
+# brew_install_or_upgrade openssl
+# brew unlink openssl && brew link openssl --force
+
+brew_install_or_upgrade homebrew/dupes/grep
+brew_install_or_upgrade homebrew/dupes/screen
+
+brew_install_or_upgrade wget --with-iri
+brew_install_or_upgrade ffmpeg --with-libvpx
+
+
+brew cleanup
+
+# yay cask!
+brew_tap caskroom/cask
+brew_install_or_upgrade brew-cask
+brew_tap caskroom/versions
+
+##cask_install "spectacle"
+#cask_install "dropbox"
+#cask_install "onepassword"
+#cask_install "rescuetime"
+cask_install flux
+#cask_install "sublime-text3"
+#cask_install "imagealpha"
+#cask_install "imageoptim"
+#cask_install "miro-video-converter"
+#cask_install "google-chrome"
+#cask_install "vlc"
+
+brew cask cleanup
