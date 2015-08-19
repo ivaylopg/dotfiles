@@ -180,7 +180,7 @@ defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int
 # Play feedback when volume is changed: false
 	defaults write -g "com.apple.sound.beep.feedback" -int 0
 # Play user interface sound effects: false
-	defaults write "com.apple.systemsound" "com.apple.sound.uiaudio.enabled" -int 0
+	#defaults write "com.apple.systemsound" "com.apple.sound.uiaudio.enabled" -int 0
 # Lower the volume for alert sound
 	defaults write "com.apple.systemsound" 'com.apple.sound.beep.volume' -float 0
 

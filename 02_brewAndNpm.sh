@@ -88,6 +88,18 @@ append_to_path() {
   fi
 }
 
+npm_install_g() {
+  if ! command -v node >/dev/null; then
+    fancy_echo "Installing Node ..."
+    brew_install_or_upgrade node
+    fancy_echo "npm is installing: %s" "$1"
+    sudo npm install -g $@
+  else
+    fancy_echo "npm is installing: %s" "$1"
+    sudo npm install -g $@
+  fi
+}
+
 trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 set -e
 
@@ -110,11 +122,11 @@ brew update
 #add_instructions "Add to your /etc/shells - $HOME/.homebrew/bin/zsh"
 
 brew_install_or_upgrade git
-brew_install_or_upgrade node
+brew_install_or_upgrade node #and npm
 brew_install_or_upgrade grc
 
-# brew_install_or_upgrade openssl
-# brew unlink openssl && brew link openssl --force
+brew_install_or_upgrade openssl
+brew unlink openssl && brew link openssl --force
 
 brew_install_or_upgrade homebrew/dupes/grep
 brew_install_or_upgrade homebrew/dupes/screen
@@ -122,8 +134,10 @@ brew_install_or_upgrade homebrew/dupes/screen
 brew_install_or_upgrade wget --with-iri
 brew_install_or_upgrade ffmpeg --with-libvpx
 
+brew_install_or_upgrade gibo
 
 brew cleanup
+#################################################
 
 # yay cask!
 brew_tap caskroom/cask
@@ -142,4 +156,11 @@ cask_install flux
 #cask_install "google-chrome"
 #cask_install "vlc"
 
+
 brew cask cleanup
+
+#npm globals
+npm_install_g git-open
+npm_install_g eslint
+npm_install_g gulp
+npm_install_g nodemon
