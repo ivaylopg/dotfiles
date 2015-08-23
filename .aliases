@@ -4,6 +4,9 @@ alias cd..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
 alias ~="cd ~"
 alias cdd="cd ~/Desktop"
 
@@ -91,10 +94,12 @@ st() {
   fi
 }
 
-# Shortcuts
+# Shortcuts and helpers
 alias v="vim"
 alias c="clear"
 alias nn="nano"
+alias e="exit"
+alias path='echo -e ${PATH//:/\\n}'
 
 # File size
 alias fs="stat -f \"%z bytes\""
@@ -107,9 +112,16 @@ alias fs="stat -f \"%z bytes\""
 # Empty the Trash on all mounted volumes and the main HDD
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 
+# do not delete / or prompt if deleting more than 3 files at a time #
+alias rm='rm -I --preserve-root'
+
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+#just for fun
+alias \?="clear && fortune | cowsay"
+alias dunnet="clear && emacs -batch -l dunnet"
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"

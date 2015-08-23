@@ -117,6 +117,8 @@ fi
 fancy_echo "Updating Homebrew formulas ..."
 brew update
 
+brew_install_or_upgrade coreutils
+
 #brew_install_or_upgrade 'zsh'
 #fancy_echo "Remember to change your default shell..."
 #add_instructions "Add to your /etc/shells - $HOME/.homebrew/bin/zsh"
@@ -135,6 +137,8 @@ brew_install_or_upgrade wget --with-iri
 brew_install_or_upgrade ffmpeg --with-libvpx
 
 brew_install_or_upgrade gibo
+brew_install_or_upgrade fortune
+brew_install_or_upgrade cowsay
 
 brew cleanup
 #################################################
