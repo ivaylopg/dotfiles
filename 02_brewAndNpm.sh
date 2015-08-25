@@ -135,10 +135,10 @@ brew_install_or_upgrade homebrew/dupes/screen
 
 brew_install_or_upgrade wget --with-iri
 brew_install_or_upgrade ffmpeg --with-libvpx
-
 brew_install_or_upgrade gibo
 brew_install_or_upgrade fortune
 brew_install_or_upgrade cowsay
+brew_install_or_upgrade pidof
 
 brew cleanup
 #################################################
