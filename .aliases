@@ -113,7 +113,7 @@ alias fs="stat -f \"%z bytes\""
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 
 # do not delete / or prompt if deleting more than 3 files at a time #
-alias rm='rm -I --preserve-root'
+alias rm='grm -I --preserve-root'
 
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
@@ -122,6 +122,7 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 #just for fun
 alias \?="clear && fortune | cowsay"
 alias dunnet="clear && emacs -batch -l dunnet"
+alias adventure="~/.adventure/adv.sh"
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
