@@ -25,7 +25,7 @@ antigen-apply
 auto-ls () {
 	emulate -L zsh;
 	# explicit sexy ls'ing as aliases arent honored in here.
-	hash gls >/dev/null 2>&1 && CLICOLOR_FORCE=1 gls -aFh --color --group-directories-first || ls
+	CLICOLOR_FORCE=1 ls -FGh 
 }
 chpwd_functions=( auto-ls $chpwd_functions )
 
