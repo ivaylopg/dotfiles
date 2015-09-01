@@ -12,6 +12,8 @@ cd $HOME/Desktop/camingo
 curl -O http://janfromm.de/_data/downloads/CamingoCode-v1.0.zip
 unzip *
 open CamingoCode-*.ttf
+cd ../
+mv camingo ~/.Trash
 
 #set up Colossal Cave Adventure 2.5 (430pts)
 mkdir ~/.adventure && cp bin/adventure/* ~/.adventure/
