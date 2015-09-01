@@ -138,7 +138,7 @@ webmify(){
 
 # Print nyan cat
 # https://github.com/steckel/Git-Nyan-Graph/blob/master/nyan.sh
-# modified to work with oh-my-zsh theme functions
+# (modified to work with oh-my-zsh theme color-functions)
 function nyan() {
     clear
     echo
