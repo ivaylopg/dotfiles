@@ -4,7 +4,7 @@ I compiled Adventure 2.5 from source, and it worked, but any time I tried to loa
 
 Then I found the awesome 64-bit osx port of adventure by [Lobotomo](http://www.lobotomo.com/products/Adventure/), but I hated that fake terminal interface.
 
-I pulled the game binary out of that app and I am just using that directly. I'm pretty sure this is all kosher, given the original Adventure 2.5 license, but if anyone has a problem with this, let me know!
+I pulled the compiled Adventure binary out of Lobotomo's app bundle and I am just using that directly. I'm pretty sure this is all kosher, given the original Adventure 2.5 license, but if anyone has a problem with this, let me know!
 
 -Ivaylo
 
