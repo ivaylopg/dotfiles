@@ -1,9 +1,8 @@
 #!/bin/sh
 
+#install antigen and change to zsh
 git clone https://github.com/zsh-users/antigen .zsh-antigen/antigen
 chsh -s /bin/zsh
-
-curl -L https://raw.github.com/rauchg/wifi-password/master/wifi-password.sh -o /usr/local/bin/wifi-password && chmod +x /usr/local/bin/wifi-password
 
 ### XCode Command Line Tools
 #      thx  https://github.com/alrra/dotfiles/blob/c2da74cc333/os/os_x/install_applications.sh#L39
