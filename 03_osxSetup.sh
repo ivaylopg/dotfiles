@@ -281,7 +281,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 
 # Remove the spring loading delay for directories
-defaults write NSGlobalDomain com.apple.springing.delay -float 0
+# defaults write NSGlobalDomain com.apple.springing.delay -float 0
 
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
@@ -349,7 +349,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 ###############################################################################
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
-defaults write com.apple.dock mouse-over-hilite-stack -bool true
+#defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
 # Set the icon size of Dock items to 36 pixels
 defaults write com.apple.dock tilesize -int 32
@@ -499,7 +499,9 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 # Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
-defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" -string "@\\U21a9"
+#defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" -string "@\\U21a9"
+# For Yosemite and up:
+defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\U21a9"
 
 # Display emails in threaded mode, sorted by date (oldest at the top)
 defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
@@ -713,6 +715,42 @@ defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
 
 # Hide the app in the background if it’s not the front-most window
 defaults write com.twitter.twitter-mac HideInBackground -bool true
+
+###############################################################################
+# Power                                                                       #
+###############################################################################
+
+# Battery
+
+# Computer sleep: 10 min
+sudo pmset -b sleep 10
+
+# Display sleep: 5 min
+sudo pmset -b displaysleep 5
+
+# Put the hard disk(s) to sleep when possible: 10 min
+sudo pmset -b disksleep 10
+
+# Automatically reduce brightness before display goes to sleep
+sudo pmset -b halfdim 1
+
+
+# Power Adapter
+
+# Computer sleep: never
+sudo pmset -c sleep 0
+
+# Display sleep: 10 min
+sudo mset -c displaysleep 10
+
+# Put the hard disk(s) to sleep when possible: 10 min
+sudo pmset -c disksleep 10
+
+# Wake for network access
+sudo pmset -c womp 1
+
+# Automatically reduce brightness before display goes to sleep
+sudo pmset -c halfdim 1
 
 ###############################################################################
 # Kill affected applications                                                  #
