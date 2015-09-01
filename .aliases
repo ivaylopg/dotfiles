@@ -104,6 +104,14 @@ alias e="exit"
 alias path='echo -e ${PATH//:/\\n}'
 alias db="open ~/Dropbox"
 
+o() {
+  if [[ $# > 0 ]]; then
+    open $@
+  else
+    open -a "Finder" .
+  fi
+}
+
 # Enable aliases to be sudo’ed
 #alias sudo="sudo "
 
@@ -126,6 +134,10 @@ alias rm='grm -I --preserve-root'
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+#system update 
+alias update='softwareupdate -l'
+alias upgrade='softwareupdate -i -a'
 
 #just for fun
 alias \?="clear && fortune | cowsay"
