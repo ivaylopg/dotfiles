@@ -1,0 +1,18 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"DashDoc",
+		"Dotfiles Syntax Highlighting",
+		"GitGutter",
+		"LoremIpsum",
+		"Package Control",
+		"Sass",
+		"SFTP",
+		"SublimeLinter",
+		"SublimeLinter-contrib-eslint",
+		"SublimeOnSaveBuild"
+	]
+}
