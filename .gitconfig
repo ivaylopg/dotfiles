@@ -23,6 +23,7 @@
 	s = status
 	cma = commit -a -m
 	cm = commit -m
+	ca = commit -a
 	difflast = diff HEAD^..HEAD
 	cpbranch = "!f() { git archive $1 | tar -xC $2; }; f"
 	p = push
@@ -30,6 +31,7 @@
 	df = diff --color --color-words --abbrev
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	co = checkout
+	master = !git checkout master && git pull
 
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
