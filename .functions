@@ -154,6 +154,11 @@ function nyan() {
     echo
 }
 
+# Find shorthand
+function f() {
+    find . -name "$1" 2>/dev/null
+}
+
 # `shellswitch bash`
 # `shellswitch zsh`
 shellswitch () {
