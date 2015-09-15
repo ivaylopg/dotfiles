@@ -22,6 +22,7 @@ Thumbs.db
 Network Trash Folder
 .apdisk
 
+##############################
 # Sublime Text global ignores
 # cache files for sublime text
 *.tmlanguage.cache
@@ -31,5 +32,16 @@ Network Trash Folder
 # workspace files are user-specific
 *.sublime-workspace
 
+# package-control noise
+*/User/Package Control.last-run
+*/User/Package Control.ca-list
+*/User/Package Control.cache/
+*/User/Package Control.ca-certs/
+*/User/Package Control.ca-bundle
+*/User/Package Control.system-ca-bundle
+*/User/Package Control.merged-ca-bundle
+*/User/Package Control.user-ca-bundle
+
 # sftp configuration file
 sftp-config.json
+##############################
