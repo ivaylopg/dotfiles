@@ -3,6 +3,7 @@
 ###  backup old machine's key items
 
 mkdir -p ~/migration/home
+mkdir -p ~/migration/ST
 cd ~/migration
 
 # what is worth reinstalling?
@@ -18,4 +19,4 @@ cp ~/.bash_history ~/migration # back it up for fun?
 cp ~/.zsh_history ~/migration # back it up for fun?
 #cp ~/.gitconfig.local ~/migration
 #cp ~/.z ~/migration # z history file.
-cp "~/Library/Application Support/Sublime Text 3/Packages" ~/migration
+cp -r  ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/ ~/migration/ST
