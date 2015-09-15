@@ -112,6 +112,8 @@ o() {
   fi
 }
 
+alias x="chmod +x"
+
 # Enable aliases to be sudo’ed
 #alias sudo="sudo "
 
@@ -138,6 +140,9 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 #system update 
 alias update='softwareupdate -l'
 alias upgrade='softwareupdate -i -a'
+
+# Homebrew
+alias brew-up="brew update; brew upgrade --all; brew cleanup; brew prune"
 
 #just for fun
 alias \?="clear && fortune | cowsay"
