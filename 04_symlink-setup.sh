@@ -146,6 +146,8 @@ print_success() {
 declare -a FILES_TO_SYMLINK=$(find . -type f -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .osx | sed -e 's|//|/|' | sed -e 's|./.|.|')
 FILES_TO_SYMLINK="$FILES_TO_SYMLINK"
 
+SUBLIME=("User" "Theme - Default")
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -159,6 +161,32 @@ main() {
 
         sourceFile="$(pwd)/$i"
         targetFile="$HOME/$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
+
+        if [ -e "$targetFile" ]; then
+            if [ "$(readlink "$targetFile")" != "$sourceFile" ]; then
+
+                ask_for_confirmation "'$targetFile' already exists, do you want to overwrite it?"
+                if answer_is_yes; then
+                    rm -rf "$targetFile"
+                    execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
+                else
+                    print_error "$targetFile → $sourceFile"
+                fi
+
+            else
+                print_success "$targetFile → $sourceFile"
+            fi
+        else
+            execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
+        fi
+
+    done
+
+    #sync Sublime Text 3 Settings
+    for i in ${SUBLIME[@]}; do
+
+        sourceFile="$(pwd)/SublimeText3/$i"
+        targetFile="$HOME/Library/Application Support/Sublime Text 3/Packages/$i"
 
         if [ -e "$targetFile" ]; then
             if [ "$(readlink "$targetFile")" != "$sourceFile" ]; then
