@@ -146,8 +146,7 @@ print_success() {
 declare -a FILES_TO_SYMLINK=$(find . -type f -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .osx | sed -e 's|//|/|' | sed -e 's|./.|.|')
 FILES_TO_SYMLINK="$FILES_TO_SYMLINK"
 
-SUBLIME=("User")
-
+SUBLIME=(User)
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -182,44 +181,39 @@ main() {
 
     done
 
-    #sync Sublime Text 3 Settings
-    local STDIR=$HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages
+    ask_for_confirmation "Do you want to sync Sublime Text 3 Settings?"
+    if answer_is_yes; then
 
-    [ ! -d "$STDIR" ] && mkdir -p "$STDIR" && printf "Created %s" "$STDIR"
+        #sync Sublime Text 3 Settings
+        i=""
+        local STDIR=$HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages
 
-    #if [ -d "$STDIR/Packages/User" ]; then
-    #    mkdir "$STDIR/Packages.bak"
-    #    mv "$STDIR/Packages/User" "$DIR/Packages.bak/User"
-    #fi
-    #ln -s ~/dotfiles/sublime/User "$DIR/Packages/User"
+        [ ! -d "$STDIR" ] && mkdir -p "$STDIR" && printf "Created %s" "$STDIR"
 
+        for i in ${SUBLIME[@]}; do
+            #printf $i"\n"
+            sourceFile="$(pwd)/SublimeText3/$i"
 
+            if [ -d "$STDIR/$i" ]; then
 
-    for i in ${SUBLIME[@]}; do
-        sourceFile="$(pwd)/SublimeText3/$i"
-        #targetFile="$STDIR/$i"
-        printf $i"\n"
-
-        if [ -d "$STDIR/$i" ]; then
-
-            ask_for_confirmation "'$STDIR/$i' already exists, do you want to overwrite it?"
-            if answer_is_yes; then
-                rm -rf "$STDIR/$i"
+                ask_for_confirmation "'$STDIR/$i' already exists, do you want to overwrite it?"
+                if answer_is_yes; then
+                    rm -rf "$STDIR/$i"
+                    ln -fs "$sourceFile" "$STDIR/$i" &> /dev/null
+                    print_result $? "$STDIR/$i → $sourceFile"
+                else
+                    print_error "$STDIR/$i → $sourceFile"
+                fi
+            else
                 ln -fs "$sourceFile" "$STDIR/$i" &> /dev/null
                 print_result $? "$STDIR/$i → $sourceFile"
-                #printf "yes\n"
-            else
-                #print_error "$targetFile → $sourceFile"
-                printf "no"
             fi
-        else
-            #execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
-            printf "$STDIR/$i\n"
-        fi
 
-    done
-    
+            
 
+        done
+
+    fi
 }
 
 main
