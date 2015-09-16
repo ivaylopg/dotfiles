@@ -146,7 +146,7 @@ print_success() {
 declare -a FILES_TO_SYMLINK=$(find . -type f -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .osx | sed -e 's|//|/|' | sed -e 's|./.|.|')
 FILES_TO_SYMLINK="$FILES_TO_SYMLINK"
 
-SUBLIME=("User" "Theme - Default")
+SUBLIME=("User")
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -183,30 +183,42 @@ main() {
     done
 
     #sync Sublime Text 3 Settings
+    local STDIR=$HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages
+
+    [ ! -d "$STDIR" ] && mkdir -p "$STDIR" && printf "Created %s" "$STDIR"
+
+    #if [ -d "$STDIR/Packages/User" ]; then
+    #    mkdir "$STDIR/Packages.bak"
+    #    mv "$STDIR/Packages/User" "$DIR/Packages.bak/User"
+    #fi
+    #ln -s ~/dotfiles/sublime/User "$DIR/Packages/User"
+
+
+
     for i in ${SUBLIME[@]}; do
-
         sourceFile="$(pwd)/SublimeText3/$i"
-        targetFile="$HOME/Library/Application Support/Sublime Text 3/Packages/$i"
+        #targetFile="$STDIR/$i"
+        printf $i"\n"
 
-        if [ -e "$targetFile" ]; then
-            if [ "$(readlink "$targetFile")" != "$sourceFile" ]; then
+        if [ -d "$STDIR/$i" ]; then
 
-                ask_for_confirmation "'$targetFile' already exists, do you want to overwrite it?"
-                if answer_is_yes; then
-                    rm -rf "$targetFile"
-                    execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
-                else
-                    print_error "$targetFile → $sourceFile"
-                fi
-
+            ask_for_confirmation "'$STDIR/$i' already exists, do you want to overwrite it?"
+            if answer_is_yes; then
+                rm -rf "$STDIR/$i"
+                ln -fs "$sourceFile" "$STDIR/$i" &> /dev/null
+                print_result $? "$STDIR/$i → $sourceFile"
+                #printf "yes\n"
             else
-                print_success "$targetFile → $sourceFile"
+                #print_error "$targetFile → $sourceFile"
+                printf "no"
             fi
         else
-            execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
+            #execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
+            printf "$STDIR/$i\n"
         fi
 
     done
+    
 
 }
 
