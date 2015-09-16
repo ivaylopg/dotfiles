@@ -209,10 +209,8 @@ main() {
                 print_result $? "$STDIR/$i → $sourceFile"
             fi
 
-            
-
         done
-
+        
     fi
 }
 
