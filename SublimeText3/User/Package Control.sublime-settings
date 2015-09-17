@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"DashDoc",
+		"DocBlockr",
 		"Dotfiles Syntax Highlighting",
 		"GitGutter",
 		"Google Spell Check",
