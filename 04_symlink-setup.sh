@@ -146,7 +146,8 @@ print_success() {
 declare -a FILES_TO_SYMLINK=$(find . -type f -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .osx | sed -e 's|//|/|' | sed -e 's|./.|.|')
 FILES_TO_SYMLINK="$FILES_TO_SYMLINK"
 
-SUBLIME=(User)
+SUBLIME[0]=User
+SUBLIME[1]=Theme\ -\ Default
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -190,23 +191,24 @@ main() {
 
         [ ! -d "$STDIR" ] && mkdir -p "$STDIR" && printf "Created %s" "$STDIR"
 
-        for i in ${SUBLIME[@]}; do
-            #printf $i"\n"
-            sourceFile="$(pwd)/SublimeText3/$i"
+        for ((i = 0; i < ${#SUBLIME[@]}; i++))
+        do
+            #printf "${SUBLIME[$i]}\n"
+            sourceFile="$(pwd)/SublimeText3/${SUBLIME[$i]}"
 
-            if [ -d "$STDIR/$i" ]; then
+            if [ -d "$STDIR/${SUBLIME[$i]}" ]; then
 
-                ask_for_confirmation "'$STDIR/$i' already exists, do you want to overwrite it?"
+                ask_for_confirmation "'$STDIR/${SUBLIME[$i]}' already exists, do you want to overwrite it?"
                 if answer_is_yes; then
-                    rm -rf "$STDIR/$i"
-                    ln -fs "$sourceFile" "$STDIR/$i" &> /dev/null
-                    print_result $? "$STDIR/$i → $sourceFile"
+                    rm -rf "$STDIR/${SUBLIME[$i]}"
+                    ln -fs "$sourceFile" "$STDIR/${SUBLIME[$i]}" &> /dev/null
+                    print_result $? "$STDIR/${SUBLIME[$i]} → $sourceFile"
                 else
-                    print_error "$STDIR/$i → $sourceFile"
+                    print_error "$STDIR/${SUBLIME[$i]} → $sourceFile"
                 fi
             else
-                ln -fs "$sourceFile" "$STDIR/$i" &> /dev/null
-                print_result $? "$STDIR/$i → $sourceFile"
+                ln -fs "$sourceFile" "$STDIR/${SUBLIME[$i]}" &> /dev/null
+                print_result $? "$STDIR/${SUBLIME[$i]} → $sourceFile"
             fi
 
         done
