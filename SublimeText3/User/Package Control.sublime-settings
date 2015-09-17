@@ -18,6 +18,7 @@
 		"SFTP",
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint",
-		"SublimeOnSaveBuild"
+		"SublimeOnSaveBuild",
+		"View In Browser"
 	]
 }
