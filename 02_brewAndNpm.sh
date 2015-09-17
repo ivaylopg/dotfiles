@@ -109,7 +109,7 @@ if ! command -v brew >/dev/null; then
     mkdir $HOME/.homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
     export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
     append_to_path 'export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH' 1
-    
+
 else
   fancy_echo "Homebrew already installed. Skipping ..."
 fi
@@ -140,6 +140,7 @@ brew_install_or_upgrade fortune
 brew_install_or_upgrade cowsay
 brew_install_or_upgrade pidof
 brew_install_or_upgrade gist
+brew_install_or_upgrade pngquant
 
 brew cleanup
 #################################################
@@ -150,16 +151,17 @@ brew_install_or_upgrade brew-cask
 brew_tap caskroom/versions
 
 ##cask_install "spectacle"
-#cask_install "dropbox"
-#cask_install "onepassword"
+cask_install "dropbox"
+cask_install "onepassword"
 #cask_install "rescuetime"
 cask_install flux
-#cask_install "sublime-text3"
-#cask_install "imagealpha"
-#cask_install "imageoptim"
-#cask_install "miro-video-converter"
-#cask_install "google-chrome"
-#cask_install "vlc"
+cask_install "sublime-text3"
+cask_install "imagealpha"
+cask_install "imageoptim"
+cask_install "miro-video-converter"
+cask_install "google-chrome"
+cask_install "vlc"
+cask_install "mojibar"
 
 
 brew cask cleanup
