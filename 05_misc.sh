@@ -16,4 +16,4 @@ cd ../
 mv camingo ~/.Trash
 
 #set up Colossal Cave Adventure 2.5 (430pts)
-mkdir ~/.adventure && cp bin/adventure/* ~/.adventure/
+mkdir ~/.adventure && cp $(pwd)/bin/adventure/* ~/.adventure/
