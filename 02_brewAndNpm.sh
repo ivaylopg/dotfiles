@@ -151,17 +151,17 @@ brew_install_or_upgrade brew-cask
 brew_tap caskroom/versions
 
 ##cask_install "spectacle"
-cask_install "dropbox"
-cask_install "onepassword"
+cask_install dropbox
+cask_install onepassword
 #cask_install "rescuetime"
 cask_install flux
-cask_install "sublime-text3"
-cask_install "imagealpha"
-cask_install "imageoptim"
-cask_install "miro-video-converter"
-cask_install "google-chrome"
-cask_install "vlc"
-cask_install "mojibar"
+cask_install sublime-text3
+cask_install imagealpha
+cask_install imageoptim
+cask_install miro-video-converter
+cask_install google-chrome
+cask_install vlc
+cask_install mojibar
 
 
 brew cask cleanup
