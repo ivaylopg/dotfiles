@@ -114,6 +114,8 @@ o() {
 
 alias x="chmod +x"
 
+alias viewloginitems="osascript -e 'tell application \"System Events\" to get the name of every login item'"
+
 # Enable aliases to be sudo’ed
 #alias sudo="sudo "
 
@@ -137,7 +139,7 @@ alias rm='grm -I --preserve-root'
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
-#system update 
+#system update
 alias update='softwareupdate -l'
 alias upgrade='softwareupdate -i -a'
 
