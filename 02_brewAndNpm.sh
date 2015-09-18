@@ -161,7 +161,9 @@ cask_install imageoptim
 cask_install miro-video-converter
 cask_install google-chrome
 cask_install vlc
+
 cask_install mojibar
+osascript -e 'tell application "System Events" to make login item at end with properties {path:"$HOME/Applications/Mojibar.app", hidden:false}'
 
 
 brew cask cleanup
