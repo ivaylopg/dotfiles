@@ -150,21 +150,21 @@ brew_tap caskroom/cask
 brew_install_or_upgrade brew-cask
 brew_tap caskroom/versions
 
-##cask_install "spectacle"
-cask_install dropbox
+#cask_install dropbox
 cask_install onepassword
-#cask_install "rescuetime"
 cask_install flux
-cask_install sublime-text3
+#cask_install sublime-text3
 cask_install imagealpha
 cask_install imageoptim
 cask_install miro-video-converter
-cask_install google-chrome
+#cask_install google-chrome
 cask_install vlc
 
 cask_install mojibar
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"$HOME/Applications/Mojibar.app", hidden:false}'
 
+#cask_install "spectacle"
+#cask_install "rescuetime"
 
 brew cask cleanup
 
