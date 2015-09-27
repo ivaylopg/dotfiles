@@ -116,6 +116,8 @@ alias x="chmod +x"
 
 alias viewloginitems="osascript -e 'tell application \"System Events\" to get the name of every login item'"
 
+alias s3="aws --profile s3admin s3"
+
 # Enable aliases to be sudo’ed
 #alias sudo="sudo "
 
