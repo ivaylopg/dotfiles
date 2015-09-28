@@ -85,6 +85,22 @@ function portforwardport() {
     ssh -N -L "$LOCAL":127.0.0.1:"$REMOTE" "$@"
 }
 
+# Copy hidden TypeKit fonts
+function typekit() {
+    DIR=$(pwd)
+    FONTDIR="$HOME/Library/Application Support/Adobe/CoreSync/plugins/livetype/.r/";
+    DESTDIR="$1";
+    mkdir -p "$DESTDIR";
+    #ls -a "$FONTDIR";
+    #cd "$FONTDIR";
+    for file in "$FONTDIR".*.otf
+    do cp "$file" "$DESTDIR"/"${file#$FONTDIR.}";
+    #do echo "$file"
+    #do echo "$DESTDIR"/"${file#$FONTDIR.}";
+    done
+    #cd "$DIR";
+}
+
 # Extract archives - use: extract <file>
 # Based on http://dotfiles.org/~pseup/.bashrc
 function extract() {
