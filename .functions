@@ -64,10 +64,37 @@ function whois() {
 
 #change MAC address of interface until reboot
 function spoofmac() {
+    #$1 = interface
+    #$2 = mac address
     sudo ifconfig $1 ether $2
 }
 
+function portforward() {
+    #ssh -N -L 27017:127.0.0.1:27017 SERVER
+    PORT="$1";
+    shift;
+    ssh -N -L "$PORT":127.0.0.1:"$PORT" "$@"
+}
 
+function portforwardport() {
+    #ssh -N -L 27017:127.0.0.1:27017 SERVER
+    LOCAL="$1";
+    shift;
+    REMOTE="$1";
+    shift;
+    ssh -N -L "$LOCAL":127.0.0.1:"$REMOTE" "$@"
+}
+
+# Copy hidden TypeKit fonts
+function typekit() {
+    DIR=$(pwd)
+    FONTDIR="$HOME/Library/Application Support/Adobe/CoreSync/plugins/livetype/.r/";
+    DESTDIR="$1";
+    mkdir -p "$DESTDIR";
+    for file in "$FONTDIR".*.otf
+    do cp "$file" "$DESTDIR"/"${file#$FONTDIR.}";
+    done
+}
 
 # Extract archives - use: extract <file>
 # Based on http://dotfiles.org/~pseup/.bashrc
