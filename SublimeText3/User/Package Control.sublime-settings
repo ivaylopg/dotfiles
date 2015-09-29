@@ -17,6 +17,7 @@
 		"Package Control",
 		"Sass",
 		"SFTP",
+		"StandardFormat",
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint",
 		"SublimeOnSaveBuild",
