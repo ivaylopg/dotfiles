@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[for (var i=0, il=${1:condition}; i<il; i++) {
+     for (var j=0, jl=${2:condition}; j<jl; j++) {
+        ${3:statement};
+     }
+}]]>
+    </content>
+    <tabTrigger>ff</tabTrigger>
+    <scope>source.js</scope>
+    <description>for(..){for... Faster Nested For-Loop</description>
+</snippet>
