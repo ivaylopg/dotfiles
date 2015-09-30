@@ -77,12 +77,26 @@ function portforward() {
 }
 
 function portforwardport() {
-    #ssh -N -L 27017:127.0.0.1:27017 SERVER
     LOCAL="$1";
     shift;
     REMOTE="$1";
     shift;
     ssh -N -L "$LOCAL":127.0.0.1:"$REMOTE" "$@"
+}
+
+function remote_portforward() {
+    #ssh -N -L 27017:127.0.0.1:27017 SERVER
+    PORT="$1";
+    shift;
+    ssh -N -R "$PORT":127.0.0.1:"$PORT" "$@"
+}
+
+function remote_portforwardport() {
+    REMOTE="$1";
+    shift;
+    LOCAL="$1";
+    shift;
+    ssh -N -R "$REMOTE":127.0.0.1:"$LOCAL" "$@"
 }
 
 # Copy hidden TypeKit fonts
