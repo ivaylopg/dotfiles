@@ -119,7 +119,7 @@ alias s3="aws --profile s3admin s3"
 
 
 # Enable aliases to be sudo’ed
-#alias sudo="sudo "
+alias sudo="sudo "
 
 # File size
 alias fs="stat -f \"%z bytes\""
