@@ -74,6 +74,7 @@ alias gp='git push'
 alias gpl="git pull"
 alias go='git-open'
 alias groot='git rev-parse 2>/dev/null && cd "./$(git rev-parse --show-cdup)"'
+alias gr='git grep'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -114,6 +115,7 @@ o() {
 
 alias x="chmod +x"
 alias viewloginitems="osascript -e 'tell application \"System Events\" to get the name of every login item'"
+alias iphone='open "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"'
 
 alias s3="aws --profile s3admin s3"
 
