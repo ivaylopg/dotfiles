@@ -200,6 +200,35 @@ function f() {
     find . -name "$1" 2>/dev/null
 }
 
+function ghclone() {
+  if [[ $# -eq 2 ]]; then
+    git clone git://github.com/$1/$2.git
+  elif [[ $# -eq 1 ]]; then
+    git clone git://github.com/ivaylopg/$1.git
+  else
+    echo "usage: 'ghclone arg1 [arg2]'"
+  fi
+  #git clone git://github.com/$USER/$1.git
+}
+
+# Opens a man (manual page) in Preview (like a PDF)
+#   Written by https://github.com/tamalw
+function pman {
+  man -t "${1}" | open -f -a /Applications/Preview.app/
+}
+
+# Shows commits you haven't pushed to the remote yet.  Accepts same
+# arguments as git-log.  Assumes 'origin' is the default remote if no
+# branch.Foo.remote configuration exists.
+# https://github.com/moubry/dotfiles/blob/master/git-notpushed
+function gnp {
+  curr_branch=$(git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||')
+  origin=$(git config --get "branch.$curr_branch.remote")
+  origin=${origin:-origin}
+
+  git log $@ $curr_branch ^remotes/$origin/$curr_branch
+}
+
 # `shellswitch bash`
 # `shellswitch zsh`
 shellswitch () {
