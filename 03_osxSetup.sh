@@ -139,7 +139,7 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 # Disable hibernation (speeds up entering sleep mode)
 #sudo pmset -a hibernatemode 0
 
-# OR 
+# OR
 
 # change sleep-to-hybernate delay (default: 1200)
 #sudo pmset -a standbydelay 1200
@@ -234,7 +234,7 @@ defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 defaults write com.apple.screencapture type -string "png"
 
 # Hide all desktop icons because who need 'em'
-#defaults write com.apple.finder CreateDesktop -bool false 
+#defaults write com.apple.finder CreateDesktop -bool false
 
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
@@ -246,9 +246,20 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 #sudo defaults delete /Library/Preferences/com.apple.windowserver.plist DisplayResolutionEnabled
 
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
+
+# Set Desktop as the default location for new Finder windows
+# For other paths, use `PfLo` and `file:///full/path/here/`
+#defaults write com.apple.finder NewWindowTarget -string "PfDe"
+#defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
+defaults write com.apple.finder NewWindowTarget -string "PfLo"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Documents/"
 
 #Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
 #defaults write com.apple.finder QuitMenuItem -bool true
@@ -296,6 +307,12 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 #/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist
 #/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist
 
+# Show icons for hard drives, servers, and removable media on the desktop
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+
 # Show item info to the right of the icons on the desktop
 #/usr/libexec/PlistBuddy -c "Set DesktopViewSettings:IconViewSettings:labelOnBottom false" ~/Library/Preferences/com.apple.finder.plist
 
@@ -316,7 +333,7 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # Use list view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
-#defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Disable the warning before emptying the Trash
 #defaults write com.apple.finder WarnOnEmptyTrash -bool false
