@@ -141,6 +141,7 @@ brew_install_or_upgrade cowsay
 brew_install_or_upgrade pidof
 brew_install_or_upgrade gist
 brew_install_or_upgrade pngquant
+brew_install_or_upgrade the_silver_searcher
 
 brew cleanup
 #################################################
@@ -150,21 +151,27 @@ brew_tap caskroom/cask
 brew_install_or_upgrade brew-cask
 brew_tap caskroom/versions
 
-#cask_install dropbox
 cask_install onepassword
 cask_install flux
-#cask_install sublime-text3
 cask_install imagealpha
 cask_install imageoptim
 cask_install miro-video-converter
-#cask_install google-chrome
 cask_install vlc
+cask_install alfred
 
 cask_install mojibar
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"$HOME/Applications/Mojibar.app", hidden:false}'
 
-#cask_install "spectacle"
-#cask_install "rescuetime"
+#cask_install spectacle
+#cask_install rescuetime
+#cask_install dropbox
+#cask_install sublime-text3
+#cask_install google-chrome
+#cask_install skype
+#cask_install cheatsheet
+
+#brew tap caskroom/fonts
+#cask_install font-camingocode
 
 brew cask cleanup
 
