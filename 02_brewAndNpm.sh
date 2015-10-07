@@ -158,6 +158,8 @@ cask_install imageoptim
 cask_install miro-video-converter
 cask_install vlc
 cask_install alfred
+cask_install rowanj-gitx
+cask_install cheatsheet
 
 cask_install mojibar
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"$HOME/Applications/Mojibar.app", hidden:false}'
@@ -168,7 +170,7 @@ osascript -e 'tell application "System Events" to make login item at end with pr
 #cask_install sublime-text3
 #cask_install google-chrome
 #cask_install skype
-#cask_install cheatsheet
+
 
 #brew tap caskroom/fonts
 #cask_install font-camingocode
