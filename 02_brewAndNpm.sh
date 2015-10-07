@@ -200,6 +200,9 @@ osascript -e 'tell application "System Events" to make login item at end with pr
 
 brew cask cleanup
 
+#pip
+#sudo easy_install pip
+
 #npm globals
 npm_install_g git-open
 npm_install_g eslint
