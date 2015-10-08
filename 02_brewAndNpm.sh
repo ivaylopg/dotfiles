@@ -180,21 +180,21 @@ osascript -e 'tell application "System Events" to make login item at end with pr
 # echo "Create a 'brew' group through System Preferences: <http://blog.strug.de/2012/06/my-homebrew-multi-user-setup/>"
 # read -p "Press any key when the 'brew' group has been created"
 
-# echo -n "Change the group of homebrew installation directory…"
+# echo -n "Change the group of homebrew installation directory..."
 # sudo chgrp -R brew /usr/local
 # sudo chgrp -R brew /opt/homebrew-cask/
 # echo "done"
 
-# echo -n "Allow group members to write inside this directory…"
+# echo -n "Allow group members to write inside this directory..."
 # sudo chmod -R g+w /usr/local
 # sudo chmod -R g+w /opt/homebrew-cask/
 # echo "done"
 
-# echo -n "Change the group of homebrew cache directory…"
+# echo -n "Change the group of homebrew cache directory..."
 # sudo chgrp -R brew /Library/Caches/Homebrew
 # echo "done"
 
-# echo -n "Allow group members to write inside this directory…"
+# echo -n "Allow group members to write inside this directory..."
 # sudo chmod -R g+w /Library/Caches/Homebrew
 # echo "done"
 
