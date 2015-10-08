@@ -213,7 +213,7 @@ function ghclone() {
 
 # Opens a man (manual page) in Preview (like a PDF)
 #   Written by https://github.com/tamalw
-function pman {
+function pman() {
   man -t "${1}" | open -f -a /Applications/Preview.app/
 }
 
@@ -221,12 +221,20 @@ function pman {
 # arguments as git-log.  Assumes 'origin' is the default remote if no
 # branch.Foo.remote configuration exists.
 # https://github.com/moubry/dotfiles/blob/master/git-notpushed
-function gnp {
+function gnp() {
   curr_branch=$(git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||')
   origin=$(git config --get "branch.$curr_branch.remote")
   origin=${origin:-origin}
 
   git log $@ $curr_branch ^remotes/$origin/$curr_branch
+}
+
+function texttoaudio() {
+  if [[ $# -eq 2 ]]; then
+    cat $1 | say -o $2
+  else
+    echo "usage: 'texttoaudio inputTextFile OutputAudioFile'"
+  fi
 }
 
 # `shellswitch bash`
