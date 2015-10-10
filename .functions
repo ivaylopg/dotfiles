@@ -237,6 +237,20 @@ function texttoaudio() {
   fi
 }
 
+
+# Shows human-readable size of the given filesystem elements.
+# $* (optional) = paths to files or folders of which the size is to be computed. If none are passed, defaults to the current directory.
+# Author: Matti Schneider <hi@mattischneider.fr>
+sizeof() {
+  if [[ $# = 0 ]]
+  then du -hc "." | tail -n 1
+  fi
+
+  for file in "$@"
+  do du -hc "$file" | tail -n 1
+  done
+}
+
 # `shellswitch bash`
 # `shellswitch zsh`
 shellswitch () {
