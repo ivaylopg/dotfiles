@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #install antigen and change to zsh
-git clone https://github.com/zsh-users/antigen .zsh-antigen/antigen
+git clone https://github.com/zsh-users/antigen $HOME/.zsh-antigen/antigen
 chsh -s /bin/zsh
 
 ### XCode Command Line Tools
