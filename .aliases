@@ -86,6 +86,7 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 # programs
 #alias st='open -a "Sublime Text"'
 alias mou='open -a "Mou"'
+alias mdn='open -a "MacDown"'
 
 # No arguments: open sublime text project in current directory, if it exists
 # With arguments: open arguments in sublime text
