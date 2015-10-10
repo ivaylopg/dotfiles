@@ -27,6 +27,7 @@
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint",
 		"SublimeOnSaveBuild",
+		"Swift",
 		"View In Browser"
 	]
 }
