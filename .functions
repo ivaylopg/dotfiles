@@ -211,6 +211,10 @@ function ghclone() {
   #git clone git://github.com/$USER/$1.git
 }
 
+function gitclearhistory() {
+  git filter-branch --force --index-filter 'git rm --cached $@' --prune-empty --tag-name-filter cat -- --all
+}
+
 # Opens a man (manual page) in Preview (like a PDF)
 #   Written by https://github.com/tamalw
 function pman() {
@@ -236,6 +240,20 @@ function texttoaudio() {
     echo "usage: 'texttoaudio inputTextFile OutputAudioFile'"
   fi
 }
+
+function audioconvert() {
+  if [[ $1 == 'caff' ]]; then
+    shift;
+    afconvert -d LEI16 -f 'caff' "$@"
+  elif [[ $1 == 'm4a' ]]; then
+    shift;
+    afconvert -d aac -f 'm4af' "$@"
+  else
+    echo "usage: 'audioconvert [caff | m4a] inputAudioFile'"
+  fi
+}
+
+
 
 
 # Shows human-readable size of the given filesystem elements.
