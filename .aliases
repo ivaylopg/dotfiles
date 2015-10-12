@@ -149,7 +149,7 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 
 #system update
 alias update='softwareupdate -l'
-alias upgrade='softwareupdate -i -a'
+alias upgrade='sudo softwareupdate -iav'
 
 # Homebrew
 alias brew-up="brew update; brew upgrade --all; brew cleanup; brew prune"
