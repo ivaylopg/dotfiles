@@ -253,6 +253,38 @@ function audioconvert() {
   fi
 }
 
+function verifypermissions() {
+  if [[ $# = 0 ]]; then
+    diskutil verifyPermissions /
+  else
+    diskutil verifyPermissions "$@"
+  fi
+}
+
+function repairpermissions() {
+  if [[ $# = 0 ]]; then
+    diskutil repairPermissions /
+  else
+    diskutil repairPermissions "$@"
+  fi
+}
+
+function verifydisk() {
+  if [[ $# = 0 ]]; then
+    diskutil verifyVolume /
+  else
+    diskutil verifyVolume "$@"
+  fi
+}
+
+function repairdisk() {
+  if [[ $# = 0 ]]; then
+    diskutil repairvolume /
+  else
+    diskutil repairvolume "$@"
+  fi
+}
+
 
 
 
