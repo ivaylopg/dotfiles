@@ -23,6 +23,7 @@ else # OS X `ls`
 fi
 
 alias lsa="ls -a"
+alias l="ls"
 
 # ls options: F = put `/` after folders, h = byte unit suffixes, color! (even with piping to awk)
 alias ls='CLICOLOR_FORCE=1 ls -Fh ${colorflag}'
