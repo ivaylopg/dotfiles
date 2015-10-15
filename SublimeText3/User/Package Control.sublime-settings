@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"Alignment",
 		"Color Highlighter",
 		"DashDoc",
 		"DocBlockr",
