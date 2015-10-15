@@ -1,10 +1,8 @@
 ## Aliases
 
 
-
-ALIAS | EXPANSION
+**NAVIGATION** |  |
 :--- | :---
-**Navigation** |  |
 **`..`** | `cd ..`
 **`..`** | `cd ..`
 **`cd..`** | `cd ..`
@@ -21,8 +19,10 @@ ALIAS | EXPANSION
 **`lsa`** | `ls -a`
 **`la`** | `List ALL files (colorized() in long format, show permissions in octal)`
 **`lsd`** | `List ONLY directories`
-################ | ################
-**Git (Shell Aliases)** | (See .gitconfig for more)
+
+
+****GIT (SHELL ALIASES)**** |  |
+:--- | :---
 **`g`** (no args) | `git status`
 **`g`** (with args) | `git [args]`
 **`gs`** | `git status`
@@ -33,7 +33,7 @@ ALIAS | EXPANSION
 **`groot`** | `cd` to root of git repo
 **`gr`** | `git grep`
 ------ | ------
-**Git (.gitconfig Aliases)** |   |
+**GIT (.GITCONFIG ALIASES)** |   |
 **`undo`** | `reset HEAD~1` (ie - unstage)
 **`last`** | `log -1 HEAD` (view last comit)
 **`s`** | `status`
@@ -52,8 +52,10 @@ ALIAS | EXPANSION
 **`sync`** | `! git stash && git pull --rebase && git push && git stash pop` (sync remote without having to merge)
 **`amend`** | `git commit --amend`
 **`discard`** | ! git reset HEAD --hard && git clean -fd (delete all changes since last commit)
-################ | ################
-**Shortcuts/Helpers** |  |
+
+
+**SHORTCUTS/HELPERS** |  |
+:--- | :---
 **`v`** | `vim`
 **`c`** | `clear`
 **`nn`** | `nano`
@@ -64,22 +66,28 @@ ALIAS | EXPANSION
 **`o`** (with args) | `open -a "Finder" .`
 **`x`** | `chmod +x`
 **`fs`** | show size of file
-################ | ################
-**Network Stuff** |  |
+
+
+**NETWORK STUFF** |  |
+:--- | :---
 **`ip`** | Prints extrnal IP address
 **`ips`** | Prints local IP address(es)
 **`flushdns`** | Clear the DNS cache
 **`post`**  | `curl -X POST -d`
 **`s3`**  | `aws --profile s3admin s3`
-################ | ################
-**Programs** |  |
+
+
+**GUI PROGRAMS** |  |
+:--- | :---
 **`mou`** | 'open -a "Mou" [args]`
 **`mdn`** | 'open -a "MacDown" [args]`
 **`vimr`** | 'open -a "VimR" [args]`
 **`st`** (args) | `subl [args/file(s)]`
 **`st`** (no args) | if there is a `.sublime-project` in cwd, it opens. Otherwise a new ST window opens
-################ | ################
-**Finder/OS** |  |
+
+
+**FINDER/OS** |  |
+:--- | :---
 **`cleanup`** | (recursively delete .DS_Store files)
 **`lock`** | lock screen
 **`emptytrash`** | empty all trashes (system, user, and voume)
@@ -91,11 +99,15 @@ ALIAS | EXPANSION
 **`iphone`** | Open iOS Simulator
 **`stfu`** | Mute system volume
 **`pumpitup`** | Set system volume to maximum
-################ | ################
-**Homebrew** |  |
+
+
+**HOMEBREW** |  |
+:--- | :---
 **`brew-up`** | Upgrade, update, and cleanup homebrew
-################ | ################
-**Just For Fun** |  |
+
+
+**JUST FOR FUN** |  |
+:--- | :---
 **`?`** | Clear the screen and cowsay a fortune
 **`dunnet`** | launch dunnet in current directory
 **`adventure`** | launch Colossal Cave adventure
