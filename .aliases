@@ -94,9 +94,18 @@ alias vimr='open -a "VimR"'
 # With arguments: open arguments in sublime text
 st() {
   if [[ $# > 0 ]]; then
-    open -a "Sublime Text" $@
+    subl $@
   else
-    open -a "Sublime Text" *.sublime-project
+    PROJ=""
+    for f in *.sublime-project(N); do
+      [ -e "$f" ] && PROJ=$f
+      break
+    done
+    if [ "$PROJ" != "" ]; then
+      subl --project "$PROJ"
+    else
+      subl -n
+    fi
   fi
 }
 
