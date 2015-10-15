@@ -6,6 +6,7 @@
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 	quotepath = false
+	editor = subl -n -w
 
 [filter "media"]
 	required = true
