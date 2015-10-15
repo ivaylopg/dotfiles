@@ -285,6 +285,22 @@ function repairdisk() {
   fi
 }
 
+# CanIUse.com Command Line Search Utility
+# Michael Wales, http://github.com/walesmd
+caniuse() {
+    local domain="http://caniuse.com/"
+    local query
+
+    if [ $# -eq 0 ]; then
+        open ${domain}
+    else
+        for term in "$@"; do
+            query=$(python -c "import sys, urllib as ul; print ul.quote('${term}');")
+            open "${domain}#search=${query}"
+        done
+    fi
+}
+
 
 
 
