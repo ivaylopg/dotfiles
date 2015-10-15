@@ -13,6 +13,9 @@ curl -L https://raw.github.com/rauchg/wifi-password/master/wifi-password.sh -o /
 echo "##### INSTALLING git-friendly #####"
 curl -s https://raw.githubusercontent.com/jamiew/git-friendly/master/install.sh | bash
 
+#set up sublime text CLI
+sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/bin/subl
+
 #install CamingoCode Font
 echo "##### INSTALLING CamingoCode Font #####"
 mkdir $HOME/Desktop/camingo
