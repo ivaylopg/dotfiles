@@ -39,6 +39,7 @@
 	amend = git commit --amend
 	discard = ! git reset HEAD --hard && git clean -fd
 	unstash = stash pop
+	bfg = ! git-big-object-report
 
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
