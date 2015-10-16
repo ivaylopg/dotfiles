@@ -214,6 +214,33 @@ main() {
         done
 
     fi
+
+    ask_for_confirmation "Do you want to sync binaries in bin/ ?"
+    if answer_is_yes; then
+
+        for i in ${FILES_TO_MOVE[@]}; do
+          FILE="$i"
+          DEST="/usr/local/bin/"
+
+          #echo "$FILE"
+          #echo "$DEST"
+
+          if [ -e "$DEST$FILE" ]; then
+            ask_for_confirmation "'$DEST$FILE' already exists, do you want to overwrite it?"
+            if answer_is_yes; then
+                #rm -rf "$DEST/$FILE"
+                cp -f "$(pwd)/bin/$FILE" "$DEST"
+                print_success "$FILE was copied to $DEST$FILE"
+            else
+                print_error "Exisiting $DEST$FILE was preserved"
+            fi
+          else
+            cp -f "$(pwd)/bin/$FILE" "$DEST"
+            print_success "$FILE was copied to $DEST$FILE"
+          fi
+      done
+
+    fi
 }
 
 main
