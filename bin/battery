@@ -139,8 +139,10 @@ fi
 
 GRAPH=$(spark 0,"${BATTERY_STATUS}",130 | awk '{print substr($0,4,3)}')
 
+BINFO=$(pmset -g batt | grep Internal | awk '{print $3",", $4, $5}' | sed 's/;//')
+
 if [ "$tmux" == "false" ]; then
-    printf "\e[0;%sm%s %s \e[m\n"  "$COLOR" "[$BATTERY_STATUS%]"  "$GRAPH"
+    printf "\e[0;%sm%s %s \e[m\n" "$COLOR" "[$BATTERY_STATUS%] $BINFO "  "$GRAPH"
 else
     printf "%s%s %s" "$COLOR" "[$BATTERY_STATUS%]" "$GRAPH"
 fi
