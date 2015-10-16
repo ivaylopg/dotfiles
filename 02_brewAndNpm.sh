@@ -177,6 +177,17 @@ osascript -e 'tell application "System Events" to make login item at end with pr
 #cask_install font-camingocode
 
 
+
+# cask install qlcolorcode
+# cask install qlstephen
+# cask install qlmarkdown
+# cask install quicklook-json
+# cask install qlprettypatch
+# cask install quicklook-csv
+# cask install betterzipql
+# cask install webp-quicklook
+
+
 # Prepare brew for multi-users setup
 # echo "Now let's make brew useful for all users."
 # echo "Create a 'brew' group through System Preferences: <http://blog.strug.de/2012/06/my-homebrew-multi-user-setup/>"
