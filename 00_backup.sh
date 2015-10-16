@@ -7,9 +7,9 @@ mkdir -p ~/migration/ST
 cd ~/migration
 
 # what is worth reinstalling?
-brew leaves      		> brew-list.txt    # all top-level brew installs
-brew cask list 			> cask-list.txt
-npm list -g --depth=0 	> npm-g-list.txt
+brew leaves         > brew-list.txt    # all top-level brew installs
+brew cask list      > cask-list.txt
+npm list -g --depth=0   > npm-g-list.txt
 
 cp ~/.z ~/migration/home
 cp -R ~/.ssh ~/migration/home

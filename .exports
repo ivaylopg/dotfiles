@@ -1,7 +1,7 @@
-# vim as default
+# nano as default
 export EDITOR="nano"
 
-# Don’t clear the screen after quitting a manual page
+# Don't clear the screen after quitting a manual page
 #xport MANPAGER="less -X"
 
 # Prefer US English and use UTF-8

@@ -173,8 +173,8 @@ osascript -e 'tell application "System Events" to make login item at end with pr
 #cask_install google-chrome
 #cask_install skype
 
-#brew tap caskroom/fonts
-#cask_install font-camingocode
+brew tap caskroom/fonts
+cask_install font-camingocode
 
 
 
