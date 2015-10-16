@@ -142,6 +142,7 @@ brew_install_or_upgrade pidof
 brew_install_or_upgrade gist
 brew_install_or_upgrade pngquant
 brew_install_or_upgrade the_silver_searcher
+brew_install_or_upgrade mackup
 
 brew cleanup
 #################################################
@@ -172,6 +173,8 @@ osascript -e 'tell application "System Events" to make login item at end with pr
 #cask_install sublime-text3
 #cask_install google-chrome
 #cask_install skype
+
+cask_install dropbox-encore
 
 brew tap caskroom/fonts
 cask_install font-camingocode
