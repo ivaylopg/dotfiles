@@ -133,6 +133,8 @@ alias flushdns='sudo dscachutil -flushcache && sudo killall -HUP mDNSResponder'
 
 alias s3="aws --profile s3admin s3"
 
+alias batt="battery"
+
 
 # Enable aliases to be sudo’ed
 alias sudo="sudo "
