@@ -146,6 +146,9 @@ print_success() {
 declare -a FILES_TO_SYMLINK=$(find . -type f -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .osx | sed -e 's|//|/|' | sed -e 's|./.|.|')
 FILES_TO_SYMLINK="$FILES_TO_SYMLINK"
 
+declare -a DIRS_TO_SYMLINK=$(find . -type d -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .osx -not -name . | sed -e 's|//|/|' | sed -e 's|./.|.|')
+DIRS_TO_SYMLINK="$DIRS_TO_SYMLINK"
+
 SUBLIME[0]=User
 SUBLIME[1]=Theme\ -\ Default
 
@@ -166,6 +169,31 @@ main() {
             if [ "$(readlink "$targetFile")" != "$sourceFile" ]; then
 
                 ask_for_confirmation "'$targetFile' already exists, do you want to overwrite it?"
+                if answer_is_yes; then
+                    rm -rf "$targetFile"
+                    execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
+                else
+                    print_error "$targetFile → $sourceFile"
+                fi
+
+            else
+                print_success "$targetFile → $sourceFile"
+            fi
+        else
+            execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
+        fi
+
+    done
+
+    for i in ${DIRS_TO_SYMLINK[@]}; do
+
+        sourceFile="$(pwd)/$i"
+        targetFile="$HOME/$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
+
+        if [ -e "$targetFile" ]; then
+            if [ "$(readlink "$targetFile")" != "$sourceFile" ]; then
+
+                ask_for_confirmation "'$targetFile' directory already exists, do you want to overwrite it?"
                 if answer_is_yes; then
                     rm -rf "$targetFile"
                     execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
