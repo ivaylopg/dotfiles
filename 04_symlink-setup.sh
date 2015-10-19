@@ -30,6 +30,9 @@ FILES_TO_SYMLINK="$FILES_TO_SYMLINK"
 declare -a DIRS_TO_SYMLINK=$(find . -type d -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .osx -not -name . | sed -e 's|//|/|' | sed -e 's|./.|.|')
 DIRS_TO_SYMLINK="$DIRS_TO_SYMLINK"
 
+declare -a BINS_TO_MOVE=$(find bin -type f -maxdepth 1 -name "*" -not -name .DS_Store -not -name adventure | sed -e 's|//|/|'| sed -e 's|bin/||')
+BINS_TO_MOVE="$BINS_TO_MOVE"
+
 SUBLIME[0]=User
 SUBLIME[1]=Theme\ -\ Default
 
@@ -71,7 +74,7 @@ main() {
         sourceFile="$(pwd)/$i"
         targetFile="$HOME/$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
 
-        if [ -e "$targetFile" ]; then
+        if [ -d "$targetFile" ]; then
             if [ "$(readlink "$targetFile")" != "$sourceFile" ]; then
 
                 ask_for_confirmation "'$targetFile' directory already exists, do you want to overwrite it?"
@@ -127,7 +130,7 @@ main() {
     ask_for_confirmation "Do you want to sync binaries in bin/ ?"
     if answer_is_yes; then
 
-        for i in ${FILES_TO_MOVE[@]}; do
+        for i in ${BINS_TO_MOVE[@]}; do
           FILE="$i"
           DEST="/usr/local/bin/"
 
