@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#source 99_utils.sh
+
 # Based on the thoughtbot laptop script:
 # https://github.com/thoughtbot/laptop/blob/master/mac
 
