@@ -138,7 +138,7 @@ alias batt="battery"
 
 
 # Enable aliases to be sudo'ed
-alias sudo="sudo "
+alias sudo="sudo"
 
 # File size
 alias fs="stat -f \"%z bytes\""
@@ -149,7 +149,6 @@ alias fs="stat -f \"%z bytes\""
 
 #web development stuff
 alias post="curl -X POST -d"
-alias jsonpost="curl -H 'Content-Type: application/json' -X POST -d"
 
 # Empty the Trash on all mounted volumes and the main HDD
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
