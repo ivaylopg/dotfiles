@@ -145,6 +145,7 @@ brew_install_or_upgrade gist
 brew_install_or_upgrade pngquant
 brew_install_or_upgrade the_silver_searcher
 brew_install_or_upgrade mackup
+brew_install_or_upgrade pandoc
 
 brew cleanup
 #################################################
