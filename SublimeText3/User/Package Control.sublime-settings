@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"Alignment",
+		"Better CoffeeScript",
 		"Color Highlighter",
 		"DashDoc",
 		"DocBlockr",
@@ -19,6 +20,7 @@
 		"Inc-Dec-Value",
 		"JavaScript Snippets",
 		"LoremIpsum",
+		"Markdown Preview",
 		"Open URL",
 		"Package Control",
 		"Sass",
