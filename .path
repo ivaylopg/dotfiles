@@ -1,4 +1,4 @@
 # Add path variables here
 
 export PATH=$PATH
-export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
+export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:/usr/texbin:$PATH
