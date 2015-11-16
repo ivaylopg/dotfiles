@@ -435,7 +435,7 @@
       "epub-embed-font": "",
 
       // Appropriate values: "pdflatex" (default), "xelatex", "lulalatex"
-      "latex-engine": "",
+      "latex-engine": "pdflatex",
 
       // Specify bibliography database to be used in resolving citations. The database
       // type will be determined from the extension of FILE, which may be .mods (MODS format),

@@ -305,6 +305,10 @@ caniuse() {
     fi
 }
 
+mdtopdf(){
+  pandoc $1 -so $2.pdf
+}
+
 
 
 
