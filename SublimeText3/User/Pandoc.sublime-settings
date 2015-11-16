@@ -1,0 +1,53 @@
+{
+
+  // There are 2 possible top level settings keys, "user" and "default". If you
+  // use "default" in your user settings file, the default settings will be
+  // overwritten, but if you use "user" your settings will be merged into the
+  // default settings.
+  "default": {
+
+    // path to the pandoc binary. Default locations per platform:
+    // -  mac
+    //    "pandoc-path": "/usr/local/bin/pandoc",
+    // -  windows
+    //    "pandoc-path": "C:/Users/[username]/AppData/Local/Pandoc/pandoc.exe",
+    "pandoc-path": "/usr/local/bin/pandoc",
+
+    // transformations
+    "transformations": {
+
+      "HTML 5": {
+        "new-buffer": 1,
+        "scope": {
+          "text.html.markdown": "markdown"
+        },
+        "syntax_file": "Packages/HTML/HTML.tmLanguage",
+        "pandoc-arguments": [
+          "--to=html5",
+          "--no-highlight"
+        ]
+      },
+
+      "Microsoft Word": {
+        "scope": {
+          "text.html": "html",
+          "text.html.markdown": "markdown_github"
+        },
+        "pandoc-arguments": [
+          "-t", "docx"
+          // if -o or --output missing, will write to a temporary file
+          // "--output=~/Downloads/output.pdf"
+        ]
+      }
+
+    },
+
+    // these should not need to be customized
+
+    // output formats that are written to file, using -o parameter. These we do
+    // not output to a sublime text buffer.
+    "pandoc-format-file": ["docx", "epub", "pdf", "odt"]
+
+  }
+
+}

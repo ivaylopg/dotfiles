@@ -145,7 +145,6 @@ brew_install_or_upgrade gist
 brew_install_or_upgrade pngquant
 brew_install_or_upgrade the_silver_searcher
 brew_install_or_upgrade mackup
-brew_install_or_upgrade pandoc
 
 brew cleanup
 #################################################
@@ -167,6 +166,7 @@ cask_install macdown
 cask_install appcleaner
 cask_install vimr
 cask_install screen-blacker
+cask_install pandoc
 
 cask_install mojibar
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"$HOME/Applications/Mojibar.app", hidden:false}'

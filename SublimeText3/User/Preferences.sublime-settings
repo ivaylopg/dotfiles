@@ -11,6 +11,7 @@
 	"font_size": 12.0,
 	"ignored_packages":
 	[
+		"Markdown",
 		"Vintage"
 	],
 	"save_on_focus_lost": true,
