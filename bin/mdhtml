@@ -1,0 +1,6 @@
+#!/bin/bash
+
+filename=$(basename "$1")
+filename="${filename%.*}"
+directory=$(dirname "$1")
+pandoc "$1" -f markdown_github -t html5 -c ~/Dotfiles/misc/ghmd.css -s -o "$directory/$filename".html

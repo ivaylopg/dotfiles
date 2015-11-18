@@ -305,19 +305,6 @@ caniuse() {
     fi
 }
 
-mdpdf(){
-  filename=$(basename "$1")
-  filename="${filename%.*}"
-  pandoc "$1" -f markdown_github -s -o "$filename".pdf
-}
-
-mdhtml(){
-  filename=$(basename "$1")
-  filename="${filename%.*}"
-  pandoc "$1" -f markdown_github -t html5 -s -o "$filename".html
-}
-
-
 
 
 # Shows human-readable size of the given filesystem elements.
