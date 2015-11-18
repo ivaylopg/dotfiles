@@ -57,3 +57,4 @@ augroup markdown
 augroup END
 
 " https://github.com/AntJanus/dotfiles/blob/master/.vimrc
+" http://chibicode.com/vimrc/
