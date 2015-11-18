@@ -2,6 +2,13 @@
 
 source 99_utils.sh
 
+ask_for_confirmation "Install Vundle (Vim Plugin manager)?"
+if answer_is_yes; then
+  print_info "Installing Vundle..."
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  vim +PluginInstall +qall
+fi
+
 ask_for_confirmation "Install Alcatraz (Xcode package manager)?"
 if answer_is_yes; then
   print_info "Installing Alcatraz..."
