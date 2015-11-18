@@ -1,5 +1,0 @@
-{
-  "parser": "github",
-  "enabled_parsers": ["github"],
-  "enable_highlight": true
-}
