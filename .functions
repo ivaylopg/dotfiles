@@ -305,8 +305,16 @@ caniuse() {
     fi
 }
 
-mdtopdf(){
-  pandoc $1 -so $2.pdf
+mdpdf(){
+  filename=$(basename "$1")
+  filename="${filename%.*}"
+  pandoc "$1" -f markdown_github -s -o "$filename".pdf
+}
+
+mdhtml(){
+  filename=$(basename "$1")
+  filename="${filename%.*}"
+  pandoc "$1" -f markdown_github -t html5 -s -o "$filename".html
 }
 
 

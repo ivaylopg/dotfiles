@@ -26,6 +26,7 @@ colorscheme monokai
 
 set nofoldenable    " disable folding
 let g:vim_markdown_folding_disabled=1
+" let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 
 autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
 autocmd BufRead,BufNewFile *.md set filetype=markdown
