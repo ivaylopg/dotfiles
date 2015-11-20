@@ -12,8 +12,8 @@ unset file
 #   *i*) source ~/.extra
 #esac
 
-#open man pages in chrome
-export PAGER="col -b  | open -a /Applications/Google\ Chrome.app -f"
+# open man pages in chrome
+# export PAGER="col -b  | open -a /Applications/Google\ Chrome.app -f"
 
 
 # generic colouriser

@@ -137,6 +137,7 @@ brew_install_or_upgrade homebrew/dupes/screen
 
 brew_install_or_upgrade wget --with-iri
 brew_install_or_upgrade ffmpeg --with-libvpx
+brew_install_or_upgrade hub
 brew_install_or_upgrade gibo
 brew_install_or_upgrade fortune
 brew_install_or_upgrade cowsay
@@ -233,3 +234,4 @@ npm_install_g eslint
 npm_install_g gulp
 npm_install_g nodemon
 npm_install_g standard-format
+npm_install_g github-email
