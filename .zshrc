@@ -25,7 +25,7 @@ antigen-apply
 auto-ls () {
 	emulate -L zsh;
 	# explicit sexy ls'ing as aliases arent honored in here.
-	CLICOLOR_FORCE=1 ls -FGh 
+	CLICOLOR_FORCE=1 ls -FGh
 }
 chpwd_functions=( auto-ls $chpwd_functions )
 
