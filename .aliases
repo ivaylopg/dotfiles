@@ -58,9 +58,11 @@ alias lsd="ls -l | grep '^d' | awk '
 # from: https://github.com/thoughtbot/dotfiles/blob/master/zsh/functions/g
 g() {
   if [[ $# > 0 ]]; then
-    git $@
+    hub $@
+    #git $@
   else
-    git status
+    hub status
+    #git status
   fi
 }
 
@@ -69,13 +71,21 @@ if [[ -n "$ZSH_VERSION" ]]; then
     compdef g=git
 fi;
 
-alias gs='git status'
-alias ga="git add"
-alias gp='git push'
-alias gpl="git pull"
+alias gs='hub status'
+alias ga="hub add"
+alias gp='hub push'
+alias gpl="hub pull"
 alias go='git-open'
 alias groot='git rev-parse 2>/dev/null && cd "./$(git rev-parse --show-cdup)"'
-alias gr='git grep'
+alias gr='hub grep'
+
+# alias gs='git status'
+# alias ga="git add"
+# alias gp='git push'
+# alias gpl="git pull"
+# alias go='git-open'
+# alias groot='git rev-parse 2>/dev/null && cd "./$(git rev-parse --show-cdup)"'
+# alias gr='git grep'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
