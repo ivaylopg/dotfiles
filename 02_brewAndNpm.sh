@@ -146,6 +146,8 @@ brew_install_or_upgrade gist
 brew_install_or_upgrade pngquant
 brew_install_or_upgrade the_silver_searcher
 brew_install_or_upgrade mackup
+#brew_install_or_upgrade entr #file/directory monitoring
+#brew_install_or_upgrade terminal-notifier #send Notification Center messages
 
 brew cleanup
 #################################################
@@ -180,6 +182,8 @@ osascript -e 'tell application "System Events" to make login item at end with pr
 #cask_install sublime-text3
 #cask_install google-chrome
 #cask_install skype
+#cask_install gpgtools #Encrypted email
+#cask_install licecap #GIF screen capture
 
 #https://daisydiskapp.com/
 
