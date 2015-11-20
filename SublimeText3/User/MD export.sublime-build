@@ -2,12 +2,12 @@
     "selector": "text.html.markdown",
     "shell": true,
     "path": "/Users/ivaylopg/.homebrew/bin:/Users/ivaylopg/.homebrew/sbin:/usr/texbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin",
-    "cmd": ["mdhtml $file"],
+    "cmd": ["mdhtml '$file'"],
 
     "variants": [
-        { "name": "HTML", "cmd": ["mdhtml $file"] },
-        { "name": "PDF", "cmd": ["mdpdf $file"] },
-        { "name": "RTF", "cmd": ["mdrtf $file"] },
-        { "name": "DOC", "cmd": ["mddoc $file"] }
+        { "name": "HTML", "cmd": ["mdhtml '$file'"] },
+        { "name": "PDF", "cmd": ["mdpdf '$file'"] },
+        { "name": "RTF", "cmd": ["mdrtf '$file'"] },
+        { "name": "DOC", "cmd": ["mddoc '$file'"] }
     ]
 }
