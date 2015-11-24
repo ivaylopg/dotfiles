@@ -7,6 +7,7 @@
 	attributesfile = ~/.gitattributes
 	quotepath = false
 	# editor = subl -n -w
+  pager = diff-highlight | diff-so-fancy | less -r
 
 [filter "media"]
 	required = true
@@ -73,6 +74,11 @@
 	added = yellow
 	changed = green
 	untracked = cyan
+[color "diff-highlight"]
+  oldNormal = "red bold"
+  oldHighlight = "red bold 52"
+  newNormal = "green bold"
+  newHighlight = "green bold 22"
 [merge]
     tool = opendiff
 
