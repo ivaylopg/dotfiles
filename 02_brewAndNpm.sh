@@ -125,7 +125,7 @@ brew_install_or_upgrade coreutils
 #fancy_echo "Remember to change your default shell..."
 #add_instructions "Add to your /etc/shells - $HOME/.homebrew/bin/zsh"
 
-brew_install_or_upgrade git
+# brew_install_or_upgrade git
 brew_install_or_upgrade node #and npm
 brew_install_or_upgrade grc
 
@@ -158,7 +158,7 @@ brew_tap caskroom/cask
 brew_install_or_upgrade brew-cask
 brew_tap caskroom/versions
 
-cask_install onepassword
+#cask_install onepassword
 cask_install flux
 cask_install spectacle
 cask_install imagealpha
