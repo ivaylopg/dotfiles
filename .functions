@@ -305,6 +305,9 @@ caniuse() {
     fi
 }
 
+function gitbo() {
+  gibo $@ >> .gitignore
+}
 
 
 # Shows human-readable size of the given filesystem elements.
