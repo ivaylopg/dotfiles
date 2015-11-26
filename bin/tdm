@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# enable Target Display Mode on computers that support it
+
+osascript -e "tell application \"System Events\" to key code 144 using command down"
+
+exit 0
