@@ -148,6 +148,8 @@ alias batt="battery"
 
 alias cask='brew cask'
 
+alias otf2ttf='fontforge -script ~/Dotfiles/misc/fontconvert.sh'
+
 
 # Enable aliases to be sudo'ed
 alias sudo="sudo"

@@ -309,6 +309,10 @@ function gitbo() {
   gibo $@ >> .gitignore
 }
 
+function timelapse() {
+  i=1;while [ 1 ];do screencapture -t jpg -x "$@"/$i.jpg; let i++;sleep 5; done
+}
+
 
 # Shows human-readable size of the given filesystem elements.
 # $* (optional) = paths to files or folders of which the size is to be computed. If none are passed, defaults to the current directory.

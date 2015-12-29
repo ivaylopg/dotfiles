@@ -146,6 +146,7 @@ brew_install_or_upgrade pidof
 brew_install_or_upgrade gist
 brew_install_or_upgrade pngquant
 brew_install_or_upgrade the_silver_searcher
+brew_install_or_upgrade fontforge
 brew_install_or_upgrade mackup
 #brew_install_or_upgrade entr #file/directory monitoring
 #brew_install_or_upgrade terminal-notifier #send Notification Center messages
