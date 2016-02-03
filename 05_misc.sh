@@ -37,6 +37,12 @@ if answer_is_yes; then
   sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/bin/subl
 fi
 
+ask_for_confirmation "Install tmux plugin manager"
+if answer_is_yes; then
+  print_info "Installing tmux plugin manager"
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
 
 ask_for_confirmation "Install AWS CLI?"
 if answer_is_yes; then

@@ -119,6 +119,11 @@ st() {
   fi
 }
 
+#tmux
+alias tmuxnew="tmux new -s "
+alias tmuxkill="tmux kill-session -t "
+alias tmuxa="tmux a -t "
+
 # Shortcuts and helpers
 alias v="vim"
 alias c="clear"
