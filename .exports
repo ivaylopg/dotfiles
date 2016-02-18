@@ -1,5 +1,5 @@
 # nano as default
-export EDITOR="nano"
+export EDITOR="vim"
 
 # Don't clear the screen after quitting a manual page
 #xport MANPAGER="less -X"
