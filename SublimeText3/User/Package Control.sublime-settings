@@ -24,6 +24,7 @@
 		"Markdown Extended",
 		"Open URL",
 		"Package Control",
+		"Pretty JSON",
 		"Sass",
 		"SFTP",
 		"ShaderLanguages",
@@ -33,6 +34,7 @@
 		"SublimeLinter-contrib-eslint",
 		"SublimeOnSaveBuild",
 		"Swift",
-		"View In Browser"
+		"View In Browser",
+		"WakaTime"
 	]
 }
