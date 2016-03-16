@@ -252,8 +252,11 @@ function audioconvert() {
   elif [[ $1 == 'm4a' ]]; then
     shift;
     afconvert -d aac -f 'm4af' "$@"
+  elif [[ $1 == 'oh' ]]; then
+    shift;
+    afconvert -f m4af -d aac@44100 -b 48000 -c 1 "$@"
   else
-    echo "usage: 'audioconvert [caff | m4a] inputAudioFile'"
+    echo "usage: 'audioconvert [caff | m4a | oh] inputAudioFile'"
   fi
 }
 
