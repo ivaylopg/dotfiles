@@ -132,7 +132,7 @@ alias e="exit"
 alias path='echo -e ${PATH//:/\\n}'
 alias db="open ~/Dropbox"
 alias dot="cd ~/Dotfiles"
-alias desktop = "cd ~/Desktop"
+alias desktop="cd ~/Desktop"
 
 o() {
   if [[ $# > 0 ]]; then
