@@ -149,7 +149,7 @@ brew_install_or_upgrade the_silver_searcher
 brew_install_or_upgrade fontforge
 brew_install_or_upgrade mackup
 brew_install_or_upgrade tmux
-brew_install_or_upgrade carthage
+#brew_install_or_upgrade carthage
 #brew_install_or_upgrade entr #file/directory monitoring
 #brew_install_or_upgrade terminal-notifier #send Notification Center messages
 
@@ -172,7 +172,7 @@ cask_install alfred
 cask_install rowanj-gitx
 cask_install macdown
 cask_install appcleaner
-cask_install vimr
+#cask_install vimr
 cask_install screen-blacker
 cask_install pandoc
 cask_install basictex
