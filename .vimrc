@@ -17,6 +17,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'bling/vim-airline'
  Plugin 'airblade/vim-gitgutter'
 " Plugin 'scrooloose/syntastic'
+ Plugin 'wakatime/vim-wakatime'
 
 call vundle#end()            " required
 filetype plugin indent on     " required!
