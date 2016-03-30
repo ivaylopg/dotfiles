@@ -34,7 +34,7 @@ fi
 ask_for_confirmation "Configure Sublime Text CLI?"
 if answer_is_yes; then
   print_info "Setting up Sublime CLI"
-  sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/bin/subl
+  sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 fi
 
 ask_for_confirmation "Install tmux plugin manager"
