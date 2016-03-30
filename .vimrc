@@ -48,7 +48,7 @@ autocmd BufRead,BufNewFile *.jade set ft=jade
 set noerrorbells
 set noswapfile
 set nobackup
-nnoremap ; :
+" nnoremap ; :
 
 " Always show statusline
 set laststatus=2
