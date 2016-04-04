@@ -123,6 +123,39 @@ st() {
 alias tmuxnew="tmux new -s "
 alias tmuxkill="tmux kill-session -t "
 alias tmuxa="tmux a -t "
+alias tmuxhelp="echo '
+        *** TMUX CHEAT SHEET ***
+      List Sessions - tmux ls
+        New Session - tmuxnew <session name>
+       Kill Session - tmuxkill <session name>
+  Attach to Session - tmuxa <session name>
+Detach from Session - C-f d
+                  - - -
+      Create Window - C-f c
+       List Windows - C-f w
+        Next Window - C-f n
+    Previous Window - C-f p
+        Find Window - C-f f
+        Name Window - C-f ,
+        Kill Window - C-f &
+   Prev/Next Window - SHIFT-[L/R Arrow]
+                  - - -
+     Vertical Split - %
+   Horizontal Split - \"
+       Move to Pane - C-f [h,j,k,l]
+        Resize Pane - C-f [ARROWS]
+     Preset Layouts - C-f [SPACE]
+   Toggle Pane Zoom - C-f z
+        Cycle Panes - o
+          Kill Pane - q
+                  - - -
+          Scroll Up - C-f u
+        Scroll Down - C-f d
+          Big Clock - C-f t
+     List shortcuts - C-f ?
+     Command prompt - C-f :
+  Reload tmux.conf - C-f r\\n'"
+
 
 # Shortcuts and helpers
 alias v="vim"
