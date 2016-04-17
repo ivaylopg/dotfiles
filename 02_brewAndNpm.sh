@@ -196,7 +196,7 @@ cask_install dropbox-encore
 brew tap caskroom/fonts
 cask_install font-camingocode
 
-
+cask_install karabiner
 
 # cask install qlcolorcode
 # cask install qlstephen
