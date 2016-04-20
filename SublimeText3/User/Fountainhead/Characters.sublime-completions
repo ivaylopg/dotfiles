@@ -1,0 +1,6 @@
+{
+		"scope": "text.fountain - comment - foreground - dialogue - lyrics - string - entity.other.inherited-class - variable.parameter - entity.name.function - entity.name.filename - meta.diff - support.function - constant.numeric - foreground - entity.name.tag",
+
+		"completions":
+		["2ND GRADER","7 YEAR OLD","ARTIS","ARTIST","BORTHER","BOY","BROTHER","CHILD","DAD","FRIEND","GIRL","GRANDMOTHER","GRANDSON","GUY1","IN THE JAPANESE SECTION","KID","LEIDY","LEIDY SITS ON THE OTTOMAN AND GIGGLES AT SUSAN'S SKEPTICISM","LITTLE GIRL","MAN","MOM","MOTHER","NOT SURE WHERE THIS TAKES PLACE","PERS","PERSON","PERSON1","PERSON2","PRE","SISTER","STUDENT","SUSAN","WOMAN","WOMAN 1","YOUNG BOY","YOUNG GIRL"]
+}
