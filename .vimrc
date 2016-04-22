@@ -29,26 +29,21 @@ colorscheme monokai
 " let g:vim_markdown_folding_disabled=1
 " let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 
-autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufRead,BufNewFile *.txt set filetype=markdown
-autocmd BufRead,BufNewFile *.module set filetype=php
-autocmd BufRead,BufNewFile *.install set filetype=php
-autocmd BufRead,BufNewFile *.test set filetype=php
-autocmd BufRead,BufNewFile *.inc set filetype=php
-autocmd BufRead,BufNewFile *.profile set filetype=php
-autocmd BufRead,BufNewFile *.view set filetype=php
+" autocmd BufRead,BufNewFile *.md set filetype=markdown
+" autocmd BufRead,BufNewFile *.txt set filetype=markdown
 autocmd BufNewFile,BufRead *.less set filetype=less
 autocmd BufRead,BufNewFile *.js set ft=javascript syntax=javascript
 autocmd BufRead,BufNewFile *.json set ft=json syntax=javascript
-autocmd BufRead,BufNewFile *.twig set ft=htmldjango
-autocmd BufRead,BufNewFile *.rabl set ft=ruby
-autocmd BufRead,BufNewFile *.jade set ft=jade
 
 set noerrorbells
 set noswapfile
 set nobackup
 " nnoremap ; :
+
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 
 " Always show statusline
 set laststatus=2
