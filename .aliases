@@ -154,7 +154,7 @@ Detach from Session - C-f d
           Big Clock - C-f t
      List shortcuts - C-f ?
      Command prompt - C-f :
-  Reload tmux.conf - C-f r\\n'"
+   Reload tmux.conf - C-f r\\n'"
 
 
 # Shortcuts and helpers
@@ -166,6 +166,7 @@ alias path='echo -e ${PATH//:/\\n}'
 alias db="open ~/Dropbox"
 alias dot="cd ~/Dotfiles"
 alias desktop="cd ~/Desktop"
+alias please="sudo"
 
 o() {
   if [[ $# > 0 ]]; then
