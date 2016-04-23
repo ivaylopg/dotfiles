@@ -168,6 +168,9 @@ alias dot="cd ~/Dotfiles"
 alias desktop="cd ~/Desktop"
 alias please="sudo"
 
+alias vundle="vim +PluginInstall +qall"
+alias vundleup="vim +PluginUpdate +qall"
+
 o() {
   if [[ $# > 0 ]]; then
     open $@

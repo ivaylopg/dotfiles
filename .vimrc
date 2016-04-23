@@ -45,6 +45,10 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" remap for escape
+inoremap jj <ESC>
+vnoremap jj <ESC>
+
 " Always show statusline
 set laststatus=2
 
