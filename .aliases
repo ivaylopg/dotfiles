@@ -78,6 +78,7 @@ alias gpl="hub pull"
 alias go='git-open'
 alias groot='git rev-parse 2>/dev/null && cd "./$(git rev-parse --show-cdup)"'
 alias gr='hub grep'
+alias count="git rev-list HEAD | wc -l | tr -d ' '"
 
 # alias gs='git status'
 # alias ga="git add"
