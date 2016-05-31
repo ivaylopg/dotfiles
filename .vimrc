@@ -40,14 +40,41 @@ set noswapfile
 set nobackup
 " nnoremap ; :
 
+" Use case insensitive search, except when using capital letters
+set ignorecase
+set smartcase
+
+" When opening a new line and no filetype-specific indenting is enabled, keep
+" the same indent as the line you're currently on. Useful for READMEs, etc.
+set autoindent
+
+" Instead of failing a command because of unsaved changes, instead raise a
+" dialogue asking if you wish to save changed files.
+set confirm
+
+" Display line numbers on the left
+" set number
+
+" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
+" mapping of <C-L> below)
+set hlsearch
+
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 " remap for escape
-inoremap jj <ESC>
-vnoremap jj <ESC>
+inoremap kk <ESC>
+vnoremap kk <ESC>
+
+" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
+" which is the default
+map Y y$
+
+" Map <C-L> (redraw screen) to also turn off search highlighting until the
+" next search
+nnoremap <C-L> :nohl<CR><C-L>
 
 " Always show statusline
 set laststatus=2
