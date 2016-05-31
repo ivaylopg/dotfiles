@@ -24,6 +24,7 @@ filetype plugin indent on     " required!
 
 syntax enable
 colorscheme monokai
+hi Search term=standout ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
 
 " set nofoldenable    " disable folding
 " let g:vim_markdown_folding_disabled=1
@@ -74,7 +75,7 @@ map Y y$
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
-nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <C-L> :nohlsearch<CR><C-L>
 
 " Always show statusline
 set laststatus=2
