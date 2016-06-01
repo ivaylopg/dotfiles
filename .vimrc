@@ -26,6 +26,15 @@ syntax enable
 colorscheme monokai
 hi Search term=standout ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
 
+" Highlight extra whitespace
+" http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
 " set nofoldenable    " disable folding
 " let g:vim_markdown_folding_disabled=1
 " let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
@@ -44,6 +53,7 @@ set nobackup
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
+set incsearch
 
 " When opening a new line and no filetype-specific indenting is enabled, keep
 " the same indent as the line you're currently on. Useful for READMEs, etc.
@@ -77,8 +87,26 @@ map Y y$
 " next search
 nnoremap <C-L> :nohlsearch<CR><C-L>
 
+" Control-Tab navigation (like browser)
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+
+nnoremap th :tabnext<CR>
+nnoremap tl :tabprev<CR>
+nnoremap tn :tabnew<CR>
+nnoremap tt :tabedit<Space>
+nnoremap tm :tabm<Space>
+nnoremap tq :tabclose<CR>
+
 " Always show statusline
 set laststatus=2
+
+" type w!! to sudo-edit a file if you forgot to do it when you opened
+cmap w!! w !sudo tee % >/dev/null
 
 augroup markdown
     au!
