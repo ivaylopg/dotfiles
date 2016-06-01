@@ -99,10 +99,14 @@ nnoremap tm :tabm<Space>
 nnoremap tq :tabclose<CR>
 
 
-" play nice with OSX paste
-nnoremap <C-p> :r !pbpaste<CR>
-inoremap <C-p> <Esc>:r !pbpaste<CR>
-
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    " play nice with OSX paste
+    nnoremap <C-p> :r !pbpaste<CR>
+    inoremap <C-p> <Esc>:r !pbpaste<CR>
+  endif
+endif
 
 
 " Always show statusline
