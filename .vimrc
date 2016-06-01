@@ -87,12 +87,8 @@ map Y y$
 " next search
 nnoremap <C-L> :nohlsearch<CR><C-L>
 
-" Control-Tab navigation (like browser)
-nnoremap <C-S-tab> :tabprevious<CR>
-nnoremap <C-tab>   :tabnext<CR>
+" tab shortcuts
 nnoremap <C-t>     :tabnew<CR>
-inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
 nnoremap th :tabnext<CR>
