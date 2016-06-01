@@ -98,6 +98,13 @@ nnoremap tt :tabedit<Space>
 nnoremap tm :tabm<Space>
 nnoremap tq :tabclose<CR>
 
+
+" play nice with OSX paste
+nnoremap <C-p> :r !pbpaste<CR>
+inoremap <C-p> <Esc>:r !pbpaste<CR>
+
+
+
 " Always show statusline
 set laststatus=2
 
@@ -111,3 +118,4 @@ augroup END
 
 " https://github.com/AntJanus/dotfiles/blob/master/.vimrc
 " http://chibicode.com/vimrc/
+
