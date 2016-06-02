@@ -1,6 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+let mapleader=","
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
@@ -70,6 +72,11 @@ set confirm
 " mapping of <C-L> below)
 set hlsearch
 
+" START MAPPINGS
+
+nnoremap ; :
+noremap ;; ;
+
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
@@ -108,6 +115,7 @@ if has("unix")
   endif
 endif
 
+" END MAPPINGS
 
 " Always show statusline
 set laststatus=2
