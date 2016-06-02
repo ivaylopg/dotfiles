@@ -150,6 +150,8 @@ brew_install_or_upgrade fontforge
 brew_install_or_upgrade mackup
 brew_install_or_upgrade tmux
 brew_install_or_upgrade cloc
+brew_install_or_upgrade imagemagick
+
 #brew_install_or_upgrade carthage
 #brew_install_or_upgrade entr #file/directory monitoring
 #brew_install_or_upgrade terminal-notifier #send Notification Center messages
