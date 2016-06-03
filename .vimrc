@@ -115,7 +115,37 @@ if has("unix")
   endif
 endif
 
+map <leader>md :call MarkdownActions(1)<CR>
+map <leader>mdh :call MarkdownActions(1)<CR>
+map <leader>mdr :call MarkdownActions(2)<CR>
+map <leader>mdp :call MarkdownActions(3)<CR>
+map <leader>mdc :call MarkdownActions(4)<CR>
+
 " END MAPPINGS
+
+
+" START FUNCTIONS
+
+function MarkdownActions(action)
+  if (&ft=='ghmarkdown' || &ft=='markdown')
+    if a:action == 1
+      :! mdhtml %:t
+      ":! echo %:t
+    elseif a:action == 2
+      :! mdrtf %:t
+    elseif a:action == 3
+      :! mdpdf %:t
+    elseif a:action == 4
+      " pandoc test.mdown -f markdown_github -t html5 -c  ~/Dotfiles/misc/ghmd.css -s | pandoc -f html -s -t rtf | pbcopy
+      :! pandoc test.mdown -f markdown_github -t html5 -c  ~/Dotfiles/misc/ghmd.css -s | pandoc -f html -s -t rtf | pbcopy
+    else
+      return
+    endif
+  endif
+  return
+endfunction
+
+" END FUNCTIONS
 
 " Always show statusline
 set laststatus=2
