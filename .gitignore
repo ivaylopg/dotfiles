@@ -48,5 +48,6 @@ sftp-config.json
 #ignore local copy of Vundle
 .vim/bundle/*
 
+.vim/.netrwhist
 ##############################
 
