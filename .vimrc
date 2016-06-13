@@ -20,9 +20,13 @@ Plugin 'VundleVim/Vundle.vim'
  Plugin 'airblade/vim-gitgutter'
 " Plugin 'scrooloose/syntastic'
  Plugin 'wakatime/vim-wakatime'
+ Plugin 'scrooloose/nerdtree'
 
 call vundle#end()            " required
 filetype plugin indent on     " required!
+
+" don't forgrt to run :PluginInstall
+
 
 syntax enable
 colorscheme monokai
@@ -72,6 +76,12 @@ set confirm
 " mapping of <C-L> below)
 set hlsearch
 
+" START PLUGIN CUSTOMIZATIONS
+
+let NERDTreeShowHidden=1
+
+" END PLUGIN CUSTOMIZATIONS
+
 " START MAPPINGS
 
 nnoremap ; :
@@ -120,6 +130,8 @@ map <leader>mdh :call MarkdownActions(1)<CR>
 map <leader>mdr :call MarkdownActions(2)<CR>
 map <leader>mdp :call MarkdownActions(3)<CR>
 map <leader>mdc :call MarkdownActions(4)<CR>
+
+map <leader>nt :NERDTree<CR>
 
 " END MAPPINGS
 
