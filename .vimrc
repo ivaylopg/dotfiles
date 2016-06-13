@@ -137,7 +137,8 @@ function MarkdownActions(action)
       :! mdpdf %:t
     elseif a:action == 4
       " pandoc test.mdown -f markdown_github -t html5 -c  ~/Dotfiles/misc/ghmd.css -s | pandoc -f html -s -t rtf | pbcopy
-      :! pandoc test.mdown -f markdown_github -t html5 -c  ~/Dotfiles/misc/ghmd.css -s | pandoc -f html -s -t rtf | pbcopy
+      ":! pandoc test.mdown -f markdown_github -t html5 -c  ~/Dotfiles/misc/ghmd.css -s | pandoc -f html -s -t rtf | pbcopy
+      :! mdcp %:t
     else
       return
     endif
