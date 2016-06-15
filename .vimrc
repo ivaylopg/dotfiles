@@ -21,6 +21,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'scrooloose/syntastic'
  Plugin 'wakatime/vim-wakatime'
  Plugin 'scrooloose/nerdtree'
+ Plugin 'guns/xterm-color-table.vim'
 
 call vundle#end()            " required
 filetype plugin indent on     " required!
@@ -31,6 +32,11 @@ filetype plugin indent on     " required!
 syntax enable
 colorscheme monokai
 hi Search term=standout ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
+" hi clear SpellBad
+hi SpellBad guibg=NONE gui=underline guisp=#870000 ctermbg=088 term=underline
+hi SpellCap guibg=NONE gui=underline guisp=#00005f ctermbg=017 term=underline
+hi clear SpellRare
+hi clear SpellLocal
 
 " Highlight extra whitespace
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
@@ -50,6 +56,10 @@ autocmd BufWinLeave * call clearmatches()
 autocmd BufNewFile,BufRead *.less set filetype=less
 autocmd BufRead,BufNewFile *.js set ft=javascript syntax=javascript
 autocmd BufRead,BufNewFile *.json set ft=json syntax=javascript
+
+
+autocmd FileType gitcommit,ghmarkdown,markdown,text setlocal spell
+
 
 set noerrorbells
 set noswapfile
