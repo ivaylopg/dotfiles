@@ -34,7 +34,8 @@ colorscheme monokai
 hi Search term=standout ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
 " hi clear SpellBad
 hi SpellBad guibg=NONE gui=underline guisp=#870000 ctermbg=088 term=underline
-hi SpellCap guibg=NONE gui=underline guisp=#00005f ctermbg=017 term=underline
+" hi SpellCap guibg=NONE gui=underline guisp=#00005f ctermbg=017 term=underline
+hi clear SpellCap
 hi clear SpellRare
 hi clear SpellLocal
 
@@ -59,6 +60,7 @@ autocmd BufRead,BufNewFile *.json set ft=json syntax=javascript
 
 
 autocmd FileType gitcommit,ghmarkdown,markdown,text setlocal spell
+set complete+=kspell
 
 
 set noerrorbells
@@ -113,6 +115,9 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohlsearch<CR><C-L>
+
+" TAB for autocomplete
+imap <leader><Tab> <C-P>
 
 " tab shortcuts
 nnoremap <C-t>     :tabnew<CR>
