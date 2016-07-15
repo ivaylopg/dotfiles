@@ -200,6 +200,7 @@ brew tap caskroom/fonts
 cask_install font-camingocode
 
 cask_install karabiner
+cask_install gpgtools
 
 # cask install qlcolorcode
 # cask install qlstephen
