@@ -167,6 +167,9 @@ alias dot="cd ~/Dotfiles"
 alias desktop="cd ~/Desktop"
 alias please="sudo"
 
+# http://hints.macworld.com/article.php?story=20051026183044858
+alias listlocal="dns-sd -B _ssh._tcp ."
+
 alias vundle="vim +PluginInstall +qall"
 alias vundleup="vim +PluginUpdate +qall"
 
