@@ -67,6 +67,12 @@ if answer_is_yes; then
   mackup restore
 fi
 
+ask_for_confirmation "Install 'Bundler' Ruby Gem?"
+if answer_is_yes; then
+  print_info "Installing 'Bundler'"
+  gem install bundler
+fi
+
 # ask_for_confirmation ""
 # if answer_is_yes; then
 # fi

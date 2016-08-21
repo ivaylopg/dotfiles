@@ -151,6 +151,9 @@ brew_install_or_upgrade mackup
 brew_install_or_upgrade tmux
 brew_install_or_upgrade cloc
 brew_install_or_upgrade imagemagick
+brew_install_or_upgrade pandoc
+brew_install_or_upgrade rbenv
+
 
 #brew_install_or_upgrade carthage
 #brew_install_or_upgrade entr #file/directory monitoring
@@ -173,15 +176,17 @@ cask_install miro-video-converter
 cask_install vlc
 cask_install alfred
 cask_install rowanj-gitx
-cask_install macdown
+#cask_install macdown
 cask_install appcleaner
 #cask_install vimr
 cask_install screen-blacker
-cask_install pandoc
+###cask_install pandoc
 cask_install basictex
 
 cask_install mojibar
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"$HOME/Applications/Mojibar.app", hidden:false}'
+
+
 
 #cask_install caffeine
 #cask_install rescuetime
