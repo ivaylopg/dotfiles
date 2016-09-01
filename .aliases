@@ -196,6 +196,7 @@ alias cask='brew cask'
 
 alias otf2ttf='fontforge -script ~/Dotfiles/misc/fontconvert.sh'
 
+alias be='bundle exec'
 
 # Enable aliases to be sudo'ed
 alias sudo="sudo"
