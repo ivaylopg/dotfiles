@@ -154,6 +154,11 @@ brew_install_or_upgrade imagemagick
 brew_install_or_upgrade pandoc
 brew_install_or_upgrade rbenv
 
+# zork!
+brew_tap wjwwood/eork
+brew_install_or_upgrade zork1
+#brew_install_or_upgrade zork2
+#brew_install_or_upgrade zork3
 
 #brew_install_or_upgrade carthage
 #brew_install_or_upgrade entr #file/directory monitoring
