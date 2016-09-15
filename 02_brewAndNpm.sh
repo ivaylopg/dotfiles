@@ -154,17 +154,12 @@ brew_install_or_upgrade imagemagick
 brew_install_or_upgrade pandoc
 brew_install_or_upgrade rbenv
 
-# zork!
-brew_tap wjwwood/eork
-brew_install_or_upgrade zork1
-#brew_install_or_upgrade zork2
-#brew_install_or_upgrade zork3
 
 #brew_install_or_upgrade carthage
 #brew_install_or_upgrade entr #file/directory monitoring
 #brew_install_or_upgrade terminal-notifier #send Notification Center messages
 
-brew cleanup
+#brew cleanup
 #################################################
 
 # yay cask!
@@ -212,14 +207,23 @@ cask_install font-camingocode
 cask_install karabiner
 cask_install gpgtools
 
-# cask install qlcolorcode
-# cask install qlstephen
-# cask install qlmarkdown
-# cask install quicklook-json
-# cask install qlprettypatch
-# cask install quicklook-csv
-# cask install betterzipql
-# cask install webp-quicklook
+# cask_install qlcolorcode
+# cask_install qlstephen
+# cask_install qlmarkdown
+# cask_install quicklook-json
+# cask_install qlprettypatch
+# cask_install quicklook-csv
+# cask_install betterzipql
+# cask_install webp-quicklook
+
+# games!
+brew_tap wjwwood/zork
+brew_install_or_upgrade zork1
+#brew_install_or_upgrade zork2
+#brew_install_or_upgrade zork3
+brew_install_or_upgrade homebrew/games/nethack
+brew_install_or_upgrade homebrew/games/brogue
+cask_install dungeon-crawl-stone-soup-tiles
 
 
 # Prepare brew for multi-users setup
@@ -245,6 +249,8 @@ cask_install gpgtools
 # sudo chmod -R g+w /Library/Caches/Homebrew
 # echo "done"
 
+
+brew cleanup
 brew cask cleanup
 
 #pip
