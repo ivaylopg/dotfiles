@@ -263,3 +263,4 @@ npm_install_g gulp
 npm_install_g nodemon
 npm_install_g standard-format
 npm_install_g github-email
+npm_install_g eslint-config-luxloop
