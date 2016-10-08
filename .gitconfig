@@ -40,6 +40,7 @@
 	amend = ! git commit --amend
 	discard = ! git reset HEAD --hard && git clean -fd
 	unstash = stash pop
+  date = show -s --format=%ci
 	bfg = ! git-big-object-report
 
 	# Show the diff between the latest commit and the current state
