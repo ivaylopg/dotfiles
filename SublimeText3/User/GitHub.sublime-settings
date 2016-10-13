@@ -1,0 +1,8 @@
+{
+    "accounts": {
+        "GitHub": {
+            "base_uri": "https://api.github.com",
+            "github_token": "0ae1789da2ac3241b74c7eeb7026d88daae90000"
+        }
+    }
+}
