@@ -30,6 +30,7 @@
 		"ShaderLanguages",
 		"SideBarEnhancements",
 		"StandardFormat",
+		"sublime-github",
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint",
 		"SublimeOnSaveBuild",
