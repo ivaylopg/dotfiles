@@ -45,9 +45,12 @@ Network Trash Folder
 # sftp configuration file
 sftp-config.json
 
-#ignore local copy of Vundle
-.vim/bundle/*
-
+# Vim generated & temporary files
+.vim/temp
 .vim/.netrwhist
+.vim/backup/*
+
+# ignore local copy of Vundle
+.vim/bundle/*
 ##############################
 
