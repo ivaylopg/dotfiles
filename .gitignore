@@ -47,6 +47,9 @@ Network Trash Folder
 # workspace files are user-specific
 *.sublime-workspace
 
+# ST certs
+SublimeText3/User/oscrypto-ca-bundle.crt
+
 # package-control noise
 */User/Package Control.last-run
 */User/Package Control.ca-list
