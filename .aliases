@@ -167,6 +167,39 @@ alias dot="cd ~/Dotfiles"
 alias desktop="cd ~/Desktop"
 alias please="sudo"
 
+########################################################
+
+alias fuck='sudo $(history -p \!\!)'
+
+# Convert a picture to a favicon
+alias make-favicon="convert -colors 256 -resize 16x16 "
+
+# Copy the working dir to the clipboard
+alias cpwd='pwd|xargs echo -n|pbcopy'
+
+# Show current airport status:
+alias apinfo='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I'
+
+# alias ydl=youtube-dl
+alias now='ruby -e "puts Time.now.utc.to_i"'
+alias nowh='ruby -e "puts Time.now"'
+
+alias uuid='uuidgen | tr "[:upper:]" "[:lower:]"'
+alias uuid1='python -c "import uuid; print uuid.uuid1()"'
+alias uuid4='python -c "import uuid; print uuid.uuid4()"'
+
+# `wifi on` to turn wifi on, and `wifi off` to turn it off
+alias wifi="networksetup -setairportpower $(networksetup -listallhardwareports | grep -A 2 'Hardware Port: Wi-Fi' | grep 'Device:' | awk '{print $2}')"
+
+# Grep in history
+function greph () { history 0 | grep -i $1 }
+
+# use colors when GNU grep with color-support
+#  Execute grep --color=auto
+alias grep='grep --color=auto'
+
+########################################################
+
 # http://hints.macworld.com/article.php?story=20051026183044858
 alias listlocal="dns-sd -B _ssh._tcp ."
 

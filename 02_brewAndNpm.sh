@@ -153,6 +153,7 @@ brew_install_or_upgrade cloc
 brew_install_or_upgrade imagemagick
 brew_install_or_upgrade pandoc
 brew_install_or_upgrade rbenv
+brew_install_or_upgrade watch
 
 
 #brew_install_or_upgrade carthage
