@@ -41,7 +41,7 @@
 	discard = ! git reset HEAD --hard && git clean -fd
 	unstash = stash pop
   date = show -s --format=%ci
-	bfg = ! git-big-object-report
+	big = ! git-big-object-report
 
   # Make stashing easier
   st = stash
