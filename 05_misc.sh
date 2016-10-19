@@ -58,7 +58,8 @@ ask_for_confirmation "Install Colossal Cave Adventure?"
 if answer_is_yes; then
   #set up Colossal Cave Adventure 2.5 (430pts)
   print_info "Installing Colossal Cave Adventure"
-  mkdir ~/.adventure && cp $(pwd)/bin/adventure/* ~/.adventure/
+  ## mkdir ~/.adventure && cp $(pwd)/bin/adventure/* ~/.adventure/
+  git clone git@github.com:ivaylopg/Adventure.git ~/.adventure
 fi
 
 ask_for_confirmation "Restore Mackup Settings?"

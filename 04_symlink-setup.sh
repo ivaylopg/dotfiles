@@ -30,7 +30,7 @@ FILES_TO_SYMLINK="$FILES_TO_SYMLINK"
 declare -a DIRS_TO_SYMLINK=$(find . -type d -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .osx -not -name . | sed -e 's|//|/|' | sed -e 's|./.|.|')
 DIRS_TO_SYMLINK="$DIRS_TO_SYMLINK"
 
-declare -a BINS_TO_MOVE=$(find bin -type f -maxdepth 1 -name "*" -not -name .DS_Store -not -name adventure | sed -e 's|//|/|'| sed -e 's|bin/||')
+declare -a BINS_TO_MOVE=$(find bin -type f -maxdepth 1 -name "*" -not -name .DS_Store | sed -e 's|//|/|'| sed -e 's|bin/||')
 BINS_TO_MOVE="$BINS_TO_MOVE"
 
 SUBLIME[0]=User

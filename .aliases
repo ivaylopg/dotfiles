@@ -264,7 +264,7 @@ alias brew-up="brew update; brew upgrade --all; brew cleanup; brew prune"
 #just for fun
 alias \?="clear && fortune | cowsay"
 alias dunnet="clear && emacs -batch -l dunnet"
-alias adventure="clear && ~/.adventure/adv.sh"
+alias adventure="(cd ~/.adventure/ && clear && ./advent)"
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
