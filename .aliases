@@ -23,6 +23,7 @@ hash gls >/dev/null 2>&1 || alias gls="ls"
 # fi
 
 alias lsa="ls -a"
+alias lst="tree -L 4 -h --du -F -C"
 alias l="ls"
 
 # ls options: F = put `/` after folders, h = byte unit suffixes, color! (even with piping to awk)
@@ -180,7 +181,7 @@ alias cpwd='pwd|xargs echo -n|pbcopy'
 # Show current airport status:
 alias apinfo='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I'
 
-# alias ydl=youtube-dl
+alias ydl=youtube-dl
 alias now='ruby -e "puts Time.now.utc.to_i"'
 alias nowh='ruby -e "puts Time.now"'
 

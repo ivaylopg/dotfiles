@@ -154,6 +154,11 @@ brew_install_or_upgrade imagemagick
 brew_install_or_upgrade pandoc
 brew_install_or_upgrade rbenv
 brew_install_or_upgrade watch
+brew_install_or_upgrade tree
+brew_install_or_upgrade httpie
+brew_install_or_upgrade exercism
+brew_install_or_upgrade youtube-dl
+
 
 
 #brew_install_or_upgrade carthage
