@@ -58,7 +58,6 @@
   m = merge -s recursive -X patience
   mm = merge --no-ff
   merge-branch = !git checkout master && git merge @{-1}
-  conflicted = grep --name-only --full-name '<<<<<<< HEAD'
 
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
