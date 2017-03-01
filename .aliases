@@ -167,6 +167,7 @@ alias db="open ~/Dropbox"
 alias dot="cd ~/Dotfiles"
 alias desktop="cd ~/Desktop"
 alias please="sudo"
+#alias reinstallAlcatraz="curl -fsSL https://raw.githubusercontent.com/supermarin/Alcatraz/deploy/Scripts/install.sh | sh"
 
 ########################################################
 
@@ -231,6 +232,7 @@ alias cask='brew cask'
 alias otf2ttf='fontforge -script ~/Dotfiles/misc/fontconvert.sh'
 
 alias be='bundle exec'
+alias j='bundle exec jekyll serve'
 
 # Enable aliases to be sudo'ed
 alias sudo="sudo"
