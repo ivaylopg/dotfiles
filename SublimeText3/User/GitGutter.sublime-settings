@@ -1,6 +1,6 @@
 {
   // Custom path to git binary when not in PATH
-  "git_binary": "",
+  "git_binary": "/usr/bin/git",
 
   // The commit, branch, tag, or remote to compare against
   // Can be set on a per-project basis by adding a project
