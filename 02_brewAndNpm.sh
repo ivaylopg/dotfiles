@@ -268,7 +268,7 @@ brew cask cleanup
 #npm globals
 npm_install_g git-open
 npm_install_g eslint
-npm_install_g gulp
+npm_install_g gulp-cli
 npm_install_g nodemon
 npm_install_g standard-format
 npm_install_g github-email
