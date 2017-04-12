@@ -25,6 +25,7 @@
 		"JavaScript Snippets",
 		"LoremIpsum",
 		"Markdown Extended",
+		"OmniSharp",
 		"Open URL",
 		"Package Control",
 		"Pretty JSON",
@@ -37,6 +38,8 @@
 		"SublimeLinter-contrib-eslint",
 		"SublimeOnSaveBuild",
 		"Swift",
+		"Unity Shader",
+		"Unity3D",
 		"View In Browser",
 		"WakaTime"
 	]
