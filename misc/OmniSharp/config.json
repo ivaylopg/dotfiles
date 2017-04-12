@@ -3,51 +3,11 @@
 
   ],
 
-  /* Example cygwin path replacements
-
-  "PathReplacements":[
-    {
-      "From":"/cygdrive/c/",
-      "To":"c:\\"
-    },
-    {
-      "From":"/",
-      "To":"\\"
-    }
-  ],*/
-
-  /* Native Emacs on Windows path replacements
-
-  "PathReplacements": [
-      {
-          "From":"/",
-          "To":"\\"
-      }
-  ],*/
-
   "IgnoredCodeIssues": [
     "^Keyword 'private' is redundant. This is the default modifier.$",
     ".* should not separate words with an underscore.*",
-    "^Use 'var' keyword$",
+    "^Use 'var' keyword$"
   ],
-
-  /* http://www.radjor.com/blog/p/65
-  "IgnoredCodeIssues": [
-     "^Keyword 'private' is redundant. This is the default modifier.$",
-     ".* should not separate words with an underscore.*",
-     "^Redundant argument name specification$",
-     "^Convert to '.*' expre.",
-     "^Use 'var' keyword$",
-     "^Name should have prefix.",
-     "^Redundant ToString.",
-     "^Initializing field by default value is redundant$",
-     "^Parameter can be IComparable$",
-     "^Convert to constant.*",
-     "^Variable could be moved to a nested scope$",
-     "^Method never reaches its end or a 'return' statement.$",
-     ".* should start with an upper case letter. \\(Rule 'Enum Members'\\)$"
-  ],
-  */
 
   "TestCommands": {
     "All": "xunit.console.exe {{AssemblyPath}}",
@@ -61,23 +21,10 @@
     "indentSize": 2,
     "continuationIndent": 2,
     "labelIndent": 0,
-    /* "eolMarker": "\r\n", */
     "eolMarker": "\n",
     "indentBlankLines": false,
     "wrapLineLength": 80
   },
-
-  /*
-    Available names:
-    * Custom
-    * KRStyle
-    * Allman
-    * Empty
-    * GNU
-    * Mono
-    * SharpDevelop
-    * Whitesmiths
-   */
   "CSharpFormattingOptionsName" : "Custom",
 
   "CSharpFormattingOptions": {
