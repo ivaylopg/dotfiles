@@ -1,0 +1,6 @@
+// These settings override both User and Default settings for the UnityC# syntax
+{
+ "auto_complete": true,
+ "auto_complete_selector": "source - comment",
+ "auto_complete_triggers": [ {"selector": "source.cs", "characters": ".<"} ],
+}
