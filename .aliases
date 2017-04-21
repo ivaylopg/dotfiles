@@ -200,6 +200,10 @@ function greph () { history 0 | grep -i $1 }
 #  Execute grep --color=auto
 alias grep='grep --color=auto'
 
+
+# Boilerplates
+alias lux-unity='hub clone luxloop/LuxloopUnityBoilerplate'
+
 ########################################################
 
 # http://hints.macworld.com/article.php?story=20051026183044858
