@@ -6,7 +6,12 @@
   "IgnoredCodeIssues": [
     "^Keyword 'private' is redundant. This is the default modifier.$",
     ".* should not separate words with an underscore.*",
-    "^Use 'var' keyword$"
+    "^Use 'var' keyword$",
+     "^Initializing field by default value is redundant$",
+     ".* should start with an upper case letter.*",
+     "^Convert to '.*' expre.",
+     ".*Name should have prefix '_'.*",
+     "^Parameter can be IComparable$"
   ],
 
   "TestCommands": {
@@ -23,7 +28,24 @@
     "labelIndent": 0,
     "eolMarker": "\n",
     "indentBlankLines": false,
-    "wrapLineLength": 80
+    "wrapLineLength": 80,
+
+    "NewLinesForBracesInTypes": false,
+    "NewLinesForBracesInMethods": false,
+    "NewLinesForBracesInProperties": false,
+    "NewLinesForBracesInAccessors": false,
+    "NewLinesForBracesInAnonymousMethods": false,
+    "NewLinesForBracesInControlBlocks": false,
+    "NewLinesForBracesInAnonymousTypes": false,
+    "NewLinesForBracesInObjectCollectionArrayInitializers": false,
+    "NewLinesForBracesInLambdaExpressionBody": false,
+
+    "NewLineForElse": false,
+    "NewLineForCatch": false,
+    "NewLineForFinally": false,
+    "NewLineForMembersInObjectInit": false,
+    "NewLineForMembersInAnonymousTypes": false,
+    "NewLineForClausesInQuery": false
   },
   "CSharpFormattingOptionsName" : "Custom",
 
