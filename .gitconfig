@@ -43,6 +43,7 @@
   date = show -s --format=%ci
 	big = ! git-big-object-report
   ao = "!f() { git remote add $1 $2 && git push -u $1 --all && git push -u $1 --tags; }; f"
+  plfs = !git -c filter.lfs.smudge= -c filter.lfs.required=false pull && git lfs pull
 
   # Make stashing easier
   st = stash
