@@ -35,5 +35,5 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 source ~/.bash_profile
 
 # do some rbenv stuff
-source "$(brew --prefix)/Cellar/rbenv/1.0.0/completions/rbenv.zsh";
+source "$(brew --prefix)/Cellar/rbenv/1.1.0/completions/rbenv.zsh";
 command rbenv rehash 2>/dev/null
