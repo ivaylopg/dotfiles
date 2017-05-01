@@ -2,5 +2,5 @@
   { "keys": ["super+ctrl+alt+t"], "command": "alignment" },
   { "keys": ["super+alt+f"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
   { "keys": ["super+f"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
-  { "keys": ["super+alt+ctrl+f"], "command": "toggle_distraction_free" },
+  { "keys": ["super+alt+ctrl+f"], "command": "toggle_distraction_free" }
 ]
