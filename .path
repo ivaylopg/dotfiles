@@ -2,3 +2,4 @@
 
 export PATH=$PATH
 export PATH=$HOME/.rbenv/shims:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:/usr/texbin:$PATH
+export PATH="$HOME/.fastlane/bin:$PATH"

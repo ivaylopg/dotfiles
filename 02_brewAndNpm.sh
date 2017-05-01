@@ -195,6 +195,8 @@ brew_install_or_upgrade bfg
 cask_install mojibar
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"$HOME/Applications/Mojibar.app", hidden:false}'
 
+cask_install fastlane
+
 
 
 #cask_install caffeine
