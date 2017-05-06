@@ -17,17 +17,18 @@ if answer_is_yes; then
   #rm -rf ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/Alcatraz.xcplugin
 fi
 
-ask_for_confirmation "Install wifi-password?"
-if answer_is_yes; then
-  print_info "Installing wifi-password"
-  curl -L https://raw.github.com/rauchg/wifi-password/master/wifi-password.sh -o /usr/local/bin/wifi-password && chmod +x /usr/local/bin/wifi-password
-fi
+# ask_for_confirmation "Install wifi-password?"
+# if answer_is_yes; then
+#   print_info "Installing wifi-password"
+#   curl -L https://raw.github.com/rauchg/wifi-password/master/wifi-password.sh -o /usr/local/bin/wifi-password && chmod +x /usr/local/bin/wifi-password
+# fi
 
 
 ask_for_confirmation "Install git-friendly?"
 if answer_is_yes; then
   print_info "Installing git-friendly"
-  curl -s https://raw.githubusercontent.com/jamiew/git-friendly/master/install.sh | bash
+  #url -s https://raw.githubusercontent.com/jamiew/git-friendly/master/install.sh | bash
+  sudo bash < <( curl https://raw.githubusercontent.com/jamiew/git-friendly/master/install.sh)
 fi
 
 
@@ -71,7 +72,7 @@ fi
 ask_for_confirmation "Install 'Bundler' Ruby Gem?"
 if answer_is_yes; then
   print_info "Installing 'Bundler'"
-  gem install bundler
+  sudo gem install bundler
 fi
 
 # ask_for_confirmation ""

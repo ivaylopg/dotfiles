@@ -125,17 +125,19 @@ brew_install_or_upgrade coreutils
 #fancy_echo "Remember to change your default shell..."
 #add_instructions "Add to your /etc/shells - $HOME/.homebrew/bin/zsh"
 
-# brew_install_or_upgrade git
+
+cask_install java
 brew_install_or_upgrade node #and npm
+brew_install_or_upgrade rbenv
 brew_install_or_upgrade grc
 
 brew_install_or_upgrade openssl
 brew unlink openssl && brew link openssl --force
 
-brew_install_or_upgrade homebrew/dupes/grep
-brew_install_or_upgrade homebrew/dupes/screen
-
-brew_install_or_upgrade wget --with-iri
+# brew_install_or_upgrade git
+brew_install_or_upgrade grep
+brew_install_or_upgrade screen
+brew_install_or_upgrade wget
 brew_install_or_upgrade ffmpeg --with-libvpx
 brew_install_or_upgrade gnu-sed --with-default-names
 brew_install_or_upgrade hub
@@ -151,13 +153,13 @@ brew_install_or_upgrade mackup
 brew_install_or_upgrade tmux
 brew_install_or_upgrade cloc
 brew_install_or_upgrade imagemagick
-brew_install_or_upgrade pandoc
-brew_install_or_upgrade rbenv
+# brew_install_or_upgrade pandoc ################################
 brew_install_or_upgrade watch
 brew_install_or_upgrade tree
 brew_install_or_upgrade httpie
 brew_install_or_upgrade exercism
 brew_install_or_upgrade youtube-dl
+brew_install_or_upgrade wifi-password
 
 
 
@@ -168,12 +170,9 @@ brew_install_or_upgrade youtube-dl
 #brew cleanup
 #################################################
 
-# yay cask!
-brew_tap caskroom/cask
-brew_install_or_upgrade brew-cask
 brew_tap caskroom/versions
 
-#cask_install onepassword
+cask_install onepassword
 cask_install flux
 cask_install spectacle
 cask_install imagealpha
@@ -189,7 +188,7 @@ cask_install screen-blacker
 ###cask_install pandoc
 cask_install basictex
 
-cask_install java
+
 brew_install_or_upgrade bfg
 
 cask_install mojibar
@@ -204,7 +203,7 @@ cask_install fastlane
 #cask_install dropbox
 #cask_install sublime-text3
 #cask_install google-chrome
-#cask_install skype
+cask_install skype
 #cask_install gpgtools #Encrypted email
 #cask_install licecap #GIF screen capture
 
@@ -215,7 +214,7 @@ cask_install dropbox-encore
 brew tap caskroom/fonts
 cask_install font-camingocode
 
-cask_install karabiner
+#cask_install karabiner ### outdated :(
 cask_install gpgtools
 
 # cask_install qlcolorcode
@@ -228,13 +227,13 @@ cask_install gpgtools
 # cask_install webp-quicklook
 
 # games!
-brew_tap wjwwood/zork
-brew_install_or_upgrade zork1
-#brew_install_or_upgrade zork2
-#brew_install_or_upgrade zork3
-brew_install_or_upgrade homebrew/games/nethack
-brew_install_or_upgrade homebrew/games/brogue
-cask_install dungeon-crawl-stone-soup-tiles
+# brew_tap wjwwood/zork
+# brew_install_or_upgrade zork1
+# #brew_install_or_upgrade zork2
+# #brew_install_or_upgrade zork3
+# brew_install_or_upgrade homebrew/games/nethack
+# brew_install_or_upgrade homebrew/games/brogue
+# cask_install dungeon-crawl-stone-soup-tiles
 
 
 # Prepare brew for multi-users setup

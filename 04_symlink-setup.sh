@@ -44,6 +44,8 @@ main() {
     local sourceFile=""
     local targetFile=""
 
+    sudo chown -R $(whoami) /usr/local
+
     for i in ${FILES_TO_SYMLINK[@]}; do
 
         sourceFile="$(pwd)/$i"
