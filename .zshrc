@@ -7,7 +7,7 @@ source $ZSHA_BASE/antigen/antigen.zsh
 #zshConfig/git.zsh
 #zshConfig/theme-and-appearance.zsh
 
-
+antigen bundle lukechilds/zsh-nvm
 antigen bundle ivaylopg/dotfiles zshConfig/all/
 
 if [ "$OSTYPE"="darwin11.0" ]; then

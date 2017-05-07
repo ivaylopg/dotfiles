@@ -93,12 +93,12 @@ append_to_path() {
 npm_install_g() {
   if ! command -v node >/dev/null; then
     fancy_echo "Installing Node ..."
-    brew_install_or_upgrade node
+    nvm install node
     fancy_echo "npm is installing: %s" "$1"
-    sudo npm install -g $@
+    npm install -g $@
   else
     fancy_echo "npm is installing: %s" "$1"
-    sudo npm install -g $@
+    npm install -g $@
   fi
 }
 
@@ -127,9 +127,10 @@ brew_install_or_upgrade coreutils
 
 
 cask_install java
-brew_install_or_upgrade node #and npm
+# brew_install_or_upgrade node #and npm
 brew_install_or_upgrade rbenv
 brew_install_or_upgrade grc
+brew_install_or_upgrade mono
 
 brew_install_or_upgrade openssl
 brew unlink openssl && brew link openssl --force
