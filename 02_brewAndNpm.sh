@@ -269,9 +269,10 @@ brew cask cleanup
 
 #npm globals
 npm_install_g git-open
-npm_install_g eslint
 npm_install_g gulp-cli
 npm_install_g nodemon
 npm_install_g standard-format
 npm_install_g github-email
-npm_install_g eslint-config-luxloop
+npm_install_g "eslint eslint-config-luxloop"
+#npm_install_g eslint-config-luxloop
+    # see: https://github.com/npm/npm/issues/9857
