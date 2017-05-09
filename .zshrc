@@ -37,3 +37,6 @@ source ~/.bash_profile
 # do some rbenv stuff
 source "$(brew --prefix)/Cellar/rbenv/1.1.0/completions/rbenv.zsh";
 command rbenv rehash 2>/dev/null
+
+export PATH=/Users/ivaylopg/Library/Android/sdk/tools:$PATH
+export PATH=/Users/ivaylopg/Library/Android/sdk/platform-tools:$PATH

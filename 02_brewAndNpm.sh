@@ -161,6 +161,7 @@ brew_install_or_upgrade httpie
 brew_install_or_upgrade exercism
 brew_install_or_upgrade youtube-dl
 brew_install_or_upgrade wifi-password
+brew_install_or_upgrade jq
 
 
 
@@ -276,5 +277,12 @@ npm_install_g nodemon
 npm_install_g standard-format
 npm_install_g github-email
 npm_install_g "eslint eslint-config-luxloop"
+#npm_install_g css-select
+#npm_install_g css-what
+#npm_install_g electron
+npm_install_g json2csv
+#npm_install_g yo
+#npm_install_g coffee-script
+
 #npm_install_g eslint-config-luxloop
     # see: https://github.com/npm/npm/issues/9857
