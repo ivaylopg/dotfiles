@@ -15,14 +15,6 @@ add_instructions() {
   echo $1 >> $HOME/Desktop/manualSetupInstructions.txt
 }
 
-# case "$SHELL" in
-#   */zsh) : ;;
-#   *)
-#     fancy_echo "Changing your shell to zsh ..."
-#       chsh -s "$(which zsh)"
-#     ;;
-# esac
-
 brew_install_or_upgrade() {
   if brew_is_installed "$1"; then
     if brew_is_upgradable "$1"; then
@@ -103,7 +95,7 @@ npm_install_g() {
 }
 
 trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
-set -e
+#set -e
 
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew ..."
@@ -150,7 +142,6 @@ brew_install_or_upgrade gist
 brew_install_or_upgrade pngquant
 brew_install_or_upgrade the_silver_searcher
 brew_install_or_upgrade fontforge
-brew_install_or_upgrade mackup
 brew_install_or_upgrade tmux
 brew_install_or_upgrade cloc
 brew_install_or_upgrade imagemagick
@@ -158,24 +149,22 @@ brew_install_or_upgrade imagemagick
 brew_install_or_upgrade watch
 brew_install_or_upgrade tree
 brew_install_or_upgrade httpie
-brew_install_or_upgrade exercism
-brew_install_or_upgrade youtube-dl
 brew_install_or_upgrade wifi-password
 brew_install_or_upgrade jq
+brew_install_or_upgrade bfg
 
 
-
-#brew_install_or_upgrade carthage
-#brew_install_or_upgrade entr #file/directory monitoring
-#brew_install_or_upgrade terminal-notifier #send Notification Center messages
-
-#brew cleanup
-#################################################
-
+brew cleanup
 brew_tap caskroom/versions
 
+cask_install sublime-text
+cask_install google-chrome
 cask_install onepassword
 cask_install flux
+cask_install skype
+cask_install dropbox
+#cask_install dropbox-encore
+cask_install android-studio
 cask_install spectacle
 cask_install imagealpha
 cask_install imageoptim
@@ -183,52 +172,23 @@ cask_install miro-video-converter
 cask_install vlc
 cask_install alfred
 cask_install rowanj-gitx
-#cask_install macdown
 cask_install appcleaner
-#cask_install vimr
 cask_install screen-blacker
-###cask_install pandoc
 cask_install basictex
+#cask_install gpgtools #Encrypted email
+#cask_install karabiner ### outdated :(
+###cask_install pandoc
 
-
-brew_install_or_upgrade bfg
 
 cask_install mojibar
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"$HOME/Applications/Mojibar.app", hidden:false}'
 
 # cask_install fastlane
 # cask_install android-sdk
-cask_install android-studio
-
-
-
-#cask_install caffeine
-#cask_install rescuetime
-#cask_install dropbox
-#cask_install sublime-text3
-#cask_install google-chrome
-cask_install skype
-#cask_install gpgtools #Encrypted email
-#cask_install licecap #GIF screen capture
-
-#https://daisydiskapp.com/
-
-cask_install dropbox-encore
 
 brew tap caskroom/fonts
 cask_install font-camingocode
 
-#cask_install karabiner ### outdated :(
-cask_install gpgtools
-
-# cask_install qlcolorcode
-# cask_install qlstephen
-# cask_install qlmarkdown
-# cask_install quicklook-json
-# cask_install qlprettypatch
-# cask_install quicklook-csv
-# cask_install betterzipql
-# cask_install webp-quicklook
 
 # games!
 # brew_tap wjwwood/zork
@@ -239,38 +199,12 @@ cask_install gpgtools
 # brew_install_or_upgrade homebrew/games/brogue
 # cask_install dungeon-crawl-stone-soup-tiles
 
-
-# Prepare brew for multi-users setup
-# echo "Now let's make brew useful for all users."
-# echo "Create a 'brew' group through System Preferences: <http://blog.strug.de/2012/06/my-homebrew-multi-user-setup/>"
-# read -p "Press any key when the 'brew' group has been created"
-
-# echo -n "Change the group of homebrew installation directory..."
-# sudo chgrp -R brew /usr/local
-# sudo chgrp -R brew /opt/homebrew-cask/
-# echo "done"
-
-# echo -n "Allow group members to write inside this directory..."
-# sudo chmod -R g+w /usr/local
-# sudo chmod -R g+w /opt/homebrew-cask/
-# echo "done"
-
-# echo -n "Change the group of homebrew cache directory..."
-# sudo chgrp -R brew /Library/Caches/Homebrew
-# echo "done"
-
-# echo -n "Allow group members to write inside this directory..."
-# sudo chmod -R g+w /Library/Caches/Homebrew
-# echo "done"
-
-
 brew cleanup
 brew cask cleanup
 
-#pip
-#sudo easy_install pip
 
 #npm globals
+source $NVM_DIR/nvm.sh
 npm_install_g git-open
 npm_install_g gulp-cli
 npm_install_g nodemon
@@ -283,6 +217,3 @@ npm_install_g "eslint eslint-config-luxloop"
 npm_install_g json2csv
 #npm_install_g yo
 #npm_install_g coffee-script
-
-#npm_install_g eslint-config-luxloop
-    # see: https://github.com/npm/npm/issues/9857
