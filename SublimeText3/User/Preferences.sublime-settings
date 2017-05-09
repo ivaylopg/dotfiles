@@ -11,6 +11,7 @@
 	"copy_with_empty_selection": false,
 	"detect_indentation": true,
 	"dictionary": "Packages/Language - English/en_US.dic",
+	"drag_text": false,
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "CamingoCode",
 	"font_size": 12,
