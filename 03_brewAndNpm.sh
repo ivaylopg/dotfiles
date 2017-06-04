@@ -217,3 +217,5 @@ npm_install_g "eslint eslint-config-luxloop"
 npm_install_g json2csv
 #npm_install_g yo
 #npm_install_g coffee-script
+npm_install_g pm2
+npm_install_g gitmoji-cli
