@@ -1,6 +1,7 @@
 [user]
 	name = Ivaylo Getov
 	email = contact@ivaylogetov.com
+	signingkey = 1730506574293ADD
 
 [core]
 	excludesfile = ~/.gitignore
