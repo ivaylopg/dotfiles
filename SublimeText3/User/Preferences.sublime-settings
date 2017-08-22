@@ -1,7 +1,13 @@
 {
 	"added_words":
 	[
-		"Luxloop"
+		"Luxloop",
+		"Hololens",
+		"underutilizing",
+		"gameplay",
+		"Sundance",
+		"immersive",
+		"online"
 	],
 	"auto_complete_commit_on_tab": true,
 	"auto_complete_triggers":
@@ -31,6 +37,17 @@
 		"Markdown",
 		"Vintage"
 	],
+	"ignored_words":
+	[
+		"platformer",
+		"platformers"
+	],
+	"match_brackets": false,
+	"match_brackets_angle": false,
+	"match_brackets_braces": false,
+	"match_brackets_content": false,
+	"match_brackets_square": false,
+	"match_tags": false,
 	"save_on_focus_lost": true,
 	"shift_tab_unindent": true,
 	"smart_indent": true,

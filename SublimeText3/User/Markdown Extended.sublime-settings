@@ -1,4 +1,5 @@
 // These settings override both User and Default settings for the Markdown Extended syntax
 {
-"tab_size": 4,
+  "tab_size": 4,
+  "spell_check": true
 }

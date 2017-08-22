@@ -6,7 +6,9 @@
 	"installed_packages":
 	[
 		"Alignment",
+		"All Autocomplete",
 		"Better CoffeeScript",
+		"BracketHighlighter",
 		"C# Snippets",
 		"Color Highlighter",
 		"DashDoc",
@@ -43,6 +45,7 @@
 		"Unity Shader",
 		"Unity3D",
 		"View In Browser",
-		"WakaTime"
+		"WakaTime",
+		"WordCount"
 	]
 }
