@@ -8,43 +8,43 @@ source 99_utils.sh
 #
 
 
-SUBLIME[0]=User
-SUBLIME[1]=Theme\ -\ Default
+SUBLIME_DIRS=()
+while IFS=  read -r -d $'\0'; do
+    SUBLIME_DIRS+=("$REPLY")
+done < <(find ./SublimeText3/ -type d -maxdepth 1 -name "*" -not -name .DS_Store -not -name .git -not -name .osx -not -name SublimeText3 -not -name . -print0  | sed -e 's|//|/|')
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 main() {
 
-    local i=""
-    local sourceFile=""
-
     ask_for_confirmation "Do you want to sync Sublime Text 3 Settings?"
     if answer_is_yes; then
 
-        #sync Sublime Text 3 Settings
-        i=""
-        local STDIR=$HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages
+        for ((i = 0; i < ${#SUBLIME_DIRS[@]}; i++)); do
 
-        [ ! -d "$STDIR" ] && mkdir -p "$STDIR" && printf "Created %s" "$STDIR"
+            cleanedDirName=$(echo "${SUBLIME_DIRS[$i]}" | sed 's|^\./SublimeText3||' | sed -e 's|//||' | sed -e 's|/||')
+            sourceFile="$(pwd)/SublimeText3/$cleanedDirName"
+            targetFile="$HOME/Library/Application Support/Sublime Text 3/Packages"
+            checkTarget=$(echo "$targetFile/$cleanedDirName" | sed 's|\\||g')
 
-        for ((i = 0; i < ${#SUBLIME[@]}; i++))
-        do
-            #printf "${SUBLIME[$i]}\n"
-            sourceFile="$(pwd)/SublimeText3/${SUBLIME[$i]}"
+            # echo $sourceFile
+            # echo $targetFile
+            # echo $checkTarget
 
-            if [ -d "$STDIR/${SUBLIME[$i]}" ]; then
-
-                ask_for_confirmation "'$STDIR/${SUBLIME[$i]}' already exists, do you want to overwrite it?"
+            if [ -L "$checkTarget" ] || [ -d "$checkTarget" ]; then
+                # echo "exists!"
+                ask_for_confirmation "'$checkTarget' directory already exists, do you want to overwrite it?"
                 if answer_is_yes; then
-                    rm -rf "$STDIR/${SUBLIME[$i]}"
-                    ln -fs "$sourceFile" "$STDIR/${SUBLIME[$i]}" &> /dev/null
-                    print_result $? "$STDIR/${SUBLIME[$i]} → $sourceFile"
+                    rm -rf "$checkTarget"
+                    ln -fs "$sourceFile" "$targetFile"
+                    print_result $? "$targetFile → $sourceFile"
                 else
-                    print_error "$STDIR/${SUBLIME[$i]} → $sourceFile"
+                    print_error "$targetFile → $sourceFile"
                 fi
             else
-                ln -fs "$sourceFile" "$STDIR/${SUBLIME[$i]}" &> /dev/null
-                print_result $? "$STDIR/${SUBLIME[$i]} → $sourceFile"
+                # echo "new!"
+                ln -fs "$sourceFile" "$targetFile"
+                print_result $? "$targetFile → $sourceFile"
             fi
 
         done

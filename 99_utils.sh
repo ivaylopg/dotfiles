@@ -45,7 +45,8 @@ cmd_exists() {
 }
 
 execute() {
-    $1 &> /dev/null
+    # $1 &> /dev/null
+    $1
     print_result $? "${2:-$1}"
 }
 
