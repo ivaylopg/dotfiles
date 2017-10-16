@@ -131,6 +131,7 @@ brew unlink openssl && brew link openssl --force
 brew_install_or_upgrade grep
 brew_install_or_upgrade screen
 brew_install_or_upgrade wget
+brew_install_or_upgrade vim --with-override-system-vi
 brew_install_or_upgrade ffmpeg --with-libvpx
 brew_install_or_upgrade gnu-sed --with-default-names
 brew_install_or_upgrade hub
