@@ -202,6 +202,9 @@ function greph () { history 0 | grep -i $1 }
 #  Execute grep --color=auto
 alias grep='grep --color=auto'
 
+## Get mac model number
+alias model="curl -s https://support-sp.apple.com/sp/product?cc=`system_profiler SPHardwareDataType | awk '/Serial/ {print $4}' | cut -c 9-` |
+    sed 's|.*<configCode>\(.*\)</configCode>.*|\1|'"
 
 # Boilerplates
 alias lux-unity='hub clone luxloop/LuxloopUnityBoilerplate'
