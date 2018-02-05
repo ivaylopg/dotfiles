@@ -40,13 +40,14 @@
 		"StandardFormat",
 		"sublime-github",
 		"SublimeLinter",
-		"SublimeLinter-contrib-eslint",
+		"SublimeLinter-eslint",
 		"SublimeOnSaveBuild",
 		"Swift",
 		"Unity Shader",
 		"Unity3D",
 		"View In Browser",
 		"WakaTime",
-		"WordCount"
+		"WordCount",
+		"XmlDocs"
 	]
 }
