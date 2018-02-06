@@ -123,6 +123,8 @@ cask_install java
 brew_install_or_upgrade rbenv
 brew_install_or_upgrade grc
 brew_install_or_upgrade mono
+brew_install_or_upgrade git-lfs
+git lfs install
 
 brew_install_or_upgrade openssl
 brew unlink openssl && brew link openssl --force
