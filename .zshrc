@@ -31,6 +31,9 @@ chpwd_functions=( auto-ls $chpwd_functions )
 
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
+# Properly load NVM
+source ~/.nvm/nvm.sh
+
 # Load default dotfiles
 source ~/.bash_profile
 
@@ -40,3 +43,8 @@ command rbenv rehash 2>/dev/null
 
 export PATH=/Users/ivaylopg/Library/Android/sdk/tools:$PATH
 export PATH=/Users/ivaylopg/Library/Android/sdk/platform-tools:$PATH
+
+# Start on Desktop instead of ~
+if [[ $PWD == $HOME ]]; then
+  cd ~/Desktop
+fi
