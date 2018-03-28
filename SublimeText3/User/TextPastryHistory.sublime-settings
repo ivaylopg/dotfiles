@@ -1,0 +1,31 @@
+{
+	"history":
+	[
+		{
+			"data":
+			{
+				"args":
+				{
+					"context": "selection",
+					"operator": "subtract",
+					"pattern": "even"
+				},
+				"command": "text_pastry_modify_selection",
+				"text": "reduce even"
+			},
+			"key": "93f1900332e34557b2fc87e432a54262",
+			"label": "reduce even"
+		}
+	],
+	"last_command":
+	{
+		"args":
+		{
+			"context": "selection",
+			"operator": "subtract",
+			"pattern": "even"
+		},
+		"command": "text_pastry_modify_selection",
+		"text": "reduce even"
+	}
+}
