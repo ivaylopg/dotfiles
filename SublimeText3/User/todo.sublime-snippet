@@ -1,0 +1,11 @@
+<snippet>
+  <content>//   _____      ___
+//  |_   _|__  |   \ ___
+//    | |/ _ \ | |) / _ \
+//    |_|\___/ |___/\___/
+//
+//</content>
+  <tabTrigger>todo</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope>source.python</scope> -->
+</snippet>
