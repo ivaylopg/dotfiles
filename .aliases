@@ -278,6 +278,14 @@ alias upgrade='sudo softwareupdate -iav'
 # Homebrew
 alias brew-up="brew update; brew upgrade --all; brew cleanup; brew prune"
 
+# nvm/node
+function node-up() {
+  OLDVER=$(nvm current)
+  OLDVER=${OLDVER:1}
+  echo $OLDVER
+  nvm install node --reinstall-packages-from=$OLDVER
+}
+
 #just for fun
 alias \?="clear && fortune | cowsay"
 alias dunnet="clear && emacs -batch -l dunnet"
