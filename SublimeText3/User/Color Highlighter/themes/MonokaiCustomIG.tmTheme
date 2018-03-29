@@ -3165,6 +3165,88 @@
         <key>foreground</key>
         <string>#ffffff</string>
     </dict>
+</dict><dict>
+    <key>name</key>
+    <string>CH_color_scheme_fix</string>
+    <key>scope</key>
+    <string>ch_gutter_icon</string>
+    <key>settings</key>
+    <dict>
+        <key>foreground</key>
+        <string>#ffffff</string>
+    </dict>
+</dict><dict>
+<key>name</key>
+<string>CH_color</string>
+<key>scope</key>
+<string>CH_color_0a0a0aff</string>
+<key>settings</key>
+<dict>
+<key>background</key>
+<string>#0a0a0aff</string>
+<key>foreground</key>
+<string>#F5F5F5FF</string>
+<key>caret</key>
+<string>#F5F5F5FF</string>
+</dict>
+</dict><dict>
+<key>scope</key>
+<string>CH_text_color_0a0a0aff</string>
+<key>settings</key>
+<dict>
+<key>background</key>
+<string>#F7B23aFF</string>
+<key>foreground</key>
+<string>#0a0a0aff</string>
+<key>caret</key>
+<string>#F5F5F5FF</string>
+</dict>
+</dict><dict>
+<key>name</key>
+<string>CH_color</string>
+<key>scope</key>
+<string>CH_color_0a0a0acc</string>
+<key>settings</key>
+<dict>
+<key>background</key>
+<string>#0a0a0acc</string>
+<key>foreground</key>
+<string>#F5F5F5FF</string>
+<key>caret</key>
+<string>#F5F5F5FF</string>
+</dict>
+</dict><dict>
+<key>scope</key>
+<string>CH_text_color_0a0a0acc</string>
+<key>settings</key>
+<dict>
+<key>background</key>
+<string>#F7B23aFF</string>
+<key>foreground</key>
+<string>#0a0a0acc</string>
+<key>caret</key>
+<string>#F5F5F5FF</string>
+</dict>
+</dict><dict>
+    <key>name</key>
+    <string>CH_color_scheme_fix</string>
+    <key>scope</key>
+    <string>ch_gutter_icon</string>
+    <key>settings</key>
+    <dict>
+        <key>foreground</key>
+        <string>#ffffff</string>
+    </dict>
+</dict><dict>
+    <key>name</key>
+    <string>CH_color_scheme_fix</string>
+    <key>scope</key>
+    <string>ch_gutter_icon</string>
+    <key>settings</key>
+    <dict>
+        <key>foreground</key>
+        <string>#ffffff</string>
+    </dict>
 </dict></array>
 	<key>uuid</key>
 	<string>b76b4488-20c3-40a7-9499-457a451ee558</string>
