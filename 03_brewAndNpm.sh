@@ -169,6 +169,7 @@ cask_install flux
 cask_install skype
 cask_install dropbox
 cask_install karabiner-elements
+# cask_install intel-power-gadget
 #cask_install dropbox-encore
 cask_install android-studio
 cask_install spectacle

@@ -1,4 +1,4 @@
-ZSHA_BASE=$HOME/.zsh-antigen
+  ZSHA_BASE=$HOME/.zsh-antigen
 ADOTDIR=$ZSHA_BASE
 source $ZSHA_BASE/antigen/antigen.zsh
 
@@ -43,6 +43,9 @@ command rbenv rehash 2>/dev/null
 
 export PATH=/Users/ivaylopg/Library/Android/sdk/tools:$PATH
 export PATH=/Users/ivaylopg/Library/Android/sdk/platform-tools:$PATH
+
+# export PATH="/Users/ivaylopg/anaconda3/bin:$PATH"
+export PATH="/Users/ivaylopg/.miniconda3/bin:$PATH"
 
 # Start on Desktop instead of ~
 if [[ $PWD == $HOME ]]; then
