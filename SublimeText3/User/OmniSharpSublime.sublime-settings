@@ -1,3 +1,4 @@
 {
+	"omnisharp_server_active": "prebuilt-roslyn",
 	"omnisharp_server_config_location": "/Users/ivaylopg/Dotfiles/misc/OmniSharp/config.json"
 }

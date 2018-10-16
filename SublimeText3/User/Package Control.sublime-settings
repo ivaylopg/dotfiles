@@ -1,5 +1,6 @@
 {
 	"bootstrapped": true,
+	"debug": true,
 	"in_process_packages":
 	[
 	],
@@ -29,7 +30,6 @@
 		"JavaScript Snippets",
 		"LoremIpsum",
 		"Markdown Extended",
-		"OmniSharp",
 		"Open URL",
 		"OverrideAudit",
 		"Package Control",
