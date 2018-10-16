@@ -1,4 +1,4 @@
-  ZSHA_BASE=$HOME/.zsh-antigen
+ZSHA_BASE=$HOME/.zsh-antigen
 ADOTDIR=$ZSHA_BASE
 source $ZSHA_BASE/antigen/antigen.zsh
 
@@ -41,11 +41,18 @@ source ~/.bash_profile
 source "$(brew --prefix)/Cellar/rbenv/1.1.1/completions/rbenv.zsh";
 command rbenv rehash 2>/dev/null
 
+# needed this for cocoapods? Maybe can delete later
+export PATH=/Users/ivaylopg/.gem/ruby/2.5.0/bin:$PATH
+
+# mono setup
+export MONO_GAC_PREFIX="/Users/ivaylopg/.homebrew"
+
+# Android stuff
 export PATH=/Users/ivaylopg/Library/Android/sdk/tools:$PATH
 export PATH=/Users/ivaylopg/Library/Android/sdk/platform-tools:$PATH
 
 # export PATH="/Users/ivaylopg/anaconda3/bin:$PATH"
-export PATH="/Users/ivaylopg/.miniconda3/bin:$PATH"
+# export PATH="/Users/ivaylopg/.miniconda3/bin:$PATH"
 
 # Start on Desktop instead of ~
 if [[ $PWD == $HOME ]]; then
