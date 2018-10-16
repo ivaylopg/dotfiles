@@ -9,6 +9,14 @@ if answer_is_yes; then
   vim +PluginInstall +qall
 fi
 
+ask_for_confirmation "Install Oblique Strategies?"
+if answer_is_yes; then
+  print_info "Installing Oblique Strategies"
+  curl https://gist.githubusercontent.com/ivaylopg/6c9301e3fd740d31f8388051e13a069f/raw/440fc69fc3d921a3fe1ef6546ae11d4d07aaaba8/{obliquestrategies.sh} -o '#1'
+  sudo chmod +x obliquestrategies.sh
+  sudo mv obliquestrategies.sh /usr/local/bin/oblique
+fi
+
 ask_for_confirmation "Install git-friendly?"
 if answer_is_yes; then
   print_info "Installing git-friendly"
