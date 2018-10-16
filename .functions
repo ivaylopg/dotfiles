@@ -26,7 +26,7 @@ function startserver() {
   #python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 
   #improved no-cache version
-  python -c $'import SimpleHTTPServer\n\nclass MyHTTPRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):\n\tdef end_headers(self):\n\t\tself.send_my_headers()\n\t\tSimpleHTTPServer.SimpleHTTPRequestHandler.end_headers(self)\n\n\tdef send_my_headers(self):\n\t\tself.send_header("Cache-Control", "no-cache, no-store, must-revalidate")\n\t\tself.send_header("Pragma", "no-cache")\n\t\tself.send_header("Expires", "0")\n\n\nif __name__ == "__main__":\n\tmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\n\tmap[""] = "text/plain";\n\tfor key, value in map.items():\n\t\tmap[key] = value + ";charset=UTF-8";\n\tSimpleHTTPServer.test(HandlerClass=MyHTTPRequestHandler)' "$port"
+  python2.7 -c $'import SimpleHTTPServer\n\nclass MyHTTPRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):\n\tdef end_headers(self):\n\t\tself.send_my_headers()\n\t\tSimpleHTTPServer.SimpleHTTPRequestHandler.end_headers(self)\n\n\tdef send_my_headers(self):\n\t\tself.send_header("Cache-Control", "no-cache, no-store, must-revalidate")\n\t\tself.send_header("Pragma", "no-cache")\n\t\tself.send_header("Expires", "0")\n\n\nif __name__ == "__main__":\n\tmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\n\tmap[""] = "text/plain";\n\tfor key, value in map.items():\n\t\tmap[key] = value + ";charset=UTF-8";\n\tSimpleHTTPServer.test(HandlerClass=MyHTTPRequestHandler)' "$port"
 }
 
 
