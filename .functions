@@ -15,6 +15,10 @@ cdf() {  # short for cdfinder
   cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
 }
 
+function audio-dl() {
+  youtube-dl --extract-audio --audio-format mp3 https://www.youtube.com/watch?v="$1"
+}
+
 
 # Start an HTTP server from a directory, optionally specifying the port
 function startserver() {

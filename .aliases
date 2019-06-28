@@ -202,9 +202,10 @@ alias cpwd='pwd|xargs echo -n|pbcopy'
 # Show current airport status:
 alias apinfo='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I'
 
-alias audio-dl='youtube-dl -f "bestaudio[ext=m4a]/bestaudio" '
-alias ydl=youtube-dl
+# alias audio-dl='youtube-dl -f "bestaudio[ext=m4a]/bestaudio" '
+alias ydl='youtube-dl'
 alias adl=audio-dl
+
 alias now='ruby -e "puts Time.now.utc.to_i"'
 alias nowh='ruby -e "puts Time.now"'
 

@@ -9,7 +9,8 @@
 		"immersive",
 		"online",
 		"Mandelstein",
-		"internet"
+		"internet",
+		"collider"
 	],
 	"auto_complete_commit_on_tab": true,
 	"auto_complete_triggers":
@@ -33,7 +34,7 @@
 	"drag_text": false,
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "CamingoCode",
-	"font_size": 13,
+	"font_size": 12,
 	"ignored_packages":
 	[
 		"BracketHighlighter",
