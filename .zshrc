@@ -58,7 +58,7 @@ export PATH=/Users/ivaylopg/Library/Android/sdk/platform-tools:$PATH
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # Perforce Setup
-export P4CONFIG=/Users/ivaylopg/Documents/00_Projects/2019/AugmentedArchitecture/DeepListenerProject/p4config.txt
+export P4CONFIG=/Users/ivaylopg/Documents/00_Projects/2019/TheDeepListener/TheDeepListenerProject/p4config.txt
 export P4HOST=pixelspixels/deep-listener.main
 
 # Start on Desktop instead of ~
