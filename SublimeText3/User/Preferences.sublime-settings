@@ -36,7 +36,10 @@
 	"font_size": 13,
 	"ignored_packages":
 	[
+		"BracketHighlighter",
+		"GitGutter",
 		"Markdown",
+		"ShaderLanguages",
 		"Vintage"
 	],
 	"ignored_words":

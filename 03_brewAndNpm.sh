@@ -100,9 +100,10 @@ trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew ..."
 
-    mkdir $HOME/.homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
-    export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
-    append_to_path 'export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH' 1
+    # mkdir $HOME/.homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
+    # export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
+    # append_to_path 'export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH' 1
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 else
   fancy_echo "Homebrew already installed. Skipping ..."
@@ -122,7 +123,7 @@ cask_install java
 # brew_install_or_upgrade node #and npm
 brew_install_or_upgrade rbenv
 brew_install_or_upgrade grc
-brew_install_or_upgrade mono
+# brew_install_or_upgrade mono
 brew_install_or_upgrade git-lfs
 git lfs install
 brew_install_or_upgrade python3
@@ -135,9 +136,9 @@ brew unlink openssl && brew link openssl --force
 brew_install_or_upgrade grep
 brew_install_or_upgrade screen
 brew_install_or_upgrade wget
-brew_install_or_upgrade vim --with-override-system-vi
-brew_install_or_upgrade ffmpeg --with-libvpx
-brew_install_or_upgrade gnu-sed --with-default-names
+brew_install_or_upgrade vim #--with-override-system-vi
+brew_install_or_upgrade ffmpeg #--with-libvpx
+brew_install_or_upgrade gnu-sed #--with-default-names
 brew_install_or_upgrade hub
 brew_install_or_upgrade gibo
 brew_install_or_upgrade fortune
@@ -146,7 +147,7 @@ brew_install_or_upgrade pidof
 brew_install_or_upgrade gist
 brew_install_or_upgrade pngquant
 brew_install_or_upgrade the_silver_searcher
-brew_install_or_upgrade fontforge
+# brew_install_or_upgrade fontforge
 brew_install_or_upgrade tmux
 brew_install_or_upgrade cloc
 brew_install_or_upgrade imagemagick
@@ -162,24 +163,24 @@ brew_install_or_upgrade bfg
 brew cleanup
 brew_tap caskroom/versions
 
-cask_install sublime-text
-cask_install google-chrome
-cask_install onepassword
-cask_install flux
-cask_install skype
-cask_install dropbox
-cask_install karabiner-elements
+# cask_install sublime-text
+# cask_install google-chrome
+# cask_install onepassword
+# cask_install flux
+# cask_install skype
+# cask_install dropbox
+# cask_install karabiner-elements
 # cask_install intel-power-gadget
 #cask_install dropbox-encore
-cask_install android-studio
-cask_install spectacle
+# cask_install android-studio
+# cask_install spectacle
 cask_install imagealpha
 cask_install imageoptim
 cask_install miro-video-converter
 cask_install vlc
 cask_install alfred
-cask_install rowanj-gitx
-cask_install appcleaner
+# cask_install rowanj-gitx
+# cask_install appcleaner
 cask_install screen-blacker
 cask_install basictex
 #cask_install gpgtools #Encrypted email
@@ -187,8 +188,8 @@ cask_install basictex
 ###cask_install pandoc
 
 
-cask_install mojibar
-osascript -e 'tell application "System Events" to make login item at end with properties {path:"$HOME/Applications/Mojibar.app", hidden:false}'
+# cask_install mojibar
+# osascript -e 'tell application "System Events" to make login item at end with properties {path:"$HOME/Applications/Mojibar.app", hidden:false}'
 
 # cask_install fastlane
 # cask_install android-sdk
@@ -224,5 +225,6 @@ npm_install_g "eslint eslint-config-luxloop"
 npm_install_g json2csv
 #npm_install_g yo
 #npm_install_g coffee-script
-npm_install_g pm2
+# npm_install_g pm2
 npm_install_g gitmoji-cli
+# 

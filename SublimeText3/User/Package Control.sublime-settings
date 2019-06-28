@@ -3,6 +3,9 @@
 	"debug": true,
 	"in_process_packages":
 	[
+		"BracketHighlighter",
+		"GitGutter",
+		"ShaderLanguages"
 	],
 	"installed_packages":
 	[

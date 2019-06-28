@@ -38,8 +38,8 @@ source ~/.nvm/nvm.sh
 source ~/.bash_profile
 
 # do some rbenv stuff
-source "$(brew --prefix)/Cellar/rbenv/1.1.1/completions/rbenv.zsh";
-command rbenv rehash 2>/dev/null
+# source "$(brew --prefix)/Cellar/rbenv/1.1.1/completions/rbenv.zsh";
+# command rbenv rehash 2>/dev/null
 
 # needed this for cocoapods? Maybe can delete later
 export PATH=/Users/ivaylopg/.gem/ruby/2.5.0/bin:$PATH

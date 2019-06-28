@@ -17,12 +17,12 @@ if answer_is_yes; then
   sudo mv obliquestrategies.sh /usr/local/bin/oblique
 fi
 
-ask_for_confirmation "Install git-friendly?"
-if answer_is_yes; then
-  print_info "Installing git-friendly"
-  #url -s https://raw.githubusercontent.com/jamiew/git-friendly/master/install.sh | bash
-  sudo bash < <( curl https://raw.githubusercontent.com/jamiew/git-friendly/master/install.sh)
-fi
+# ask_for_confirmation "Install git-friendly?"
+# if answer_is_yes; then
+#   print_info "Installing git-friendly"
+#   #url -s https://raw.githubusercontent.com/jamiew/git-friendly/master/install.sh | bash
+#   sudo bash < <( curl https://raw.githubusercontent.com/jamiew/git-friendly/master/install.sh)
+# fi
 
 ask_for_confirmation "Configure Sublime Text CLI?"
 if answer_is_yes; then
