@@ -54,6 +54,10 @@ export PATH=/Users/ivaylopg/Library/Android/sdk/platform-tools:$PATH
 # export PATH="/Users/ivaylopg/anaconda3/bin:$PATH"
 # export PATH="/Users/ivaylopg/.miniconda3/bin:$PATH"
 
+# Perforce Setup
+export P4CONFIG=/Users/ivaylopg/Documents/00_Projects/2019/AugmentedArchitecture/DeepListenerProject/p4config.txt
+export P4HOST=pixelspixels/deep-listener.main
+
 # Start on Desktop instead of ~
 if [[ $PWD == $HOME ]]; then
   cd ~/Desktop
