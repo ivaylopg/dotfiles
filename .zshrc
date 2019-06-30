@@ -61,6 +61,8 @@ export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export P4CONFIG=/Users/ivaylopg/Documents/00_Projects/2019/TheDeepListener/TheDeepListenerProject/p4config.txt
 export P4HOST=pixelspixels/deep-listener.main
 
+
+
 # Start on Desktop instead of ~
 if [[ $PWD == $HOME ]]; then
   cd ~/Desktop

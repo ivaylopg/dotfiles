@@ -163,6 +163,8 @@ brew_install_or_upgrade bfg
 brew cleanup
 brew_tap caskroom/versions
 
+cask_install android-platform-tools
+
 # cask_install sublime-text
 # cask_install google-chrome
 # cask_install onepassword
@@ -227,4 +229,4 @@ npm_install_g json2csv
 #npm_install_g coffee-script
 # npm_install_g pm2
 npm_install_g gitmoji-cli
-# 
+#
