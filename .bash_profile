@@ -90,3 +90,60 @@ shopt -s nocaseglob;
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
+
+
+
+# export PATH=$PATH:"/Users/ivaylopg/NVPACK/apache-ant-1.8.2/bin"
+
+
+
+# export PATH=$PATH:"/Users/ivaylopg/NVPACK/android-sdk-macosx/platform-tools"
+
+# export PATH=$PATH:"/Users/ivaylopg/NVPACK/android-sdk-macosx/build-tools"
+
+# export PATH=$PATH:"/Users/ivaylopg/NVPACK/android-sdk-macosx/extras/android/support"
+
+
+# export PATH=$PATH:"/Users/ivaylopg/NVPACK/android-ndk-r15c"
+# export NDK_ROOT="/Users/ivaylopg/NVPACK/android-ndk-r15c"
+# export NDKROOT="/Users/ivaylopg/NVPACK/android-ndk-r15c"
+# export NVPACK_NDK_VERSION="android-ndk-r15c"
+# export PATH=$PATH:"/Users/ivaylopg/NVPACK/gradle-4.1-rc-2/bin"
+# export PATH=$PATH:"/Users/ivaylopg/NVPACK/android-sdk-macosx/tools"
+
+
+# export PATH=$PATH:"/Users/ivaylopg/NVPACK/android-ndk-r14b"
+
+# export PATH=$PATH:"/Users/ivaylopg/NVPACK/apache-ant-1.8.2/bin"
+
+# export PATH=$PATH:"/Users/ivaylopg/NVPACK/gradle-4.1/bin"
+
+# export PATH=$PATH:"/Users/ivaylopg/NVPACK/android-sdk-macosx/tools"
+
+# export PATH=$PATH:"/Users/ivaylopg/NVPACK/android-sdk-macosx/platform-tools"
+
+# export PATH=$PATH:"/Users/ivaylopg/NVPACK/android-sdk-macosx/build-tools"
+
+# export PATH=$PATH:"/Users/ivaylopg/NVPACK/android-sdk-macosx/extras/android/support"
+export NVPACK_ROOT="/Users/ivaylopg/NVPACK"
+
+export PATH=$PATH:"/Users/ivaylopg/NVPACK/android-ndk-r14b"
+export NDK_ROOT="/Users/ivaylopg/NVPACK/android-ndk-r14b"
+export NDKROOT="/Users/ivaylopg/NVPACK/android-ndk-r14b"
+export NVPACK_NDK_VERSION="android-ndk-r14b"
+export NVPACK_NDK_TOOL_VERSION="4.9"
+
+export PATH=$PATH:"/Users/ivaylopg/NVPACK/apache-ant-1.8.2/bin"
+export ANT_HOME="/Users/ivaylopg/NVPACK/apache-ant-1.8.2"
+
+export PATH=$PATH:"/Users/ivaylopg/NVPACK/gradle-4.1/bin"
+export GRADLE_HOME="/Users/ivaylopg/NVPACK/gradle-4.1"
+
+export PATH=$PATH:"/Users/ivaylopg/NVPACK/android-sdk-macosx/tools"
+export ANDROID_HOME="/Users/ivaylopg/NVPACK/android-sdk-macosx"
+
+export PATH=$PATH:"/Users/ivaylopg/NVPACK/android-sdk-macosx/platform-tools"
+
+export PATH=$PATH:"/Users/ivaylopg/NVPACK/android-sdk-macosx/build-tools"
+
+export PATH=$PATH:"/Users/ivaylopg/NVPACK/android-sdk-macosx/extras/android/support"
