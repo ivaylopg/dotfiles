@@ -306,3 +306,7 @@ alias adventure="(cd ~/.adventure/ && clear && ./advent)"
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
+
+# Toggle Chrome Dark Mode
+alias chromelight="defaults write com.google.Chrome NSRequiresAquaSystemAppearance -bool YES"
+alias chromedark="defaults write com.google.Chrome NSRequiresAquaSystemAppearance -bool NO"
