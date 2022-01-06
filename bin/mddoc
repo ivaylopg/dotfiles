@@ -1,6 +1,0 @@
-#!/bin/bash
-
-filename=$(basename "$1")
-filename="${filename%.*}"
-directory=$(dirname "$1")
-pandoc "$1" -f markdown_github -t docx -s -o "$directory/$filename".docx

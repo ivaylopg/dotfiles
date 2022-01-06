@@ -116,28 +116,6 @@ alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 
-# programs
-#alias st='open -a "Sublime Text"'
-alias mou='open -a "Mou"'
-
-# No arguments: open sublime text project in current directory, if it exists
-# With arguments: open arguments in sublime text
-st() {
-  if [[ $# > 0 ]]; then
-    subl $@
-  else
-    PROJ=""
-    for f in *.sublime-project(N); do
-      [ -e "$f" ] && PROJ=$f
-      break
-    done
-    if [ "$PROJ" != "" ]; then
-      subl --project "$PROJ"
-    else
-      subl -n
-    fi
-  fi
-}
 
 #tmux
 alias tmuxnew="tmux new -s "
@@ -187,24 +165,10 @@ alias db="open ~/Dropbox"
 alias dot="cd ~/Dotfiles"
 alias desktop="cd ~/Desktop"
 alias please="sudo"
-#alias reinstallAlcatraz="curl -fsSL https://raw.githubusercontent.com/supermarin/Alcatraz/deploy/Scripts/install.sh | sh"
 
 ########################################################
 
 alias fuck='sudo $(history -p \!\!)'
-
-# Convert a picture to a favicon
-alias make-favicon="convert -colors 256 -resize 16x16 "
-
-# Copy the working dir to the clipboard
-alias cpwd='pwd|xargs echo -n|pbcopy'
-
-# Show current airport status:
-alias apinfo='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I'
-
-# alias audio-dl='youtube-dl -f "bestaudio[ext=m4a]/bestaudio" '
-alias ydl='youtube-dl'
-alias adl=audio-dl
 
 alias now='ruby -e "puts Time.now.utc.to_i"'
 alias nowh='ruby -e "puts Time.now"'
@@ -213,22 +177,12 @@ alias uuid='uuidgen | tr "[:upper:]" "[:lower:]"'
 alias uuid1='python -c "import uuid; print uuid.uuid1()"'
 alias uuid4='python -c "import uuid; print uuid.uuid4()"'
 
-# `wifi on` to turn wifi on, and `wifi off` to turn it off
-alias wifi="networksetup -setairportpower $(networksetup -listallhardwareports | grep -A 2 'Hardware Port: Wi-Fi' | grep 'Device:' | awk '{print $2}')"
-
 # Grep in history
 function greph () { history 0 | grep -i $1 }
 
 # use colors when GNU grep with color-support
 #  Execute grep --color=auto
 alias grep='grep --color=auto'
-
-## Get mac model number
-alias model="curl -s https://support-sp.apple.com/sp/product?cc=`system_profiler SPHardwareDataType | awk '/Serial/ {print $4}' | cut -c 9-` |
-    sed 's|.*<configCode>\(.*\)</configCode>.*|\1|'"
-
-# Boilerplates
-alias lux-unity='hub clone luxloop/LuxloopUnityBoilerplate'
 
 ########################################################
 
@@ -253,17 +207,6 @@ alias iphone='open "/Applications/Xcode.app/Contents/Developer/Applications/Simu
 #alias flushdns='sudo dscachutil -flushcache && sudo killall -HUP mDNSResponder'
 alias flushdns='sudo killall -HUP mDNSResponder'
 
-alias s3="aws --profile s3admin s3"
-
-alias batt="battery"
-
-alias cask='brew cask'
-
-alias otf2ttf='fontforge -script ~/Dotfiles/misc/fontconvert.sh'
-
-alias be='bundle exec'
-alias j='bundle exec jekyll serve'
-
 # Enable aliases to be sudo'ed
 alias sudo="sudo"
 
@@ -274,9 +217,6 @@ alias fs="stat -f \"%z bytes\""
 # alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 #     Replaced this with a function in .functions
 
-#web development stuff
-alias post="curl -X POST -d"
-
 # Empty the Trash on all mounted volumes and the main HDD
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 
@@ -286,10 +226,6 @@ alias rm='grm -I --preserve-root'
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-
-#system update
-alias update='softwareupdate -l'
-alias upgrade='sudo softwareupdate -iav'
 
 # Homebrew
 alias brew-up="brew update; brew upgrade --all; brew cleanup; brew prune"

@@ -1,5 +1,0 @@
-{
-  "whitelist_syntaxes": ["Plain Text", "Markdown", "Markdown Extended"],
-  "char_ignore_whitespace": false,
-  "enable_count_pages": false
-}
