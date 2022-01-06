@@ -46,7 +46,7 @@ cask_install() {
     fancy_echo "Cask %s is already installed. Skipping ..." "$1"
   else
     fancy_echo "Installing Cask: %s ..." "$1"
-    brew cask install $@
+    brew install $@
   fi
 }
 
@@ -99,12 +99,8 @@ trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew ..."
-
-    # mkdir $HOME/.homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
-    # export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
-    # append_to_path 'export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH' 1
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 else
   fancy_echo "Homebrew already installed. Skipping ..."
 fi
@@ -119,15 +115,15 @@ brew_install_or_upgrade coreutils
 #add_instructions "Add to your /etc/shells - $HOME/.homebrew/bin/zsh"
 
 
-cask_install java
+# cask_install java
 # brew_install_or_upgrade node #and npm
-brew_install_or_upgrade rbenv
+# brew_install_or_upgrade rbenv
 brew_install_or_upgrade grc
 # brew_install_or_upgrade mono
 brew_install_or_upgrade git-lfs
 git lfs install
-brew_install_or_upgrade python3
-brew postinstall python3
+# brew_install_or_upgrade python3
+# brew postinstall python3
 
 brew_install_or_upgrade openssl
 brew unlink openssl && brew link openssl --force
@@ -146,24 +142,24 @@ brew_install_or_upgrade cowsay
 brew_install_or_upgrade pidof
 brew_install_or_upgrade gist
 brew_install_or_upgrade pngquant
-brew_install_or_upgrade the_silver_searcher
+# brew_install_or_upgrade the_silver_searcher
 # brew_install_or_upgrade fontforge
 brew_install_or_upgrade tmux
 brew_install_or_upgrade cloc
 brew_install_or_upgrade imagemagick
 # brew_install_or_upgrade pandoc ################################
 brew_install_or_upgrade watch
-brew_install_or_upgrade tree
-brew_install_or_upgrade httpie
+# brew_install_or_upgrade tree
+# brew_install_or_upgrade httpie
 brew_install_or_upgrade wifi-password
-brew_install_or_upgrade jq
+# brew_install_or_upgrade jq
 brew_install_or_upgrade bfg
 
 
 brew cleanup
 brew_tap caskroom/versions
 
-cask_install android-platform-tools
+# cask_install android-platform-tools
 
 # cask_install sublime-text
 # cask_install google-chrome
@@ -176,15 +172,16 @@ cask_install android-platform-tools
 #cask_install dropbox-encore
 # cask_install android-studio
 # cask_install spectacle
-cask_install imagealpha
-cask_install imageoptim
-cask_install miro-video-converter
+
+# cask_install imagealpha
+# cask_install imageoptim
+# cask_install miro-video-converter
 cask_install vlc
-cask_install alfred
+# cask_install alfred
 # cask_install rowanj-gitx
 # cask_install appcleaner
-cask_install screen-blacker
-cask_install basictex
+# cask_install screen-blacker
+# cask_install basictex
 #cask_install gpgtools #Encrypted email
 #cask_install karabiner ### outdated :(
 ###cask_install pandoc
@@ -198,7 +195,6 @@ cask_install basictex
 
 brew tap caskroom/fonts
 cask_install font-camingocode
-
 
 # games!
 # brew_tap wjwwood/zork
@@ -216,17 +212,17 @@ brew cask cleanup
 #npm globals
 source $NVM_DIR/nvm.sh
 npm_install_g git-open
-npm_install_g gulp-cli
+# npm_install_g gulp-cli
 npm_install_g nodemon
-npm_install_g standard-format
+# npm_install_g standard-format
 npm_install_g github-email
-npm_install_g "eslint eslint-config-luxloop"
+# npm_install_g "eslint eslint-config-luxloop"
 #npm_install_g css-select
 #npm_install_g css-what
 #npm_install_g electron
-npm_install_g json2csv
+# npm_install_g json2csv
 #npm_install_g yo
 #npm_install_g coffee-script
 # npm_install_g pm2
-npm_install_g gitmoji-cli
+# npm_install_g gitmoji-cli
 #
