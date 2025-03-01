@@ -10,10 +10,6 @@ fancy_echo() {
   printf "\n$fmt\n" "$@"
 }
 
-add_instructions() {
-  touch $HOME/Desktop/manualSetupInstructions.txt
-  echo $1 >> $HOME/Desktop/manualSetupInstructions.txt
-}
 
 brew_install_or_upgrade() {
   if brew_is_installed "$1"; then
@@ -30,13 +26,10 @@ brew_install_or_upgrade() {
 }
 
 brew_is_installed() {
-  local name="$(brew_expand_alias "$1")"
-
-  brew list -1 | grep -Fqx "$name"
+  brew list -1 | grep -Fqx "$1"
 }
 
 brew_is_upgradable() {
-  local name="$(brew_expand_alias "$1")"
 
   ! brew outdated --quiet "$name" >/dev/null
 }
@@ -51,8 +44,7 @@ cask_install() {
 }
 
 cask_is_installed() {
-  local name="$(cask_expand_alias "$1")"
-  brew cask list -1 | grep -Fqx "$name"
+  brew list --cask -1 | grep -Fqx "$1"
 }
 
 brew_tap() {
@@ -64,34 +56,7 @@ brew_expand_alias() {
 }
 
 cask_expand_alias() {
-  brew cask info "$1" 2>/dev/null | head -1 | awk '{gsub(/:/, ""); print $1}'
-}
-
-append_to_path() {
-  local text="$1" path
-  local skip_new_line="${2:-0}"
-
-  path="$HOME/.path"
-
-  if ! grep -Fqs "$text" "$path"; then
-    if [ "$skip_new_line" -eq 1 ]; then
-      printf "%s\n" "$text" >> "$path"
-    else
-      printf "\n%s\n" "$text" >> "$path"
-    fi
-  fi
-}
-
-npm_install_g() {
-  if ! command -v node >/dev/null; then
-    fancy_echo "Installing Node ..."
-    nvm install node
-    fancy_echo "npm is installing: %s" "$1"
-    npm install -g $@
-  else
-    fancy_echo "npm is installing: %s" "$1"
-    npm install -g $@
-  fi
+  brew info --cask "$1" 2>/dev/null | head -1 | awk '{gsub(/:/, ""); print $1}'
 }
 
 trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
@@ -143,8 +108,9 @@ brew_tap caskroom/versions
 # cask_install android-platform-tools
 
 cask_install sublime-text
+cask_install visual-studio-code
 cask_install google-chrome
-cask_install onepassword
+cask_install 1password
 cask_install vlc
 cask_install alfred
 # cask_install appcleaner
@@ -162,9 +128,8 @@ cask_install font-camingocode
 # cask_install dungeon-crawl-stone-soup-tiles
 
 brew cleanup
-brew cask cleanup
 
-#npm globals
-source $NVM_DIR/nvm.sh
-npm_install_g git-open
-npm_install_g nodemon
+# #npm globals
+# source $NVM_DIR/nvm.sh
+# npm_install_g git-open
+# npm_install_g nodemon

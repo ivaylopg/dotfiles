@@ -66,6 +66,7 @@ lsFindType() {
 # No arguments: `git status`
 # With arguments: acts like `git`
 # from: https://github.com/thoughtbot/dotfiles/blob/master/zsh/functions/g
+unalias g
 g() {
   if [[ $# > 0 ]]; then
     hub $@
