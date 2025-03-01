@@ -121,6 +121,7 @@ brew_install_or_upgrade wget
 brew_install_or_upgrade vim #--with-override-system-vi
 brew_install_or_upgrade ffmpeg #--with-libvpx
 brew_install_or_upgrade gnu-sed #--with-default-names
+brew_install_or_upgrade yt-dlp
 brew_install_or_upgrade hub
 brew_install_or_upgrade gibo
 brew_install_or_upgrade fortune

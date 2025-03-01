@@ -1,124 +1,124 @@
 [user]
-	name = Ivaylo Getov
-	email = contact@ivaylogetov.com
-	signingkey = 1730506574293ADD
+    name = Ivaylo Getov
+    email = ivaylo@pixels-pixels.com
+    signingkey = 1730506574293ADD
 
 [core]
-	excludesfile = /Users/ivaylopg/.gitignore
-	attributesfile = ~/.gitattributes
-	quotepath = false
-	# editor = subl -n -w
+    excludesfile = /Users/ivaylopg/.gitignore
+    attributesfile = ~/.gitattributes
+    quotepath = false
+    # editor = subl -n -w
   pager = diff-highlight | diff-so-fancy | less -r
 
 [filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+    required = true
+    clean = git media clean %f
+    smudge = git media smudge %f
 
 # push easily. http://stackoverflow.com/a/23918418/89484
 [push]
-	# default = current
-	default = matching
+    # default = current
+    default = matching
 
 [alias]
-	undo = reset HEAD~1
-	last = log -1 HEAD
-	s = status
-	cma = commit -a -m
-	cm = commit -m
-	ca = commit -a
-	difflast = diff HEAD^..HEAD
-	cpbranch = "!f() { git archive $1 | tar -xC $2; }; f"
-	p = push
-	pl = pull
-	df = diff --color --color-words --abbrev --ignore-space-at-eol -b -w --ignore-blank-lines
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    undo = reset HEAD~1
+    last = log -1 HEAD
+    s = status
+    cma = commit -a -m
+    cm = commit -m
+    ca = commit -a
+    difflast = diff HEAD^..HEAD
+    cpbranch = "!f() { git archive $1 | tar -xC $2; }; f"
+    p = push
+    pl = pull
+    df = diff --color --color-words --abbrev --ignore-space-at-eol -b -w --ignore-blank-lines
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
     lg-merge = !git log $(git merge-base --octopus $(git log -1 --merges --pretty=format:%P $1))..$1 --graph --pretty=oneline --abbrev-commit --boundary
     # incorporate this somehow? git log --graph --oneline --all
-	co = checkout
-	master = !git checkout master && git pull
-	gr=grep
-	sync = ! git stash && git pull --rebase && git push && git stash pop
-	amend = ! git commit --amend
-	discard = ! git reset HEAD --hard && git clean -fd
-	unstash = stash pop
-  date = show -s --format=%ci
-	big = ! git-big-object-report
-  ao = "!f() { git remote add $1 $2 && git push -u $1 --all && git push -u $1 --tags; }; f"
-  plfs = !git -c filter.lfs.smudge= -c filter.lfs.required=false pull && git lfs pull
-  stats = shortlog -sn
-  qr = rebase -i HEAD~2 #'quick rebase'
+    co = checkout
+    master = !git checkout master && git pull
+    gr=grep
+    sync = ! git stash && git pull --rebase && git push && git stash pop
+    amend = ! git commit --amend
+    discard = ! git reset HEAD --hard && git clean -fd
+    unstash = stash pop
+    date = show -s --format=%ci
+    big = ! git-big-object-report
+    ao = "!f() { git remote add $1 $2 && git push -u $1 --all && git push -u $1 --tags; }; f"
+    plfs = !git -c filter.lfs.smudge= -c filter.lfs.required=false pull && git lfs pull
+    stats = shortlog -sn
+    qr = rebase -i HEAD~2 #'quick rebase'
 
-  # Make stashing easier
-  st = stash
-  stl = stash list
-  stp = stash pop
+    # Make stashing easier
+    st = stash
+    stl = stash list
+    stp = stash pop
 
-  # Make rebasing easier
-  rb = rebase
-  rba = rebase --abort
-  rbc = rebase --continue
-  rbs = rebase --skip
+    # Make rebasing easier
+    rb = rebase
+    rba = rebase --abort
+    rbc = rebase --continue
+    rbs = rebase --skip
 
-  # Easier merging
-  m = merge -s recursive -X patience
-  mm = merge --no-ff
-  merge-branch = !git checkout master && git merge @{-1}
-  conflicted = grep --name-only --full-name '<<<<<<< HEAD'
+    # Easier merging
+    m = merge -s recursive -X patience
+    mm = merge --no-ff
+    merge-branch = !git checkout master && git merge @{-1}
+    conflicted = grep --name-only --full-name '<<<<<<< HEAD'
 
-	# Show the diff between the latest commit and the current state
-	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+    # Show the diff between the latest commit and the current state
+    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
-	# Merge GitHub pull request on top of the `master` branch
-	mpr = "!f() { \
-		if [ $(printf \"%s\" \"$1\" | grep '^[0-9]\\+$' > /dev/null; printf $?) -eq 0 ]; then \
-			git fetch origin refs/pull/$1/head:pr/$1 && \
-			git rebase master pr/$1 && \
-			git checkout master && \
-			git merge pr/$1 && \
-			git branch -D pr/$1 && \
-			git commit --amend -m \"$(git log -1 --pretty=%B)\n\nCloses #$1.\"; \
-		fi \
-	}; f"
+    # Merge GitHub pull request on top of the `master` branch
+    mpr = "!f() { \
+        if [ $(printf \"%s\" \"$1\" | grep '^[0-9]\\+$' > /dev/null; printf $?) -eq 0 ]; then \
+            git fetch origin refs/pull/$1/head:pr/$1 && \
+            git rebase master pr/$1 && \
+            git checkout master && \
+            git merge pr/$1 && \
+            git branch -D pr/$1 && \
+            git commit --amend -m \"$(git log -1 --pretty=%B)\n\nCloses #$1.\"; \
+        fi \
+    }; f"
 
-	derefandcollectgarbage = ! git for-each-ref --format='delete %(refname)' refs/original | git update-ref --stdin && git reflog expire --expire=now --all && git gc --prune=now
+    derefandcollectgarbage = ! git for-each-ref --format='delete %(refname)' refs/original | git update-ref --stdin && git reflog expire --expire=now --all && git gc --prune=now
 
 [color]
-	ui = always
+    ui = always
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
 [color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
+    added = yellow
+    changed = green
+    untracked = cyan
 [color "diff-highlight"]
-  oldNormal = "red bold"
-  oldHighlight = "red bold 52"
-  newNormal = "green bold"
-  newHighlight = "green bold 22"
+    oldNormal = "red bold"
+    oldHighlight = "red bold 52"
+    newNormal = "green bold"
+    newHighlight = "green bold 22"
 [merge]
     tool = opendiff
 
 
 # rewrites
 [url "git@github.com:"]
-	insteadOf = "gh:"
-	insteadOf = "git://github.com"
-	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
+    insteadOf = "gh:"
+    insteadOf = "git://github.com"
+    pushInsteadOf = "github:"
+    pushInsteadOf = "git://github.com/"
     pushInsteadOf = "https://github.com/"
 [url "git@gist.github.com:"]
-	insteadOf = "gst:"
-	pushInsteadOf = "gist:"
-	pushInsteadOf = "git://gist.github.com/"
-	pushInsteadOf = "https://gist.github.com/"
+    insteadOf = "gst:"
+    pushInsteadOf = "gist:"
+    pushInsteadOf = "git://gist.github.com/"
+    pushInsteadOf = "https://gist.github.com/"
 
 
 # Any GitHub repo with my username should be checked out r/w by default
@@ -127,25 +127,22 @@
 [url "git@github.com:ivaylopg/"]
   insteadOf = "git://github.com/ivaylopg/"
 
-[url "git@github.com:luxloop/"]
-  insteadOf = "git://github.com/luxloop/"
-
 [help]
-	autocorrect = 1
+    autocorrect = 1
 
 # For username / github token / etc
 #[include]
   #path = ~/.gitconfig.local
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path =
 [mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+    cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
 [init]
-	defaultBranch = main
+    defaultBranch = main

@@ -96,19 +96,6 @@ alias such='git'
 alias very='git'
 alias wow='git status'
 
-# $ wow
-# $ such commit
-# $ very push
-# #########################
-
-# alias gs='git status'
-# alias ga="git add"
-# alias gp='git push'
-# alias gpl="git pull"
-# alias go='git-open'
-# alias groot='git rev-parse 2>/dev/null && cd "./$(git rev-parse --show-cdup)"'
-# alias gr='git grep'
-
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
@@ -213,10 +200,6 @@ alias sudo="sudo"
 # File size
 alias fs="stat -f \"%z bytes\""
 
-# ROT13-encode text. Works for decoding, too! ;)
-# alias rot13='tr a-zA-Z n-za-mN-ZA-M'
-#     Replaced this with a function in .functions
-
 # Empty the Trash on all mounted volumes and the main HDD
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 
@@ -242,7 +225,3 @@ alias adventure="(cd ~/.adventure/ && clear && ./advent)"
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
-
-# Toggle Chrome Dark Mode
-alias chromelight="defaults write com.google.Chrome NSRequiresAquaSystemAppearance -bool YES"
-alias chromedark="defaults write com.google.Chrome NSRequiresAquaSystemAppearance -bool NO"
