@@ -244,7 +244,7 @@ caniuse() {
 }
 
 function gitbo() {
-  gibo $@ >> .gitignore
+  gibo dump $@ >> .gitignore
 }
 
 function timelapse() {
@@ -265,3 +265,21 @@ sizeof() {
   done
 }
 
+# No arguments: open sublime text project in current directory, if it exists
+# With arguments: open arguments in sublime text
+st() {
+  if [[ $# > 0 ]]; then
+    subl $@
+  else
+    PROJ=""
+    for f in *.sublime-project(N); do
+      [ -e "$f" ] && PROJ=$f
+      break
+    done
+    if [ "$PROJ" != "" ]; then
+      subl --project "$PROJ"
+    else
+      subl -n
+    fi
+  fi
+}

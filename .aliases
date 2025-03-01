@@ -57,7 +57,7 @@ lsFindType() {
 }
 
 # Python version
-alias python="python3"
+# alias python="python3"
 
 
 # Git (See .gitconfig for more)

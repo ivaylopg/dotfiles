@@ -50,3 +50,6 @@ source ~/.privaterc
 if [[ $PWD == $HOME ]]; then
   cd ~/Desktop
 fi
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export LANG=en_US.UTF-8
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"

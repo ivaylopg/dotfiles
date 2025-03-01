@@ -73,3 +73,5 @@ sftp-config.json
 ##############################
 
 .privaterc
+
+.config/karabiner/*
