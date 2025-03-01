@@ -1,5 +1,5 @@
 # Load our dotfiles like ~/.bash_prompt, etc…
-for file in ~/.{bash_prompt,exports,aliases,functions,path}; do
+for file in ~/.{bash_prompt,aliases,functions,path}; do
     [ -r "$file" ] && source "$file"
 done
 unset file
@@ -13,6 +13,16 @@ if [ "$TERM" != dumb ] && [ -n "$GRC" ]
         for app in {diff,make,gcc,g++,ping,traceroute}; do
             alias "$app"='colourify '$app
     done
+fi
+
+
+# here's LS_COLORS
+# github.com/trapd00r/LS_COLORS
+# check if on Linux, because dircolors only works on GNU
+unamestr=$(uname)
+if [[ "$unamestr" == 'Linux' ]]; then
+   command -v gdircolors >/dev/null 2>&1 || alias gdircolors="dircolors"
+   eval "$(gdircolors -b ~/.dircolors)"
 fi
 
 ##################################### quit now if in zsh
