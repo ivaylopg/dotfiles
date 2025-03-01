@@ -18,5 +18,3 @@ cp /Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist 
 cp -R ~/Library/Services ~/migration/Lib/Services # automator stuff
 cp ~/.bash_history ~/migration/home # back it up for fun?
 cp ~/.zsh_history ~/migration/home # back it up for fun?
-#cp ~/.gitconfig.local ~/migration
-cp -r  ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/ ~/migration/ST

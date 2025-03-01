@@ -46,7 +46,7 @@ cask_install() {
     fancy_echo "Cask %s is already installed. Skipping ..." "$1"
   else
     fancy_echo "Installing Cask: %s ..." "$1"
-    brew install $@
+    brew install --cask $@
   fi
 }
 
@@ -109,26 +109,12 @@ fancy_echo "Updating Homebrew formulas ..."
 brew update
 
 brew_install_or_upgrade coreutils
-
-#brew_install_or_upgrade 'zsh'
-#fancy_echo "Remember to change your default shell..."
-#add_instructions "Add to your /etc/shells - $HOME/.homebrew/bin/zsh"
-
-
-# cask_install java
-# brew_install_or_upgrade node #and npm
-# brew_install_or_upgrade rbenv
 brew_install_or_upgrade grc
-# brew_install_or_upgrade mono
 brew_install_or_upgrade git-lfs
 git lfs install
-# brew_install_or_upgrade python3
-# brew postinstall python3
 
 brew_install_or_upgrade openssl
 brew unlink openssl && brew link openssl --force
-
-# brew_install_or_upgrade git
 brew_install_or_upgrade grep
 brew_install_or_upgrade screen
 brew_install_or_upgrade wget
@@ -142,17 +128,11 @@ brew_install_or_upgrade cowsay
 brew_install_or_upgrade pidof
 brew_install_or_upgrade gist
 brew_install_or_upgrade pngquant
-# brew_install_or_upgrade the_silver_searcher
-# brew_install_or_upgrade fontforge
 brew_install_or_upgrade tmux
 brew_install_or_upgrade cloc
 brew_install_or_upgrade imagemagick
-# brew_install_or_upgrade pandoc ################################
 brew_install_or_upgrade watch
-# brew_install_or_upgrade tree
-# brew_install_or_upgrade httpie
 brew_install_or_upgrade wifi-password
-# brew_install_or_upgrade jq
 brew_install_or_upgrade bfg
 
 
@@ -161,37 +141,12 @@ brew_tap caskroom/versions
 
 # cask_install android-platform-tools
 
-# cask_install sublime-text
-# cask_install google-chrome
-# cask_install onepassword
-# cask_install flux
-# cask_install skype
-# cask_install dropbox
-# cask_install karabiner-elements
-# cask_install intel-power-gadget
-#cask_install dropbox-encore
-# cask_install android-studio
-# cask_install spectacle
-
-# cask_install imagealpha
-# cask_install imageoptim
-# cask_install miro-video-converter
+cask_install sublime-text
+cask_install google-chrome
+cask_install onepassword
 cask_install vlc
-# cask_install alfred
-# cask_install rowanj-gitx
+cask_install alfred
 # cask_install appcleaner
-# cask_install screen-blacker
-# cask_install basictex
-#cask_install gpgtools #Encrypted email
-#cask_install karabiner ### outdated :(
-###cask_install pandoc
-
-
-# cask_install mojibar
-# osascript -e 'tell application "System Events" to make login item at end with properties {path:"$HOME/Applications/Mojibar.app", hidden:false}'
-
-# cask_install fastlane
-# cask_install android-sdk
 
 brew tap caskroom/fonts
 cask_install font-camingocode
@@ -208,21 +163,7 @@ cask_install font-camingocode
 brew cleanup
 brew cask cleanup
 
-
 #npm globals
 source $NVM_DIR/nvm.sh
 npm_install_g git-open
-# npm_install_g gulp-cli
 npm_install_g nodemon
-# npm_install_g standard-format
-npm_install_g github-email
-# npm_install_g "eslint eslint-config-luxloop"
-#npm_install_g css-select
-#npm_install_g css-what
-#npm_install_g electron
-# npm_install_g json2csv
-#npm_install_g yo
-#npm_install_g coffee-script
-# npm_install_g pm2
-# npm_install_g gitmoji-cli
-#
